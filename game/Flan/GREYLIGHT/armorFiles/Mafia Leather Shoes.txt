@@ -1,0 +1,8 @@
+Name Mafia Leather Shoes
+ShortName bootsmafia
+ItemID 36821
+Icon mgc.iconbootsmafia
+Colour 255 255 255
+Type Boots
+Defence 0
+ArmourTexture mgc.armormafia

@@ -1,0 +1,8 @@
+Name Medic Pants
+ShortName pantsmedic
+ItemID 36825
+Icon mgc.iconpantsmedic
+Colour 255 255 255
+Type Legs
+Defence 0
+ArmourTexture mgc.armormedic

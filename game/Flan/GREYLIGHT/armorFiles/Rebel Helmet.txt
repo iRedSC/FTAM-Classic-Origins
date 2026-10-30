@@ -1,0 +1,8 @@
+Name Aktura Rebel Helmet
+ShortName helmetrebel
+ItemID 36810
+Icon mgc.iconhelmetrebel
+Colour 255 255 255
+Type Hat
+Defence 0.1
+ArmourTexture mgc.armorrebel

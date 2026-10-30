@@ -1,0 +1,8 @@
+Name Malughi Army Trousers
+ShortName pantsarmy
+ItemID 36806
+Icon mgc.iconpantsarmy
+Colour 255 255 255
+Type Legs
+Defence 0
+ArmourTexture mgc.armorarmy

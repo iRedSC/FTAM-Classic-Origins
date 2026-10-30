@@ -1,0 +1,9 @@
+Name Karakul Hat
+ShortName karakul
+ItemID 37301
+Icon mgc.iconkarakul
+Colour 255 255 255
+Type Helmet
+Model blackjagsmasksandhats.mgckarakul
+Defence 0
+ArmourTexture mgc.karakul

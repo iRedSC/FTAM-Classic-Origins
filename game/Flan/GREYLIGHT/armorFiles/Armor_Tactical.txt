@@ -1,0 +1,15 @@
+﻿Name Tactical Armor
+ShortName armortactical
+Icon lupineArmorTactical
+Colour 255 255 255
+
+Type Body
+Model dwdefence.LupineArmorTactical
+Defence 6
+ArmourTexture LupineMilitaryArmor_A
+
+Description _&3Tier III
+
+Durability 200
+
+ModelScale 1.0

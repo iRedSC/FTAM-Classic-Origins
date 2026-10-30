@@ -1,0 +1,15 @@
+Name Advanced Bodyarmor
+ShortName armoradvanced
+Icon lupineArmorStandardB
+Colour 255 255 255
+
+Type Body
+Model dwdefence.LupineArmorStandardB
+Defence 7
+ArmourTexture LupineMilitaryArmor_A
+
+Description _&cTier IV
+
+Durability 400
+
+ModelScale 1.0

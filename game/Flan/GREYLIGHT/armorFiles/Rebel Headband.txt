@@ -1,0 +1,8 @@
+Name Aktura Rebel Headband
+ShortName beretrebel
+ItemID 36814
+Icon mgc.iconberetrebel
+Colour 255 255 255
+Type Helmet
+Defence 0
+ArmourTexture mgc.beretrebel

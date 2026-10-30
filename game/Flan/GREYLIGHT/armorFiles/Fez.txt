@@ -1,0 +1,9 @@
+Name Fez
+ShortName fez
+ItemID 37303
+Icon mgc.iconfez
+Colour 255 255 255
+Type Helmet
+Model blackjagsmasksandhats.mgcfez
+Defence 0
+ArmourTexture mgc.fez

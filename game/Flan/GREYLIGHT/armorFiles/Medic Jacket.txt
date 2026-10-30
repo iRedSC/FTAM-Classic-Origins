@@ -1,0 +1,8 @@
+Name Medic Jacket
+ShortName shirtmedic
+ItemID 36824
+Icon mgc.iconshirtmedic
+Colour 255 255 255
+Type Chest
+Defence 0
+ArmourTexture mgc.armormedic

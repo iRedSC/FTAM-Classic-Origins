@@ -1,0 +1,8 @@
+Name Malughi Army Bodyarmour
+ShortName bodyarmy
+ItemID 36805
+Icon mgc.iconbodyarmy
+Colour 255 255 255
+Type Chest
+Defence 0.1
+ArmourTexture mgc.armorarmy

@@ -1,0 +1,15 @@
+Name Beta-A1 Armor
+ShortName armorstandard
+Icon lupineArmorStandard
+Colour 255 255 255
+
+Type Body
+Model dwdefence.LupineArmorStandard
+Defence 5
+ArmourTexture LupineMilitaryArmor_A
+
+Description _&aTier II
+
+Durability 100
+
+ModelScale 1.0

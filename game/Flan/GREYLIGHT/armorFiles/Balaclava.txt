@@ -1,0 +1,9 @@
+Name Balaclava
+ShortName balaclava
+ItemID 37304
+Icon mgc.iconbalaclava
+Colour 255 255 255
+Type Helmet
+Model blackjagsmasksandhats.mgcbalaclava
+Defence 0
+ArmourTexture mgc.balaclava

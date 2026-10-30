@@ -1,0 +1,8 @@
+Name Aktura Rebel Bodyarmour
+ShortName bodyrebel
+ItemID 36811
+Icon mgc.iconbodyrebel
+Colour 255 255 255
+Type Chest
+Defence 0.1
+ArmourTexture mgc.armorrebel
