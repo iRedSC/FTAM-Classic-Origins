@@ -29,11 +29,16 @@
 <flansmod:m1014>.addTooltip("§6§l* §7Only obtainable from Vote Crates.");
 <flansmod:cz805>.addTooltip("§6§l* §7Only obtainable from Vote Crates.");
 <flansmod:m4a1>.addTooltip("§6§l* §7Only obtainable from Vote Crates.");
+<mcheli:mh-6>.addTooltip("§6§l* §7Only obtainable from Vote Crates.");
+<mcheli:uh-1c>.addTooltip("§6§l* §7Only obtainable from Vote Crates.");
+<mcheli:emb314>.addTooltip("§6§l* §7Only obtainable from Vote Crates.");
 
 <flansmod:csls06>.addTooltip("§6§l* §7Only obtainable from Rare Crates.");
 <flansmod:pm9>.addTooltip("§6§l* §7Only obtainable from Rare Crates.");
 <flansmod:cslr4>.addTooltip("§6§l* §7Only obtainable from Rare Crates.");
 <flansmod:hk33>.addTooltip("§6§l* §7Only obtainable from Rare Crates.");
+<mcheli:a6m2>.addTooltip("§6§l* §7Only obtainable from Rare Crates.");
+<mcheli:ec665>.addTooltip("§6§l* §7Only obtainable from Rare Crates.");
 
 <minecraft:nether_star>.addTooltip("§6§l* §7These can be obtained from the §3§nQuarry Loot Room");
 <Mekanism:MachineBlock:4>.addTooltip("§6§l* §7These can be crafted or obtained from the §3§nQuarry Loot Room");
