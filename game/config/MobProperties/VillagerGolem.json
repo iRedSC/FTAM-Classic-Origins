@@ -1,0 +1,18 @@
+{
+  "_name": "VillagerGolem",
+  "drops": [
+    {
+      "function": "all",
+      "functions": [
+        {
+          "_comment": "sprinkler",
+          "function": "add",
+          "id": "OpenBlocks:sprinkler",
+          "count": .2
+        }
+      ]
+    }
+  ],
+  "pre_stats": [],
+  "stats": []
+}

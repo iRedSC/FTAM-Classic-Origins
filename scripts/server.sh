@@ -120,12 +120,27 @@ sync_mods() {
     echo "Mods: ${#wanted[@]} total, $added added, $updated updated, $removed removed"
 }
 
+sync_game() {
+    # game/ holds the server's settings: mod configs and MineTweaker scripts. Each file in it replaces the
+    # server's copy on every start; files it doesn't have, such as ones mods write themselves, are left alone.
+    local file count=0
+    while IFS= read -r -d '' file; do
+        mkdir -p "$SERVER/$(dirname "$file")"
+        cmp -s "$REPO/game/$file" "$SERVER/$file" && continue
+        cp "$REPO/game/$file" "$SERVER/$file"
+        printf '\033[36m  ~ %s\033[0m\n' "$file"
+        count=$((count + 1))
+    done < <(cd "$REPO/game" && find . -type f -printf '%P\0')
+    echo "Settings: $count updated from game/"
+}
+
 mkdir -p "$SERVER"
 JAVA="$(find_java8)"
 
 update_repo
 install_forge
 sync_mods
+sync_game
 
 # Running this script is agreeing to the Minecraft EULA: https://aka.ms/MinecraftEULA
 [ -f "$SERVER/eula.txt" ] || echo 'eula=true' > "$SERVER/eula.txt"
