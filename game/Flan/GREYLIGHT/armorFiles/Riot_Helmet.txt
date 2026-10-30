@@ -1,0 +1,16 @@
+﻿Name Riot Helmet
+ShortName riothelmet
+Icon penbarRiotHelmet
+Colour 255 255 255
+
+Type Head
+Model dwdefence.RiotHelmet
+Defence 2
+ArmourTexture Penbar_CasualUniform
+
+Description _&3Tier III
+
+Durability 512
+
+ModelScale 0.5
+   

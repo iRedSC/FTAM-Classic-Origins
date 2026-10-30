@@ -1,0 +1,8 @@
+Name Aktura Rebel Trousers
+ShortName pantsrebel
+ItemID 36812
+Icon mgc.iconpantsrebel
+Colour 255 255 255
+Type Legs
+Defence 0
+ArmourTexture mgc.armorrebel

@@ -1,0 +1,8 @@
+Name Aktura Rebel Boots
+ShortName bootsrebel
+ItemID 36813
+Icon mgc.iconbootsrebel
+Colour 255 255 255
+Type Boots
+Defence 0
+ArmourTexture mgc.armorrebel

@@ -1,0 +1,8 @@
+Name Medic Boots
+ShortName bootsmedic
+ItemID 36826
+Icon mgc.iconbootsmedic
+Colour 255 255 255
+Type Boots
+Defence 0
+ArmourTexture mgc.armormedic

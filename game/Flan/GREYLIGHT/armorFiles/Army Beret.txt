@@ -1,0 +1,8 @@
+Name Malughi Army Beret
+ShortName beretmilitary
+ItemID 36808
+Icon mgc.iconberetarmy
+Colour 255 255 255
+Type Helmet
+Defence 0
+ArmourTexture mgc.beretarmy

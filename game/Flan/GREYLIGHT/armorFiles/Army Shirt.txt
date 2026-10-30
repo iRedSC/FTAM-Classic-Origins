@@ -1,0 +1,8 @@
+Name Malughi Army Shirt
+ShortName shirtarmy
+ItemID 36809
+Icon mgc.iconshirtarmy
+Colour 255 255 255
+Type Chest
+Defence 0
+ArmourTexture mgc.shirtarmy

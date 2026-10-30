@@ -1,0 +1,15 @@
+﻿Name Civilian Armor
+ShortName armorbasic
+Icon lupineArmorBasic
+Colour 255 255 255
+
+Type Body
+Model dwdefence.LupineArmorBasic
+Defence 4
+ArmourTexture LupineMilitaryArmor_A
+
+Description _&9Tier I
+
+Durability 50
+
+ModelScale 1.0

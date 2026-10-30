@@ -1,0 +1,8 @@
+Name Mafia Smoking
+ShortName shirtmafia
+ItemID 36819
+Icon mgc.iconshirtmafia
+Colour 255 255 255
+Type Chest
+Defence 0
+ArmourTexture mgc.shirtmafia

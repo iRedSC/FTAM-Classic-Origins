@@ -1,0 +1,8 @@
+Name Mafia Flat Cap
+ShortName beretmafia
+ItemID 36818
+Icon mgc.iconberetmafia
+Colour 255 255 255
+Type Helmet
+Defence 0
+ArmourTexture mgc.shirtmafia

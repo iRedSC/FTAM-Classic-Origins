@@ -1,0 +1,9 @@
+Name Kazakh Fur Hat
+ShortName kazakhfurhat
+ItemID 37302
+Icon mgc.iconkazakhfurhat
+Colour 255 255 255
+Type Helmet
+Model blackjagsmasksandhats.mgckazakhfurhat
+Defence 0
+ArmourTexture mgc.kazakhfurhat

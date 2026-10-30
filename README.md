@@ -8,6 +8,10 @@ Install [Prism Launcher](https://prismlauncher.org) and sign in once, then run `
 
 It pulls this repo, creates or updates the `FTAM Nostalgia` Prism instance, mirrors `mods/shared` and `mods/client` into it, and starts the game. Anything else in the instance's mods folder is removed.
 
+### CurseForge
+
+Without Prism, `play.cmd` uses the CurseForge app instead (`play.cmd curseforge` picks it when both are installed). The first run opens CurseForge and a generated `FTAM Nostalgia.zip`: import it with **Create Custom Profile > Import**, and the script fills the new profile with the pack's mods and settings. After that, run `play.cmd` before playing to update, then press **Play** in CurseForge. It can't launch the game or update on its own.
+
 ## Dev builds
 
 The `dev` branch has the newest builds of our mods plus dev-only tools. Run `git switch dev`, then `play.cmd`; it plays in a separate `FTAM Nostalgia (dev)` instance. `git switch main` to go back.

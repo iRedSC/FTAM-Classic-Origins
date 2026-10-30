@@ -1,0 +1,9 @@
+Name Turkic Bork Hat
+ShortName turkicborkhat
+ItemID 37300
+Icon mgc.iconturkicborkhat
+Colour 255 255 255
+Type Helmet
+Model blackjagsmasksandhats.mgcturkicborkhat
+Defence 0
+ArmourTexture mgc.turkicborkhat
