@@ -4,7 +4,7 @@
 #
 #   scripts/server.sh [server-dir]
 #
-# server-dir defaults to ./server in the repo (gitignored).
+# server-dir defaults to ./server in the repo, or ./server-<branch> off main (both gitignored).
 # FTAM_SERVER_MEMORY sets the max heap (default 6G); JAVA8 points at a Java 8 binary.
 
 set -euo pipefail
@@ -17,7 +17,11 @@ INSTALLER_URL="https://maven.minecraftforge.net/net/minecraftforge/forge/$FORGE_
 MEMORY="${FTAM_SERVER_MEMORY:-6G}"
 
 REPO="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-SERVER="${1:-$REPO/server}"
+
+# Any branch but main (dev builds) gets its own server folder, so it never touches the main world.
+BRANCH="$(git -C "$REPO" rev-parse --abbrev-ref HEAD)"
+if [ "$BRANCH" = main ]; then DEFAULT_SERVER="$REPO/server"; else DEFAULT_SERVER="$REPO/server-$BRANCH"; fi
+SERVER="${1:-$DEFAULT_SERVER}"
 
 fail() {
     printf '\033[31m%s\033[0m\n' "$*" >&2
