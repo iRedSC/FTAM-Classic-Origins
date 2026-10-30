@@ -1,0 +1,98 @@
+﻿//---Standard Gun Config for Flans Mod------------
+//Created by Minecraft-SMP Toolbox 2.2.2.4
+
+
+//---Standard-------------------------------------
+// Naming
+Name Howa Type 89
+ShortName type89
+ItemID Your ID
+
+Description _&8[&aUncommon&8]
+
+// Visuals
+Model mpack.type89
+ModelScale 0.07
+Icon type89TD
+
+
+// Recipe
+
+
+//Misc
+
+//------------------------------------------------
+
+//---Gun------------------------------------------
+//Gun Type
+
+
+//Visual
+Model mpack.type89
+ModelScale 0.07
+Texture Skin_Gun_type89
+DeployedModel mpack.type89
+DeployedTexture Skin_Gun_type89
+Icon type89TD
+
+//Damage
+Damage 3.56
+Damage10m 3.56
+Damage100m 2.67
+HeadshotDamage 4.63
+HeadshotDamage10m 4.63
+HeadshotDamage100m 3.47
+
+Recoil 3.5
+RecoilYaw .15
+
+Spread 0
+
+//Ammo
+Ammo armag
+NumBullets 1
+BulletSpeed 40
+
+
+//Attachments
+AllowAllAttachments False
+AllowAttachments mpackverticalgrip mpack.stubby mpackrvg mpack.eotech mpack.jh406 mpack.rx01 mpackafg2tan mpackafg2gray mpackafg2black mpack.vcog mpack.mark4mrtm1 mpack.trubrite mpack.docter mpack.rkobra mpack.pkas mpack.ta11c mpack.nt4 mpack.harisbipod mpack.compm4 mpack.microt1 mpack.rsrmr mpack.rmr
+AllowBarrelAttachments True
+AllowScopeAttachments True
+AllowStockAttachments True
+AllowGripAttachments True
+
+
+//Weapon Settings
+CanForceReload True
+CanShootUnderwater True
+ConsumeGunOnUse False
+
+Mode FULLAUTO
+MoveSpeedModifier .9
+OneHanded False
+
+ReloadTime 60
+SecondaryFunction ADS_ZOOM
+ShootDelay 2
+UsableByMechas False
+UsableByPlayers True
+Icon type89TD
+
+//Shield
+
+
+//Zoom
+
+
+//Melee
+
+
+//Deployable Settings
+
+
+//Sound
+ShootSound ARmpackM16Shoot
+ReloadSound Reload.mpack.e.50
+
+//------------------------------------------------

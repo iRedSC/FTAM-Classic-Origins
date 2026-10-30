@@ -1,0 +1,97 @@
+﻿//---Standard Gun Config for Flans Mod------------
+//Created by Minecraft-SMP Toolbox 2.1.4.2
+
+
+//---Standard-------------------------------------
+// Naming
+Name MP5k
+ShortName mp5k
+ItemID Your ID
+
+Description _&8[&aUncommon&8]
+
+// Visuals
+Model mpack.mp5k
+ModelScale 0.12
+Icon mp5kTD
+
+
+// Recipe
+
+
+//Misc
+
+//------------------------------------------------
+
+//---Gun------------------------------------------
+//Gun Type
+
+
+//Visual
+Model mpack.mp5k
+ModelScale 0.12
+Texture Skin_Gun_mp5k
+DeployedModel mpack.mp5k
+DeployedTexture Skin_Gun_mp5k
+Icon mp5kTD
+
+//Damage
+Damage 3.8
+Damage10m 1.9
+Damage100m -200
+HeadshotDamage 4.56
+HeadshotDamage10m 2.28
+HeadshotDamage100m 0.36
+
+Spread 9
+
+Recoil 1
+RecoilYaw 1
+
+
+//Ammo
+BulletSpeed 40
+Ammo smgmag
+
+
+//Attachments
+AllowAllAttachments False
+AllowBarrelAttachments False
+AllowScopeAttachments True
+AllowStockAttachments False
+AllowGripAttachments False
+AllowAttachments mpack.eotech mpack.jh406 mpack.rx01 mpack.vcog mpack.mark4mrtm1 mpack.trubrite mpack.docter mpack.rkobra mpack.pkas mpack.ta11c mpack.compm4 mpack.microt1 mpack.rsrmr mpack.rmr
+
+
+//Weapon Settings
+CanForceReload True
+CanShootUnderwater True
+
+Mode FULLAUTO
+MoveSpeedModifier .975
+OneHanded True
+
+ReloadTime 40
+SecondaryFunction ADS_ZOOM
+ShootDelay 1
+UsableByMechas False
+UsableByPlayers True
+Icon mp5kTD
+
+//Shield
+
+
+//Zoom
+
+
+//Melee
+
+
+//Deployable Settings
+
+
+//Sound
+ShootSound MPmpackMP5KShoot
+ReloadSound Reload.mpack.c.40
+
+//------------------------------------------------

@@ -1,0 +1,96 @@
+﻿//---Standard Gun Config for Flans Mod------------
+//Created by Minecraft-SMP Toolbox 2.1.4.2
+
+
+//---Standard-------------------------------------
+// Naming
+Name Barret M82
+ShortName m82
+ItemID Your ID
+
+Description _&8[&dMythic&8]
+
+// Visuals
+Model mpack.m82
+ModelScale 0.35
+Icon BarretM82TD
+
+
+// Recipe
+
+
+//Misc
+
+//------------------------------------------------
+
+//---Gun------------------------------------------
+//Gun Type
+
+
+//Visual
+Model mpack.m82
+ModelScale 0.21
+Texture Skin_Gun_m82
+DeployedModel mpack.m82
+DeployedTexture Skin_Gun_m82
+
+
+//Damage
+Damage 28.5
+Damage10m 28.5
+Damage100m 27.93
+HeadshotDamage 57
+HeadshotDamage10m 57
+HeadshotDamage100m 54.88
+
+
+//Ammo
+Ammo snipermag
+NumBullets 1
+BulletSpeed 40
+
+
+//Attachments
+AllowAllAttachments False
+AllowBarrelAttachments False
+AllowScopeAttachments True
+AllowStockAttachments False
+AllowGripAttachments False
+Icon BarretM82TD
+
+//Weapon Settings
+CanForceReload True
+CanShootUnderwater True
+ConsumeGunOnUse False
+Spread 0.01
+Mode SEMIAUTO
+MoveSpeedModifier .5
+OneHanded False
+Recoil 10
+ReloadTime 200
+SecondaryFunction ADS_ZOOM
+ShootDelay 20
+UsableByMechas False
+UsableByPlayers True
+Icon BarretM82TD
+
+//Shield
+
+
+//Zoom
+Scope mpackscope
+ZoomLevel 6
+FOVZoomLevel 3
+
+
+//Melee
+
+
+//Deployable Settings
+
+
+//Sound
+ShootSound SRmpackM82Shoot
+ReloadSound Reload.mpack.f.100
+
+//------------------------------------------------

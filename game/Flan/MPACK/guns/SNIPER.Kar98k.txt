@@ -1,0 +1,95 @@
+﻿//---Standard Gun Config for Flans Mod------------
+//Created by Minecraft-SMP Toolbox 2.1.4.2
+
+
+//---Standard-------------------------------------
+// Naming
+Name Kar98k
+ShortName kar98k
+
+Description _&8[&5Epic&8]
+
+// Visuals
+Model mpack.kar98k
+ModelScale 0.11
+Icon kar98kTD
+
+
+// Recipe
+
+
+//Misc
+
+//------------------------------------------------
+
+//---Gun------------------------------------------
+//Gun Type
+
+
+//Visual
+Model mpack.kar98k
+ModelScale 0.11
+Texture Skin_Gun_kar98k
+DeployedModel kar98k
+DeployedTexture Skin_Gun_kar98k
+Icon kar98kTD
+
+//Damage
+Damage 18.4
+Damage10m 18.4
+Damage100m 16.56
+HeadshotDamage 36.8
+HeadshotDamage10m 36.8
+HeadshotDamage100m 33.12
+
+
+//Ammo
+Ammo bullet792
+NumAmmoSlots 5
+NumAmmoItemsInGun 5
+LoadIntoGun 5
+NumBullets 1
+BulletSpeed 40
+
+
+//Attachments
+AllowAllAttachments True
+AllowAttachments vcog
+AllowBarrelAttachments False
+AllowScopeAttachments True
+AllowStockAttachments False
+AllowGripAttachments False
+
+//Weapon Settings
+CanForceReload True
+CanShootUnderwater True
+
+Spread 0.09
+Mode FULLAUTO
+MoveSpeedModifier .85
+OneHanded False
+Recoil 15
+ReloadTime 120
+SecondaryFunction ADS_ZOOM
+ShootDelay 20
+UsableByMechas False
+UsableByPlayers True
+Icon kar98kTD
+
+//Shield
+
+
+//Zoom
+
+
+//Melee
+
+
+//Deployable Settings
+
+
+//Sound
+ShootSound RiflempackKar98kShoot
+ReloadSound ReloadmpackKar98k
+
+//------------------------------------------------

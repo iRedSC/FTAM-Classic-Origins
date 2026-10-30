@@ -1,0 +1,16 @@
+Name Tactical Helmet
+ShortName tacticalhead
+Icon lupineLMSSHelmet
+Colour 255 255 255
+
+Type Head
+Model dwdefence.LMSSHead
+Defence 2
+ArmourTexture LupineLMSSUniform
+NightVision true
+
+Description _&3Tier III_&8[&3Tactical &7Set&8]
+
+Durability 256
+
+ModelScale 0.5

@@ -1,0 +1,90 @@
+﻿//---Standard Gun Config for Flans Mod------------
+//Created by Minecraft-SMP Toolbox 2.1.4.2
+
+
+//---Standard-------------------------------------
+// Naming
+Name MP5A4
+ShortName mp5a4
+
+Description _&8[&bRare&8]
+
+// Visuals
+Model mpack.mp5
+ModelScale 0.12
+Icon MP5A4_TD
+
+
+// Recipe
+
+
+//Misc
+
+
+
+//------------------------------------------------
+
+//---Gun------------------------------------------
+//Gun Type
+
+
+//Visual
+Model mpack.mp5
+ModelScale 0.12
+Texture Skin_Gun_mp5
+DeployedModel mpack.mp5
+DeployedTexture Skin_Gun_mp5
+
+
+//Damage
+Damage 4
+Damage10m 3.2
+Damage100m 1
+HeadshotDamage 4.8
+HeadshotDamage10m 3.84
+HeadshotDamage100m 1.2
+
+Spread 4
+
+Recoil 2
+RecoilYaw 2
+
+
+//Ammo
+Ammo smgmag
+NumBullets 1
+BulletSpeed 40
+
+//Weapon Settings
+CanForceReload True
+CanShootUnderwater True
+ConsumeGunOnUse False
+
+Mode FULLAUTO
+MoveSpeedModifier .95
+OneHanded False
+
+ReloadTime 80
+SecondaryFunction ADS_ZOOM
+ShootDelay 2
+UsableByMechas False
+UsableByPlayers True
+
+
+//Shield
+
+
+//Zoom
+
+
+//Melee
+
+
+//Deployable Settings
+
+
+//Sound
+ShootSound SMGmpackMP5Shoot
+ReloadSound Reload.mpack.c.40
+
+//------------------------------------------------

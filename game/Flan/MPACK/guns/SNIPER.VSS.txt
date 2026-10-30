@@ -1,0 +1,100 @@
+﻿//---Standard Gun Config for Flans Mod------------
+//Created by Minecraft-SMP Toolbox 2.1.4.2
+
+
+//---Standard-------------------------------------
+// Naming
+Name VSS Vintorez
+ShortName vss
+
+Description _&8[&7Common&8]
+
+// Visuals
+Model mpack.vss
+ModelScale 0.54
+Icon VSSTD
+
+
+// Recipe
+
+
+//Misc
+
+//------------------------------------------------
+
+//---Gun------------------------------------------
+//Gun Type
+
+
+//Visual
+Model mpack.vss
+ModelScale 0.54
+Texture Skin_Gun_vss
+DeployedModel mpack.vss
+DeployedTexture Skin_Gun_vss
+Icon VSSTD
+
+//Damage
+Damage 5
+Damage10m 5
+Damage100m 4.5
+HeadshotDamage 10
+HeadshotDamage10m 10
+HeadshotDamage100m 9
+
+Recoil 2
+RecoilYaw .5
+
+Spread 0
+
+
+//Ammo
+Ammo snipermag
+NumBullets 1
+BulletSpeed 40
+
+
+//Attachments
+AllowAllAttachments False
+AllowBarrelAttachments False
+AllowScopeAttachments False
+AllowStockAttachments False
+AllowGripAttachments False
+
+
+//Weapon Settings
+CanForceReload True
+CanShootUnderwater True
+ConsumeGunOnUse False
+
+Mode FULLAUTO
+MoveSpeedModifier .925
+OneHanded False
+
+ReloadTime 100
+SecondaryFunction ADS_ZOOM
+ShootDelay 4
+UsableByMechas False
+UsableByPlayers True
+Icon VSSTD
+
+//Shield
+
+
+//Zoom
+Scope mpackscope
+ZoomLevel 4
+FOVZoomLevel 2
+
+
+//Melee
+
+
+//Deployable Settings
+
+
+//Sound
+ShootSound SRmpackVSSShoot
+ReloadSound Reload.mpack.g.65
+
+//------------------------------------------------

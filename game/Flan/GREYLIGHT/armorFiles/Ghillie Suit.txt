@@ -1,0 +1,9 @@
+Name Ghillie Suit
+ShortName ghilliesuit
+ItemID 37305
+Icon mgc.iconghilliesuit
+Colour 255 255 255
+Type Helmet
+Model blackjagsmasksandhats.mgcghilliesuit
+Defence 0
+ArmourTexture mgc.ghilliesuit

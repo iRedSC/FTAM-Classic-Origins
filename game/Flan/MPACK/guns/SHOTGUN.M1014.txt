@@ -1,0 +1,95 @@
+//---Standard Gun Config for Flans Mod------------
+//Created by Minecraft-SMP Toolbox 2.1.3.0
+
+
+//---Standard-------------------------------------
+// Naming
+Name M1014
+ShortName m1014
+
+Description _&8[&bRare&8]
+
+// Visuals
+Model mpack.m1014
+ModelScale 0.07
+Icon M1014_TD
+
+
+// Recipe
+
+
+//Misc
+
+//------------------------------------------------
+
+//---Gun------------------------------------------
+//Gun Type
+Deployable False
+
+
+//Visual
+Model mpack.m1014
+ModelScale 0.07
+Texture Skin_Gun_m1014
+DeployedModel m1014
+DeployedTexture Skin_Gun_m1014
+
+
+//Damage
+Damage 4.8
+Damage10m 2.4
+Damage100m -200
+HeadshotDamage 5.28
+HeadshotDamage10m 2.64
+HeadshotDamage100m -200
+
+Recoil 7
+
+Spread 25
+
+
+//Ammo
+Ammo 12gauge
+NumAmmoSlots 7
+NumAmmoItemsInGun 7
+LoadIntoGun 7
+NumBullets 6
+BulletSpeed 40
+
+
+//Attachments
+AllowAllAttachments False
+AllowBarrelAttachments False
+AllowScopeAttachments True
+AllowStockAttachments False
+AllowGripAttachments True
+AllowAttachments verticalgrip stubbygrip eotech jh406 rx01 trubrite docter rkobra pkas ta11c
+
+//Weapon Settings
+CanForceReload True
+ConsumeGunOnUse False
+
+
+Mode SEMIAUTO
+
+ReloadTime 120
+ShootDelay 13
+MoveSpeedModifier .90
+
+//Shield
+
+
+//Zoom
+
+
+//Melee
+
+
+//Deployable Settings
+
+
+//Sound
+ShootSound ShotgunmpackM1014Shoot
+ReloadSound ReloadmpackShotgun7RDSemi
+
+//------------------------------------------------

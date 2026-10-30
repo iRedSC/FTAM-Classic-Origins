@@ -1,0 +1,8 @@
+Name Malughistan Police Pants
+ShortName pantspolice
+ItemID 36802
+Icon mgc.iconpantspolice
+Colour 255 255 255
+Type Pants
+Defence 0
+ArmourTexture mgc.armorpolice

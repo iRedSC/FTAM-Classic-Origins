@@ -1,0 +1,16 @@
+Name Chamberlain Head
+ShortName juggernauthead
+Icon ambirconHeavynautHelmet
+Colour 255 255 255
+
+Type Head
+Model dwdefence.ChamberlainHead
+Defence 6
+ArmourTexture Ambircon_ChamberlainUniform
+MoveSpeedModifier 0.95
+
+Description _&dTier VI_&8[&dJuggernaut &7Set&8]
+
+Durability 1024
+
+ModelScale 0.5

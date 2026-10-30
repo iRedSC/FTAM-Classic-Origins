@@ -1,0 +1,98 @@
+﻿//---Standard Gun Config for Flans Mod------------
+//Created by Minecraft-SMP Toolbox 2.1.4.2
+
+
+//---Standard-------------------------------------
+// Naming
+Name Jericho 941
+ShortName j941
+
+Description _&8[&7Common&8]
+
+// Visuals
+Model mpack.j941
+ModelScale 0.06
+Icon j941TD
+
+
+// Recipe
+
+
+//Misc
+
+//Paintjob Settings
+//Format is "Paintjob iconName textureName requiredDyeAmount requiredDyeColour" Multiple colours may be listed in order, seperated by a space
+//Dye colours are "black", "red", "green", "brown", "blue", "purple", "cyan", "silver", "gray", "pink", "lime", "yellow", "lightBlue", "magenta", "orange", "white"
+
+Paintjob j941desert j941desert orange 2 yellow 2 brown 2
+Paintjob j941navy j941navy cyan 2 lightBlue 2 blue 2
+Paintjob j941urban j941urban gray 4 silver 4
+Paintjob j941snow j941snow white 4 silver 4
+Paintjob j941woodland j941woodland green 4 brown 4
+
+//------------------------------------------------
+
+//---Gun------------------------------------------
+//Gun Type
+
+
+//Visual
+Model mpack.j941
+ModelScale 0.06
+Texture Skin_Gun_j941
+DeployedModel j941
+DeployedTexture Skin_Gun_j941
+Icon j941TD
+
+//Damage
+Damage 3.5
+Damage10m 3.15
+Damage100m 0.35
+HeadshotDamage 4.01
+HeadshotDamage10m 3.61
+HeadshotDamage100m 0.36
+
+Recoil 1
+RecoilYaw 1
+
+
+//Ammo
+Ammo pistolmag
+NumBullets 1
+BulletSpeed 40
+
+
+//Attachments
+
+
+//Weapon Settings
+CanForceReload True
+CanShootUnderwater True
+
+Spread 4
+Mode SEMIAUTO
+OneHanded False
+ReloadTime 40
+SecondaryFunction ADS_ZOOM
+ShootDelay 1
+UsableByMechas False
+UsableByPlayers True
+Icon j941TD
+
+//Shield
+
+
+//Zoom
+
+
+//Melee
+
+
+//Deployable Settings
+
+
+//Sound
+ShootSound PistolmpackJericho941Shoot
+ReloadSound Reload.mpack.c.40
+
+//------------------------------------------------

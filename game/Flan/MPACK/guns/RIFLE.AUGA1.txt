@@ -1,0 +1,100 @@
+﻿//---Standard Gun Config for Flans Mod------------
+//Created by Minecraft-SMP Toolbox 2.1.4.2
+
+
+//---Standard-------------------------------------
+// Naming
+Name Steyr AUG A1
+ShortName auga1
+ItemID Your ID
+
+Description _&8[&bRare&8]
+
+// Visuals
+Model mpack.auga1
+ModelScale 0.12
+Icon AUGA1TD
+
+
+// Recipe
+
+
+//Misc
+
+
+
+
+//------------------------------------------------
+
+//---Gun------------------------------------------
+//Gun Type
+
+
+//Visual
+Model mpack.auga1
+ModelScale 0.12
+Texture Skin_Gun_auga1
+DeployedModel mpack.auga1
+DeployedTexture Skin_Gun_auga1
+Icon AUGA1TD
+
+//Damage
+Damage 3.5
+Damage10m 3.5
+Damage100m 2.63
+HeadshotDamage 4.55
+HeadshotDamage10m 4.55
+HeadshotDamage100m 3.41
+
+Recoil 1.0
+RecoilYaw .25
+
+Spread .75
+
+//Ammo
+Ammo armag
+NumBullets 1
+BulletSpeed 40
+
+
+//Attachments
+AllowAllAttachments False
+AllowBarrelAttachments True
+AllowScopeAttachments False
+AllowStockAttachments False
+AllowGripAttachments False
+AllowAttachments mpack.nt4
+
+
+//Weapon Settings
+CanShootUnderwater False
+ConsumeGunOnUse False
+
+MoveSpeedModifier .925
+Mode FULLAUTO
+OneHanded False
+
+ReloadTime 80
+SecondaryFunction ADS_ZOOM
+ShootDelay 2
+UsableByMechas False
+UsableByPlayers True
+Icon AUGA1TD
+
+//Shield
+
+
+//Zoom
+FOVZoomLevel 2
+
+
+//Melee
+
+
+//Deployable Settings
+
+
+//Sound
+ShootSound ARmpackAUGA1Shoot
+ReloadSound Reload.mpack.e.55
+//------------------------------------------------

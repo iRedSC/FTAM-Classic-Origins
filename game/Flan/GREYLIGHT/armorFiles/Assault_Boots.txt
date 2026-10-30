@@ -1,0 +1,15 @@
+Name Assault Boots
+ShortName assaultboots
+Icon lupineAssaultBoots
+Colour 255 255 255
+
+Type Boots
+Model dwdefence.AssaultBoots
+Defence 2
+ArmourTexture LupineMilitaryArmor_A
+
+Description _&aTier II_&8[&aAssault &7Set&8]
+
+Durability 128
+
+ModelScale 0.5

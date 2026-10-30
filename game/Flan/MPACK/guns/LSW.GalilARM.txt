@@ -1,0 +1,94 @@
+﻿//---Standard Gun Config for Flans Mod------------
+//Created by Minecraft-SMP Toolbox 2.1.4.2
+
+
+//---Standard-------------------------------------
+// Naming
+Name Galil ARM
+ShortName galilarm
+ItemID Your ID
+
+Description _&8[&dMythic&8]
+
+// Visuals
+Model mpack.galilarm
+ModelScale 0.13
+Icon galilarmTD
+
+
+// Recipe
+
+
+//Misc
+
+//------------------------------------------------
+
+//---Gun------------------------------------------
+//Gun Type
+
+
+//Visual
+Model mpack.galilarm
+ModelScale 0.13
+Texture Skin_Gun_galilarm
+DeployedModel mpack.galilarm
+DeployedTexture Skin_Gun_galilarm
+Icon galilarmTD
+
+//Damage
+Damage 7
+Damage10m 7
+Damage100m 5.33
+HeadshotDamage 10.08
+HeadshotDamage10m 9.58
+HeadshotDamage100m 7.56
+
+
+//Ammo
+Ammo armag
+NumBullets 1
+BulletSpeed 40
+
+
+//Attachments
+AllowAllAttachments False
+AllowBarrelAttachments True
+AllowScopeAttachments True
+AllowStockAttachments False
+AllowGripAttachments False
+
+//Weapon Settings
+CanForceReload True
+CanShootUnderwater True
+ConsumeGunOnUse False
+Accuracy 2
+Spread 2
+Mode FULLAUTO
+MoveSpeedModifier .875
+OneHanded False
+Recoil 3
+ReloadTime 90
+SecondaryFunction ADS_ZOOM
+ShootDelay 2
+UsableByMechas False
+UsableByPlayers True
+Icon galilarmTD
+
+
+//Shield
+
+
+//Zoom
+
+
+//Melee
+
+
+//Deployable Settings
+
+
+//Sound
+ShootSound LSWmpackGalilARMShoot
+ReloadSound Reload.mpack.f.90
+
+//------------------------------------------------

@@ -1,0 +1,104 @@
+//---Standard Gun Config for Flans Mod------------
+//Created by Minecraft-SMP Toolbox 2.1.3.0
+
+
+//---Standard-------------------------------------
+// Naming
+Name SCAR-L
+ShortName scarl
+
+Description _&8[&6Legendary&8]
+
+// Visuals
+Model mpack.scarl
+ModelScale 0.06
+Icon scarltan
+
+
+// Recipe
+
+
+
+
+//Paintjob Settings
+//Format is "Paintjob iconName textureName requiredDyeAmount requiredDyeColour" Multiple colours may be listed in order, seperated by a space
+//Dye colours are "black", "red", "green", "brown", "blue", "purple", "cyan", "silver", "gray", "pink", "lime", "yellow", "lightBlue", "magenta", "orange", "white"
+Paintjob scarlblackTD scarlblackTD gray 6
+
+
+
+//------------------------------------------------
+
+//---Gun------------------------------------------
+//Gun Type
+
+
+//Visual
+Model mpack.scarl
+ModelScale 0.06
+Texture Skin_Gun_Scarl
+DeployedModel Scarl
+DeployedTexture Skin_Gun_Scarl
+Icon scarltan
+
+//Damage
+Damage 6.5
+Damage10m 6.5
+Damage100m 4.88
+HeadshotDamage 10.01
+HeadshotDamage10m 10.01
+HeadshotDamage100m 7.51
+
+Recoil .55
+RecoilYaw .15
+
+Spread .50
+
+
+//Ammo
+Ammo armag
+NumBullets 1
+BulletSpeed 40
+
+
+//Attachments
+AllowAllAttachments False
+AllowBarrelAttachments True
+AllowScopeAttachments True
+AllowStockAttachments False
+AllowGripAttachments True
+AllowAttachments verticalgrip stubby eotech jh406 rx01 trubrite docter rkobra pkas ta11c riflesup
+
+//Weapon Settings
+CanForceReload True
+CanShootUnderwater False
+ConsumeGunOnUse False
+
+
+Mode FULLAUTO
+MoveSpeedModifier .9
+OneHanded False
+
+ReloadTime 80
+SecondaryFunction ADS_ZOOM
+ShootDelay 2
+UsableByMechas False
+UsableByPlayers True
+Icon scarltan
+
+//Shield
+
+
+//Zoom
+
+
+//Melee
+
+
+//Deployable Settings
+
+
+//Sound
+ShootSound ARmpackSCARLShoot
+ReloadSound Reload.mpack.g.60
+//------------------------------------------------

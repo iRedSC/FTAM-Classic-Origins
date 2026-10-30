@@ -1,0 +1,95 @@
+﻿//---Standard Gun Config for Flans Mod------------
+//Created by Minecraft-SMP Toolbox 2.1.4.2
+
+
+//---Standard-------------------------------------
+// Naming
+Name MK20 SSR
+ShortName mk20ssr
+
+Description _&8[&6Legendary&8]
+
+// Visuals
+Model mpack.mk20ssr
+ModelScale 0.06
+Icon MK20SSRTD
+
+
+
+// Recipe
+
+
+//Misc
+
+//------------------------------------------------
+
+//---Gun------------------------------------------
+//Gun Type
+
+
+//Visual
+Model mpack.mk20ssr
+ModelScale 0.06
+Texture Skin_Gun_mk20ssr
+DeployedModel mk20ssr
+DeployedTexture Skin_Gun_mk20ssr
+Icon MK20SSRTD
+
+//Damage
+Damage 15
+Damage10m 15
+Damage100m 12.75
+HeadshotDamage 22.04
+HeadshotDamage10m 22.04
+HeadshotDamage100m 18.73
+
+
+//Ammo
+Ammo dmrmag
+NumBullets 1
+BulletSpeed 40
+
+
+//Attachments
+AllowAllAttachments False
+AllowAttachments verticalgrip stubbygrip eotech jh406 trubrite docter rx01 rkobra pkas ta11c riflesup
+AllowBarrelAttachments True
+AllowScopeAttachments True
+AllowStockAttachments False
+AllowGripAttachments True
+
+
+//Weapon Settings
+CanForceReload True
+CanShootUnderwater True
+ConsumeGunOnUse False
+Spread 0.09
+Mode SEMIAUTO
+MoveSpeedModifier .9
+OneHanded False
+Recoil 5
+RecoilYaw 1
+ReloadTime 80
+SecondaryFunction ADS_ZOOM
+ShootDelay 6.6
+UsableByMechas False
+UsableByPlayers True
+Icon MK20SSRTD
+
+//Shield
+
+
+//Zoom
+
+
+//Melee
+
+
+//Deployable Settings
+
+
+//Sound
+ShootSound DMRmpackMK20SSRShoot
+ReloadSound Reload.mpack.g.65
+
+//------------------------------------------------

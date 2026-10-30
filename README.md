@@ -26,4 +26,4 @@ It pulls this repo, installs Forge into `server/` (or the folder you pass as the
 
 ## Settings
 
-`game/` holds the pack's settings: mod configs, MineTweaker `scripts/` and ContentTweaker `contentScripts/`. `play.cmd` and the server script copy each file in it over the game folder's copy every time they run, so edit them here, not in the instance or server. Files `game/` doesn't have, such as your own options, are left alone.
+`game/` holds the pack's settings: mod configs, MineTweaker `scripts/`, ContentTweaker `contentScripts/` and Flan's Mod content packs (`Flan/`: MPACK guns, GREYLIGHT armor and injectors). `play.cmd` and the server script copy each file in it over the game folder's copy every time they run, so edit them here, not in the instance or server. Files `game/` doesn't have, such as your own options, are left alone.

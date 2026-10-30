@@ -1,0 +1,99 @@
+﻿//---Standard Gun Config for Flans Mod------------
+//Created by Minecraft-SMP Toolbox 2.1.4.2
+
+
+//---Standard-------------------------------------
+// Naming
+Name FN FAL
+ShortName fal
+
+Description _&8[&bRare&8]
+
+
+
+// Visuals
+Model mpack.fal
+ModelScale 0.06
+Icon falTD
+
+
+
+// Recipe
+
+
+//Misc
+
+//Paintjob Settings
+//Format is "Paintjob iconName textureName requiredDyeAmount requiredDyeColour" Multiple colours may be listed in order, seperated by a space
+//Dye colours are "black", "red", "green", "brown", "blue", "purple", "cyan", "silver", "gray", "pink", "lime", "yellow", "lightBlue", "magenta", "orange", "white"
+Paintjob falpolyTD falpolyTD black 6
+
+
+//------------------------------------------------
+
+//---Gun------------------------------------------
+//Gun Type
+
+
+//Visual
+Model mpack.fal
+ModelScale 0.06
+Texture Skin_Gun_fal
+DeployedModel fal
+DeployedTexture Skin_Gun_fal
+Icon falTD
+
+//Damage
+Damage 7
+Damage10m 7
+Damage100m 5.95
+HeadshotDamage 10
+HeadshotDamage10m 10
+HeadshotDamage100m 8.5
+
+Recoil 4.5
+RecoilYaw 0.15
+
+Spread .15
+
+//Ammo
+Ammo dmrmag
+NumBullets 1
+BulletSpeed 40
+
+
+//Attachments
+
+
+//Weapon Settings
+CanForceReload True
+CanShootUnderwater True
+ConsumeGunOnUse False
+
+Mode SEMIAUTO
+MoveSpeedModifier .90
+OneHanded False
+
+ReloadTime 60
+SecondaryFunction ADS_ZOOM
+ShootDelay 5
+UsableByMechas True
+UsableByPlayers True
+Icon falTD
+
+//Shield
+
+
+//Zoom
+
+
+//Melee
+
+
+//Deployable Settings
+
+
+//Sound
+ShootSound BRmpackFALShoot
+ReloadSound Reload.mpack.c.45
+//------------------------------------------------

@@ -1,0 +1,15 @@
+Name Casual Uniform
+ShortName casualbody
+Icon penbarCasualBody
+Colour 255 255 255
+
+Type Body
+Model dwdefence.CasualBody
+Defence 1
+ArmourTexture Penbar_CasualUniform
+
+Description _&9Tier I_&8[&9Casual &7Set&8]
+
+Durability 64
+
+ModelScale 0.5

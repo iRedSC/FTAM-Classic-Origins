@@ -1,0 +1,97 @@
+﻿//---Standard Gun Config for Flans Mod------------
+//Created by Minecraft-SMP Toolbox 2.1.4.2
+
+
+//---Standard-------------------------------------
+// Naming
+Name MP7
+ShortName mp7
+ItemID Your ID
+
+Description _&8[&bRare&8]
+
+// Visuals
+Model mpack.mp7
+ModelScale 0.07
+Icon MP7TD
+
+
+// Recipe
+
+
+//Misc
+
+//------------------------------------------------
+
+//---Gun------------------------------------------
+//Gun Type
+
+
+//Visual
+Model mpack.mp7
+ModelScale 0.07
+Texture Skin_Gun_mp7
+DeployedModel mpack.mp7
+DeployedTexture Skin_Gun_mp7
+Icon MP7TD
+
+//Damage
+Damage 4
+Damage10m 3.2
+Damage100m 1
+HeadshotDamage 4.8
+HeadshotDamage10m 3.84
+HeadshotDamage100m 1.2
+
+Spread 25
+
+Recoil 1
+RecoilYaw 1
+
+//Ammo
+Ammo smgmag
+NumBullets 1
+BulletSpeed 40
+
+
+//Attachments
+AllowAllAttachments False
+AllowBarrelAttachments True
+AllowScopeAttachments True
+AllowStockAttachments True
+AllowGripAttachments False
+AllowAttachments mpack.eotech mpack.vcog mpack.mark4mrtm1 mpack.jh406 mpack.rx01 mpack.trubrite mpack.docter mpack.rkobra mpack.pkas mpack.ta11c mpack.compm4 mpack.microt1 mpack.rsrmr mpack.rmr
+
+//Weapon Settings
+CanForceReload True
+CanShootUnderwater True
+ConsumeGunOnUse False
+
+Mode FULLAUTO
+MoveSpeedModifier .975
+OneHanded False
+
+ReloadTime 40
+SecondaryFunction ADS_ZOOM
+ShootDelay 1
+UsableByMechas False
+UsableByPlayers True
+Icon MP7TD
+
+//Shield
+
+
+//Zoom
+
+
+//Melee
+
+
+//Deployable Settings
+
+
+//Sound
+ShootSound SMGmpackMP7Shoot
+ReloadSound Reload.mpack.c.40
+
+//------------------------------------------------

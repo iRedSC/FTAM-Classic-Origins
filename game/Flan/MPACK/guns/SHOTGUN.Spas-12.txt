@@ -1,0 +1,95 @@
+//---Standard Gun Config for Flans Mod------------
+//Created by Minecraft-SMP Toolbox 2.1.4.2
+
+
+//---Standard-------------------------------------
+// Naming
+Name SPAS-12
+ShortName spas12
+
+Description _&8[&6Legendary&8]
+
+// Visuals
+Model mpack.spas12
+ModelScale 0.07
+Icon Spas12TD
+
+
+// Recipe
+
+
+//Misc
+
+//------------------------------------------------
+
+//---Gun------------------------------------------
+//Gun Type
+
+
+//Visual
+Model mpack.spas12
+ModelScale 0.07
+Texture Skin_Gun_spas12
+DeployedModel spas12
+DeployedTexture Skin_Gun_spas12
+Icon Spas12TD
+
+//Damage
+Damage 6
+Damage10m 3
+Damage100m -200
+HeadshotDamage 6.6
+HeadshotDamage10m 3.3
+HeadshotDamage100m -200
+
+Recoil 7
+
+Spread 25
+
+//Ammo
+Ammo 12gauge
+NumAmmoSlots 8
+NumAmmoItemsInGun 8
+LoadIntoGun 8
+NumBullets 6
+BulletSpeed 40
+
+
+//Attachments
+AllowAllAttachments False
+AllowBarrelAttachments False
+AllowScopeAttachments True
+AllowStockAttachments False
+AllowGripAttachments False
+AllowAttachments eotech jh406 rx01 trubrite docter rkobra pkas ta11c
+
+
+//Weapon Settings
+CanForceReload True
+ConsumeGunOnUse False
+
+
+Mode SEMIAUTO
+MoveSpeedModifier .90
+
+ReloadTime 120
+ShootDelay 10
+Icon Spas12TD
+
+//Shield
+
+
+//Zoom
+
+
+//Melee
+
+
+//Deployable Settings
+
+
+//Sound
+ShootSound ShotgunmpackSpas12Shoot
+ReloadSound ReloadmpackShotgun8RDPump
+
+//------------------------------------------------

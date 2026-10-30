@@ -1,0 +1,15 @@
+Name Tactical Uniform
+ShortName tacticalbody
+Icon lupineLMSSBody
+Colour 255 255 255
+
+Type Body
+Model dwdefence.LMSSBody
+Defence 4
+ArmourTexture LupineLMSSUniform
+
+Description _&3Tier III_&8[&3Tactical &7Set&8]
+
+Durability 256
+
+ModelScale 0.5

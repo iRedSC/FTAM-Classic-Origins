@@ -1,0 +1,17 @@
+Name Chamberlain Uniform
+ShortName juggernautbody
+Icon ambirconHeavynautBody
+Colour 255 255 255
+
+Type Body
+Model dwdefence.ChamberlainBody
+Defence 6
+ArmourTexture Ambircon_ChamberlainUniform
+MoveSpeedModifier 0.95
+KnockbackModifier 1.0
+
+Description _&dTier VI_&8[&dJuggernaut &7Set&8]
+
+Durability 2048
+
+ModelScale 0.5

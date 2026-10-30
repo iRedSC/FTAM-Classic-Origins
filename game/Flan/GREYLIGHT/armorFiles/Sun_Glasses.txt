@@ -1,0 +1,16 @@
+Name Sunglasses
+ShortName sunglasses
+Icon penbarSunnyGear
+Colour 255 255 255
+
+Type Head
+Model dwdefence.SunnyGear
+Defence 5
+ArmourTexture Penbar_CasualUniform
+
+Durability 2048
+
+Description _&4Tier V
+
+ModelScale 0.5
+   

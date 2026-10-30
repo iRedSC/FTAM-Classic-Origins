@@ -1,0 +1,95 @@
+﻿//---Standard Gun Config for Flans Mod------------
+//Created by Minecraft-SMP Toolbox 2.1.4.2
+
+
+//---Standard-------------------------------------
+// Naming
+Name JNG-90
+ShortName jng90
+
+Description _&8[&6Legendary&8]
+
+// Visuals
+Model mpack.jng90
+ModelScale 0.07
+Icon jng90TD
+
+
+// Recipe
+
+
+//Misc
+
+//------------------------------------------------
+
+//---Gun------------------------------------------
+//Gun Type
+
+
+//Visual
+Model mpack.jng90
+ModelScale 0.07
+Texture Skin_Gun_jng90
+DeployedModel jng90
+DeployedTexture Skin_Gun_jng90
+Icon jng90TD
+
+//Damage
+Damage 26
+Damage10m 26
+Damage100m 24.05
+HeadshotDamage 52
+HeadshotDamage10m 52
+HeadshotDamage100m 48.1
+
+
+//Ammo
+Ammo snipermag
+NumBullets 1
+BulletSpeed 60
+
+
+//Attachments
+AllowAllAttachments False
+AllowBarrelAttachments False
+AllowScopeAttachments False
+AllowStockAttachments False
+AllowGripAttachments False
+
+
+//Weapon Settings
+CanForceReload True
+CanShootUnderwater True
+
+Spread 0.01
+Mode SEMIAUTO
+MoveSpeedModifier .825
+OneHanded False
+Recoil 20
+ReloadTime 80
+SecondaryFunction ADS_ZOOM
+ShootDelay 20
+UsableByMechas False
+UsableByPlayers True
+Icon jng90TD
+
+//Shield
+
+
+//Zoom
+Scope mpackscope
+ZoomLevel 5
+FOVZoomLevel 2
+
+
+//Melee
+
+
+//Deployable Settings
+
+
+//Sound
+ShootSound SRmpackJNG90Shoot
+ReloadSound Reload.mpack.g.70
+
+//------------------------------------------------

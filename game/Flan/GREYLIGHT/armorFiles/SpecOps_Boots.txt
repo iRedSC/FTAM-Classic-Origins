@@ -1,0 +1,15 @@
+Name SpecOps Boots
+ShortName specopsboots
+Icon skymareValkyrieBoots
+Colour 255 255 255
+Type Boots
+Model dwdefence.ValkyrieBoots
+Defence 5
+Set 10
+ArmourTexture SkymareValkyrieUniform
+
+Description _&4Tier V_&8[&4SpecOps &7Set&8]
+
+Durability 1024
+
+ModelScale 0.5

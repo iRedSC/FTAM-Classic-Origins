@@ -1,0 +1,63 @@
+Name Repeater
+ShortName Crossbow
+//The ammo this gun uses (shortName)
+Ammo CrossbowAmmo
+Icon MBTCrossbow
+//Colour in Red, Green, Blue, each going up to 255.
+Colour 255 255 255
+
+//Reload time in ticks, 1/20ths of a second
+ReloadTime 80
+Recoil 1
+Damage 0
+Damage10m 18
+Damage100m 16.2
+HeadshotDamage 25.2
+HeadshotDamage10m 25.2
+HeadshotDamage100m 22.68
+Accuracy 5
+//NumBullets 1
+BulletSpeed 7.0
+ShootDelay 1
+ShootSound bow
+ReloadSound _MBTCrossbowReload
+Mode SemiAuto
+Scope None
+ZoomLevel 1.0
+FOV ZoomLevel 1.25
+Distort Sound False
+Deployable False
+DeployedModel None
+//LoadIntoGun 1
+
+MoveSpeedModifier 1.0
+
+//Lower scaled model
+ModelScale 0.2
+
+//Dual Wield Toggle
+OneHanded False
+
+//Model settings
+Model dwfirearms.MBTCrossbow
+Texture MBTRepeater_Standard
+
+//Attachment Settings
+NumGenericAttachmentSlots 1
+AllowScopeAttachments true
+AllowStockAttachments true
+AllowBarrelAttachments false
+AllowGripAttachments false
+
+//PaintJob Settings
+//Format is "Paintjob iconName textureName requiredDyeAmount requiredDyeColour" Multiple colours may be listed in order, seperated by a space.
+
+//Dye colours are "black", "red", "green", "brown", "blue", "purple", "cyan", "silver", "gray", "pink", "lime", "yellow", "lightBlue", "magenta", "orange", "white"
+
+
+//Paintjob Wolfstedt_iconDigital WolfstedtCompact_Digital blue 1 gray 1 silver 1
+
+
+//Owner DerpiWolf
+
+Description _&7[&2Military Weapon&7]
