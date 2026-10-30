@@ -10,7 +10,6 @@
 // ================================================================================
 //
 
-
 val slime = <ore:slimeball>;
 val pinkslime = <ore:slimeballPink>;
 slime.remove(<MineFactoryReloaded:pinkslime>);
@@ -143,7 +142,6 @@ recipes.remove(<MekanismGenerators:Reactor>);
 recipes.remove(<ExtraUtilities:bedrockiumIngot>);
 recipes.remove(<ExtraUtilities:block_bedrockium>);
 recipes.remove(<OpenBlocks:sprinkler>);
-recipes.remove(<FloodLights:growLight>);
 recipes.remove(<EnderIO:blockTelePad>);
 recipes.remove(<Mekanism:PortableTeleporter>);
 recipes.remove(<EnderIO:itemTravelStaff>);
@@ -313,11 +311,6 @@ recipes.addShaped(<BigReactors:BRMetalBlock:4>, [[<ore:blockBlutonium>, <content
 recipes.addShaped(<contenttweaker:Military_Radio_on>, [[<appliedenergistics2:item.ItemMultiMaterial:48>, <REBR:lcd_display>, <appliedenergistics2:item.ItemMultiMaterial:48>], [<REBR:chip>, <contenttweaker:Military_Radio>, <REBR:chip>], [<appliedenergistics2:item.ItemMultiMaterial:48>, <REBR:detonator>, <appliedenergistics2:item.ItemMultiMaterial:48>]]);
 recipes.addShaped(<appliedenergistics2:item.ItemMultiMaterial:44>, [[null, <ore:anyCertusCrystal>, null], [<ThermalExpansion:material>, <appliedenergistics2:item.ItemMultiMaterial:24>, <ThermalExpansion:material>], [null, <ore:anyCertusCrystal>, null]]);
 recipes.addShaped(<appliedenergistics2:item.ItemMultiMaterial:43>, [[null, <ore:anyCertusCrystal>, null], [<ThermalExpansion:material>, <appliedenergistics2:item.ItemMultiMaterial:22>, <ThermalExpansion:material>], [null, <ore:anyCertusCrystal>, null]]);
-recipes.addShaped(<flansmod:ghilliesuit>, [[<minecraft:leaves>, <flansmod:camoHelmet>, <minecraft:leaves>], [<flansmod:camoJacket>, <minecraft:vine>, <flansmod:camoLeggings>], [<minecraft:leaves>, <flansmod:camoBoots>, <minecraft:leaves>]]);
-recipes.addShaped(<flansmod:camoLeggings>, [[<militarybasedecor:camouflage>, <militarybasedecor:camouflage>, <militarybasedecor:camouflage>], [<militarybasedecor:camouflage>, <minecraft:vine>, <militarybasedecor:camouflage>], [<militarybasedecor:camouflage>, null, <militarybasedecor:camouflage>]]);
-recipes.addShaped(<flansmod:camoHelmet>, [[<militarybasedecor:camouflage>, <militarybasedecor:camouflage>, <militarybasedecor:camouflage>], [<militarybasedecor:camouflage>, <minecraft:vine>, <militarybasedecor:camouflage>]]);
-recipes.addShaped(<flansmod:camoJacket>, [[<militarybasedecor:camouflage>, <minecraft:vine>, <militarybasedecor:camouflage>], [<militarybasedecor:camouflage>, <militarybasedecor:camouflage>, <militarybasedecor:camouflage>], [<militarybasedecor:camouflage>, <militarybasedecor:camouflage>, <militarybasedecor:camouflage>]]);
-recipes.addShaped(<flansmod:camoBoots>, [[<militarybasedecor:camouflage>, <minecraft:vine>, <militarybasedecor:camouflage>], [<militarybasedecor:camouflage>, null, <militarybasedecor:camouflage>]]);
 recipes.addShaped(<militarybasedecor:camouflage>, [[<minecraft:leaves>, <minecraft:vine>, <minecraft:leaves>], [<minecraft:vine>, <minecraft:tallgrass:1>, <minecraft:vine>], [<minecraft:leaves>, <minecraft:vine>, <minecraft:leaves>]]);
 recipes.addShaped(<EnderIO:blockReinforcedObsidian>, [[<ore:compressedCobblestone4x>, <ore:ingotDarkSteel>, <ore:compressedCobblestone4x>], [<ore:ingotDarkSteel>, <openmodularturrets:hardWallTierFive>, <ore:ingotDarkSteel>], [<ore:compressedCobblestone4x>, <ore:ingotDarkSteel>, <ore:compressedCobblestone4x>]]);
 recipes.addShaped(<REBR:dpacket>, [[null, <REBR:bickford_fuse>, null], [<REBR:rope>, <REBR:dynamite_stick>, <REBR:rope>], [<Mekanism:CompressedRedstone>, <REBR:dynamite_stick>, <Mekanism:CompressedRedstone>]]);
@@ -338,8 +331,6 @@ recipes.addShaped(<mcheli:fuel>, [[<ore:dyeGreen>, <ore:coal>, <ore:dyeGreen>], 
 recipes.addShaped(<openmodularturrets:baseTierFourBlock>, [[<EnderIO:blockReinforcedObsidian>, <ThermalExpansion:Frame:10>, <EnderIO:blockReinforcedObsidian>], [<openmodularturrets:ioBus>, <openmodularturrets:sensorTierFiveItem>, <openmodularturrets:ioBus>], [<EnderIO:blockReinforcedObsidian>, <EnderIO:itemBasicCapacitor:2>, <EnderIO:blockReinforcedObsidian>]]);
 recipes.addShaped(<openmodularturrets:baseTierThreeBlock>, [[<ore:gemDiamond>, <openmodularturrets:sensorTierFourItem>, <ore:gemDiamond>], [<openmodularturrets:ioBus>, <ThermalExpansion:Frame:8>, <openmodularturrets:ioBus>], [<ore:gemDiamond>, <EnderIO:itemBasicCapacitor:2>, <ore:gemDiamond>]]);
 recipes.addShaped(<openmodularturrets:baseTierTwoBlock>, [[<ore:ingotElectrum>, <ThermalExpansion:Frame:6>, <ore:ingotElectrum>], [<openmodularturrets:ioBus>, <openmodularturrets:sensorTierThreeItem>, <openmodularturrets:ioBus>], [<ore:ingotElectrum>, <EnderIO:itemBasicCapacitor:1>, <ore:ingotElectrum>]]);
-recipes.addShaped(<mcheli:mxtmv>, [[<ore:blockDarkSteel>, <ore:blockDarkSteel>, <ore:blockDarkSteel>], [<ore:blockSteel>, <militarybasedecor:barbed_bundled_wire>, <militarybasedecor:barbed_bundled_wire>], [<ore:blockDarkSteel>, <ore:blockDarkSteel>, <ore:blockDarkSteel>]]);
-recipes.addShaped(<mcheli:growler>, [[null, <ore:blockDarkSteel>, null], [<militarybasedecor:barbed_bundled_wire>, <ore:blockSteel>, <militarybasedecor:barbed_bundled_wire>], [null, <ore:blockDarkSteel>, null]]);
 recipes.addShaped(<betterbuilderswands:wandUnbreakable:6>, [[<betterbuilderswands:wandUnbreakable:5>, <betterbuilderswands:wandUnbreakable:5>]]);
 recipes.addShaped(<betterbuilderswands:wandUnbreakable:5>, [[<betterbuilderswands:wandUnbreakable:4>, <betterbuilderswands:wandUnbreakable:4>]]);
 recipes.addShaped(<betterbuilderswands:wandUnbreakable:4>, [[null, <ore:itemNetherStar>], [<ExtraUtilities:builderswand>, null]]);

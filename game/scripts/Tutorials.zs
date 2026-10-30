@@ -29,23 +29,14 @@
 <flansmod:m1014>.addTooltip("§6§l* §7Only obtainable from Vote Crates.");
 <flansmod:cz805>.addTooltip("§6§l* §7Only obtainable from Vote Crates.");
 <flansmod:m4a1>.addTooltip("§6§l* §7Only obtainable from Vote Crates.");
-<mcheli:mh-6>.addTooltip("§6§l* §7Only obtainable from Vote Crates.");
-<mcheli:uh-1c>.addTooltip("§6§l* §7Only obtainable from Vote Crates.");
-<mcheli:bell207>.addTooltip("§6§l* §7Only obtainable from Vote Crates.");
-<mcheli:emb314>.addTooltip("§6§l* §7Only obtainable from Vote Crates.");
-<mcheli:m26>.addTooltip("§6§l* §7Only obtainable from Vote Crates.");
 
 <flansmod:csls06>.addTooltip("§6§l* §7Only obtainable from Rare Crates.");
 <flansmod:pm9>.addTooltip("§6§l* §7Only obtainable from Rare Crates.");
 <flansmod:cslr4>.addTooltip("§6§l* §7Only obtainable from Rare Crates.");
 <flansmod:hk33>.addTooltip("§6§l* §7Only obtainable from Rare Crates.");
-<mcheli:a6m2>.addTooltip("§6§l* §7Only obtainable from Rare Crates.");
-<mcheli:p-51d>.addTooltip("§6§l* §7Only obtainable from Rare Crates.");
-<mcheli:ec665>.addTooltip("§6§l* §7Only obtainable from Rare Crates.");
 
 <minecraft:nether_star>.addTooltip("§6§l* §7These can be obtained from the §3§nQuarry Loot Room");
 <Mekanism:MachineBlock:4>.addTooltip("§6§l* §7These can be crafted or obtained from the §3§nQuarry Loot Room");
-<Baubles:Ring>.addTooltip("§6§l* §7These can only be obtained from the §3§nQuarry Loot Room");
 
 <contenttweaker:scrap_metal>.addTooltip("§6§l* §7Scrap Metal can be obtained by recycling weapons in a pulverizer.");
 
@@ -170,5 +161,4 @@
 
 <minecraft:mob_spawner:*>.addTooltip("§6§l* §bUse a Cardboard Box to move spawners! (Everyone)");
 <minecraft:mob_spawner:*>.addTooltip("§6§l* §bVanilla Pickaxes with Silk Touch can be used to mine spawners (Donators Only)");
-
 

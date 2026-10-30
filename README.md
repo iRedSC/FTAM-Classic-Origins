@@ -28,7 +28,12 @@ It pulls this repo, installs Forge into `server/` (or the folder you pass as the
 - `mods/client`: client only
 - `mods/server`: server only
 
-`mods/shared/CraftTweaker-IC2-stub.jar` holds one empty IndustrialCraft 2 class (`ic2.api.crops.CropCard`, source inside). CraftTweaker 3.4.8 references it from its built-in registry, and without it skips the whole registry, so every `<ore:...>` and `<liquid:...>` in the scripts fails. Remove it only alongside a CraftTweaker that doesn't need it, or with IC2 itself.
+`mods/shared/CraftTweaker-addons.jar` fills two gaps in CraftTweaker 3.4.8:
+
+- One empty IndustrialCraft 2 class (`ic2.api.crops.CropCard`, source inside). CraftTweaker's built-in registry references it, and without it skips the whole registry, so every `<ore:...>` and `<liquid:...>` in the scripts fails.
+- CraftTweaker 3.1.0's MineFactoryReloaded module (`minetweaker.mods.mfr`), unchanged. 3.4.8 still loads it if present but no longer ships it, and `scripts/MFR.zs` needs it for the laser drill and harvester.
+
+Remove it only alongside a CraftTweaker that covers both.
 
 ## Settings
 
