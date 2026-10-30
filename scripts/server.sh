@@ -137,7 +137,12 @@ sync_game() {
 mkdir -p "$SERVER"
 JAVA="$(find_java8)"
 
-update_repo
+# A pull that changed this script reruns it, so the new version does this run's work.
+if [ -z "${FTAM_PULLED:-}" ]; then
+    before="$(git -C "$REPO" hash-object "${BASH_SOURCE[0]}")"
+    update_repo
+    [ "$(git -C "$REPO" hash-object "${BASH_SOURCE[0]}")" = "$before" ] || FTAM_PULLED=1 exec bash "${BASH_SOURCE[0]}" "$@"
+fi
 install_forge
 sync_mods
 sync_game
