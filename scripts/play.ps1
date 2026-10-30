@@ -54,10 +54,13 @@ function Find-InstancesDir([string]$PrismExe) {
 
 function Update-Repo {
     Write-Host 'Pulling latest pack...' -ForegroundColor Cyan
-    git -C $Repo pull --ff-only
-    if ($LASTEXITCODE -ne 0) {
-        Fail 'git pull failed. Resolve it in the repo, then run this again.'
+    # server.cmd pulls the same repo, so a run started alongside it can briefly hit git's lock.
+    foreach ($attempt in 1..5) {
+        git -C $Repo pull --ff-only
+        if ($LASTEXITCODE -eq 0) { return }
+        Start-Sleep -Seconds 2
     }
+    Fail 'git pull failed. Resolve it in the repo, then run this again.'
 }
 
 function Write-InstanceFiles([string]$Dir) {
