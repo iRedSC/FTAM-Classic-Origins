@@ -4,7 +4,6 @@ recipes.remove(<ThermalExpansion:Device:2>);
 recipes.remove(<ThermalExpansion:Workbench:*>);
 <ThermalExpansion:Workbench:*>.addTooltip("§4Banned");
 
-<minecraft:potion:*>.addTooltip("§4Banned");
 
 recipes.remove(<BigReactors:BRMetalBlock>);
 <BigReactors:BRMetalBlock>.addTooltip("§4Banned");
@@ -48,8 +47,6 @@ recipes.remove(<EnderTech:endertech.exchanger:2>);
 recipes.remove(<EnderTech:endertech.exchanger:1>);
 <EnderTech:endertech.exchanger:1>.addTooltip("§4Banned");
 
-recipes.remove(<minecraft:golden_apple:*>);
-<minecraft:golden_apple:*>.addTooltip("§4Banned");
 
 recipes.remove(<psychedelicraft:dryingTable>);
 <psychedelicraft:dryingTable>.addTooltip("§4Banned");
