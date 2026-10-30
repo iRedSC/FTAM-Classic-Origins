@@ -5,7 +5,7 @@ Colour 255 255 255
 
 Type Head
 Model dwdefence.SecurityCameraHead
-Defence 0.1
+Defence 1
 ArmourTexture SecurityCamera
 MoveSpeedModifier 1.0
 KnockbackModifier 0.25

@@ -4,5 +4,5 @@ ItemID 36804
 Icon mgc.iconhelmetarmy
 Colour 255 255 255
 Type Hat
-Defence 0.1
+Defence 1
 ArmourTexture mgc.armorarmy
