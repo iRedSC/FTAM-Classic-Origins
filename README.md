@@ -23,4 +23,3 @@ It pulls this repo, installs Forge into `server/` (or the folder you pass as the
 - `mods/shared`: client and server
 - `mods/client`: client only
 - `mods/server`: server only
-- `mods/needs-port`: depends on Bukkit and crashes plain Forge, so neither script installs it
