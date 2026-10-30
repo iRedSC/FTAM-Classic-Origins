@@ -56,7 +56,13 @@ find_java8() {
 
 update_repo() {
     say 'Pulling latest pack...'
-    git -C "$REPO" pull --ff-only || fail 'git pull failed. Resolve it in the repo, then run this again.'
+    # play.cmd pulls the same repo, so a run started alongside it can briefly hit git's lock.
+    local attempt
+    for attempt in 1 2 3 4 5; do
+        git -C "$REPO" pull --ff-only && return
+        sleep 2
+    done
+    fail 'git pull failed. Resolve it in the repo, then run this again.'
 }
 
 install_forge() {
