@@ -12,6 +12,13 @@ $MaxMemoryMb   = 6144
 
 $Repo = Split-Path -Parent $PSScriptRoot
 
+# Any branch but main (dev builds) gets its own instance, so it never touches the players' one.
+$Branch = git -C $Repo rev-parse --abbrev-ref HEAD
+if ($Branch -ne 'main') {
+    $InstanceId   = "$InstanceId-$Branch"
+    $InstanceName = "$InstanceName ($Branch)"
+}
+
 function Fail([string]$Message) {
     Write-Host $Message -ForegroundColor Red
     exit 1
