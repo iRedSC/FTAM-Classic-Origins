@@ -1,7 +1,8 @@
 # Syncs the FTAM Nostalgia Prism instance (or CurseForge profile, see curseforge.ps1) with this repo and starts the game.
 # Runs on Windows PowerShell 5.1 and PowerShell 7. `play.cmd curseforge` or `play.cmd prism` picks the launcher.
+# -SyncOnly is Prism's pre-launch command: it pulls and syncs the instance Prism is about to start, without launching.
 
-param([ValidateSet('prism', 'curseforge')][string]$Launcher)
+param([ValidateSet('prism', 'curseforge')][string]$Launcher, [switch]$SyncOnly)
 
 $ErrorActionPreference = 'Stop'
 
@@ -16,6 +17,10 @@ $Repo = Split-Path -Parent $PSScriptRoot
 
 # Any branch but main (dev builds) gets its own instance, so it never touches the players' one.
 $Branch = git -C $Repo rev-parse --abbrev-ref HEAD
+if ($LASTEXITCODE -ne 0 -or $Branch -eq 'HEAD') {
+    Write-Host 'Check out main or a pack branch before starting Minecraft.' -ForegroundColor Red
+    exit 1
+}
 if ($Branch -ne 'main') {
     $InstanceId   = "$InstanceId-$Branch"
     $InstanceName = "$InstanceName ($Branch)"
@@ -94,6 +99,27 @@ function Write-InstanceFiles([string]$Dir) {
         ) -join "`r`n") + "`r`n")
         Write-Host "Created Prism instance '$InstanceName'" -ForegroundColor Green
     }
+
+    # Prism's Play runs this script with -SyncOnly first, so launching from Prism also updates the pack.
+    $command = 'powershell.exe -NoProfile -ExecutionPolicy Bypass -File "{0}" -SyncOnly' -f $PSCommandPath
+    # Qt's INI format needs a quoted value with escaped inner quotes. Raw quotes
+    # are parsed as INI syntax and can swallow the space before -SyncOnly.
+    $settings = [ordered]@{
+        OverrideCommands = 'true'
+        PreLaunchCommand = '"' + $command.Replace('\', '/').Replace('"', '\"') + '"'
+        LogPrePostOutput = 'true'
+    }
+    $text = [System.IO.File]::ReadAllText($cfg)
+    foreach ($key in $settings.Keys) {
+        $line = "$key=$($settings[$key])"
+        $pattern = '(?m)^' + [regex]::Escape($key) + '=[^\r\n]*'
+        $text = if ([regex]::IsMatch($text, $pattern)) {
+            [regex]::Replace($text, $pattern, [System.Text.RegularExpressions.MatchEvaluator]{ param($m) $line })
+        } else {
+            $text.TrimEnd() + "`r`n$line`r`n"
+        }
+    }
+    Write-Utf8 $cfg $text
 }
 
 function Write-Utf8([string]$Path, [string]$Text) {
@@ -104,6 +130,14 @@ function Write-Utf8([string]$Path, [string]$Text) {
 function Get-GameDir([string]$Dir) {
     if (Test-Path "$Dir\.minecraft") { return "$Dir\.minecraft" }
     return "$Dir\minecraft"
+}
+
+function Get-Hash([string]$Path) {
+    # Get-FileHash's module isn't always loaded in the PowerShell Prism starts for the pre-launch command.
+    $sha = [System.Security.Cryptography.SHA256]::Create()
+    $stream = [System.IO.File]::OpenRead($Path)
+    try { return [System.BitConverter]::ToString($sha.ComputeHash($stream)) }
+    finally { $stream.Dispose(); $sha.Dispose() }
 }
 
 function Sync-Mods([string]$ModsDir) {
@@ -137,7 +171,7 @@ function Sync-Mods([string]$ModsDir) {
                 Write-Host "  + $name" -ForegroundColor Green
                 $added++
             }
-            elseif ((Get-FileHash -LiteralPath $source).Hash -ne (Get-FileHash -LiteralPath $target).Hash) {
+            elseif ((Get-Hash $source) -ne (Get-Hash $target)) {
                 Copy-Item -LiteralPath $source -Destination $target -Force
                 Write-Host "  ~ $name" -ForegroundColor Cyan
                 $updated++
@@ -160,7 +194,7 @@ function Sync-Game([string]$GameDir) {
         foreach ($file in Get-ChildItem -File -Recurse -LiteralPath $source) {
             $target = Join-Path $GameDir $file.FullName.Substring($source.Length + 1)
             if ((Test-Path -LiteralPath $target) -and
-                (Get-FileHash -LiteralPath $file.FullName).Hash -eq (Get-FileHash -LiteralPath $target).Hash) {
+                (Get-Hash $file.FullName) -eq (Get-Hash $target)) {
                 continue
             }
             New-Item -ItemType Directory -Force -Path (Split-Path -Parent $target) | Out-Null
@@ -174,15 +208,27 @@ function Sync-Game([string]$GameDir) {
     Write-Host "Settings: $count updated from game\"
 }
 
+# Prism names the instance it's launching. Refuse before pulling if this checkout is on another instance's branch.
+if ($SyncOnly -and $env:INST_ID -ne $InstanceId) {
+    Fail "This checkout is on '$Branch', which plays in '$InstanceName'. Switch the repo to this instance's branch, or play that instance."
+}
+
 # A pull that changed this script reruns it, so the new version does this run's work.
 if (-not $env:FTAM_PULLED) {
-    $before = (Get-FileHash -LiteralPath $PSCommandPath).Hash
+    $before = Get-Hash $PSCommandPath
     Update-Repo
-    if ((Get-FileHash -LiteralPath $PSCommandPath).Hash -ne $before) {
+    if ((Get-Hash $PSCommandPath) -ne $before) {
         $env:FTAM_PULLED = '1'
         & $PSCommandPath @PSBoundParameters
         exit $LASTEXITCODE
     }
+}
+
+if ($SyncOnly) {
+    Sync-Mods (Join-Path (Get-GameDir $env:INST_DIR) 'mods')
+    Sync-Game (Get-GameDir $env:INST_DIR)
+    Write-Host 'Pack ready.' -ForegroundColor Green
+    exit 0
 }
 
 # Keep the launcher that already has the pack. A new player gets Prism if it's installed, else CurseForge.
