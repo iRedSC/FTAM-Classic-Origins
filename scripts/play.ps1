@@ -146,5 +146,14 @@ Update-Repo
 Write-InstanceFiles $instanceDir
 Sync-Mods (Join-Path (Get-GameDir $instanceDir) 'mods')
 
+if (Get-Process -Name prismlauncher -ErrorAction SilentlyContinue) {
+    # A running Prism only rescans when the instances folder itself changes, so poke it
+    # and give it a moment; otherwise it rejects the launch for an instance it hasn't seen.
+    $poke = Join-Path (Split-Path -Parent $instanceDir) ".rescan-$PID"
+    New-Item -ItemType Directory -Path $poke | Out-Null
+    Remove-Item -LiteralPath $poke
+    Start-Sleep -Seconds 2
+}
+
 Write-Host 'Starting Minecraft...' -ForegroundColor Cyan
 Start-Process -FilePath $prism -ArgumentList '--launch', $InstanceId
