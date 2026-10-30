@@ -1,0 +1,99 @@
+﻿//---Standard Gun Config for Flans Mod------------
+//Created by Minecraft-SMP Toolbox 2.1.4.2
+
+
+//---Standard-------------------------------------
+// Naming
+Name CZ-805 BREN
+ShortName cz805
+
+Description _&8[&aUncommon&8]
+
+// Visuals
+Model mpack.cz805
+ModelScale 0.05
+Icon cz805TD
+
+
+// Recipe
+
+
+//Misc
+
+//------------------------------------------------
+
+//---Gun------------------------------------------
+//Gun Type
+
+
+//Visual
+Model mpack.cz805
+ModelScale 0.05
+Texture Skin_Gun_cz805
+DeployedModel mpack.cz805
+DeployedTexture Skin_Gun_cz805
+Icon cz805TD
+
+
+//Damage
+Damage 3.89
+Damage10m 3.89
+Damage100m 2.92
+HeadshotDamage 5.06
+HeadshotDamage10m 5.06
+HeadshotDamage100m 3.79
+
+Spread 2
+
+Recoil 4
+RecoilYaw 2
+
+//Ammo
+Ammo armag
+NumBullets 1
+BulletSpeed 40
+
+
+//Attachments
+AllowAllAttachments False
+AllowAttachments verticalgrip stubbygrip eotech jh406 rx01 rkobra trubrite docter pkas ta11c riflesup
+AllowBarrelAttachments True
+AllowScopeAttachments True
+AllowStockAttachments False
+AllowGripAttachments True
+
+
+//Weapon Settings
+CanForceReload True
+CanShootUnderwater False
+ConsumeGunOnUse False
+
+Mode FULLAUTO
+MoveSpeedModifier .9
+OneHanded False
+
+ReloadTime 60
+SecondaryFunction ADS_ZOOM
+ShootDelay 2
+UsableByMechas False
+UsableByPlayers True
+Icon cz805TD
+
+
+//Shield
+
+
+//Zoom
+
+
+//Melee
+
+
+//Deployable Settings
+
+
+//Sound
+ShootSound ARmpackCZ805Shoot
+ReloadSound Reload.mpack.e.50
+
+//------------------------------------------------

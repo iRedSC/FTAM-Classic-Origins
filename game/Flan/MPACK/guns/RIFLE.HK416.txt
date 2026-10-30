@@ -1,0 +1,97 @@
+﻿//---Standard Gun Config for Flans Mod------------
+//Created by Minecraft-SMP Toolbox 2.1.4.2
+
+
+//---Standard-------------------------------------
+// Naming
+Name HK416
+ShortName hk416
+
+Description _&8[&bRare&8]
+
+// Visuals
+Model mpack.hk416
+ModelScale 0.09
+Icon HK416TD
+
+
+// Recipe
+
+
+//Misc
+
+//------------------------------------------------
+
+//---Gun------------------------------------------
+//Gun Type
+
+
+//Visual
+Model mpack.hk416
+ModelScale 0.09
+Texture Skin_Gun_hk416
+DeployedModel mpack.hk416
+DeployedTexture Skin_Gun_hk416
+Icon HK416TD
+
+//Damage
+Damage 4.2
+Damage10m 4.2
+Damage100m 3.15
+HeadshotDamage 5.46
+HeadshotDamage10m 5.46
+HeadshotDamage100m 4.1
+
+Recoil 1.8
+RecoilYaw .55
+
+Spread .75
+
+//Ammo
+Ammo armag
+NumBullets 1
+BulletSpeed 40
+
+
+//Attachments
+AllowAllAttachments False
+AllowAttachments verticalgrip stubbygrip eotech jh406 rx01 rkobra trubrite docter pkas ta11c riflesup
+AllowBarrelAttachments True
+AllowScopeAttachments True
+AllowStockAttachments False
+AllowGripAttachments True
+
+
+//Weapon Settings
+CanForceReload True
+CanShootUnderwater True
+ConsumeGunOnUse False
+
+Mode FULLAUTO
+MoveSpeedModifier .9
+OneHanded False
+
+ReloadTime 40
+SecondaryFunction ADS_ZOOM
+ShootDelay 2
+UsableByMechas False
+UsableByPlayers True
+Icon HK416TD
+
+//Shield
+
+
+//Zoom
+
+
+//Melee
+
+
+//Deployable Settings
+
+
+//Sound
+ShootSound ARmpackHK416Shoot
+ReloadSound Reload.mpack.e.50
+
+//------------------------------------------------

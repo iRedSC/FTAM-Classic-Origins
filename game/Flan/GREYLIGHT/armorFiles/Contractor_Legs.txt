@@ -1,0 +1,14 @@
+Name Contractor Legs
+ShortName contractorlegs
+Icon skymareContractorLegs
+Colour 255 255 255
+Type Legs
+Model dwdefence.ContractorLegs
+Defence 4
+ArmourTexture SkymareContractorUniform
+
+Description _&cTier IV_&8[&cContractor &7Set&8]
+
+Durability 512
+
+ModelScale 0.5

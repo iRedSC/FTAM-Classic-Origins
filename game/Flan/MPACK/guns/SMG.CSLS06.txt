@@ -1,0 +1,96 @@
+﻿//---Standard Gun Config for Flans Mod------------
+//Created by Minecraft-SMP Toolbox 2.2.2.4
+
+
+//---Standard-------------------------------------
+// Naming
+Name CS LS06
+ShortName csls06
+ItemID Your ID
+
+Description _&8[&5Epic&8]
+
+// Visuals
+Model mpack.csls06
+ModelScale 0.09
+Icon csls06TD
+
+
+// Recipe
+
+
+//Misc
+
+//------------------------------------------------
+
+//---Gun------------------------------------------
+//Gun Type
+
+
+//Visual
+Model mpack.csls06
+ModelScale 0.09
+Texture Skin_Gun_csls06
+DeployedModel mpack.csls06
+DeployedTexture Skin_Gun_csls06
+
+
+//Damage
+Damage 4
+Damage10m 3.2
+Damage100m 1
+HeadshotDamage 4.48
+HeadshotDamage10m 3.58
+HeadshotDamage100m 1.12
+
+Spread 20
+
+Recoil .5
+RecoilYaw .5
+
+
+//Ammo
+Ammo lsmgmag
+NumBullets 1
+BulletSpeed 40
+
+
+//Attachments
+AllowBarrelAttachments True
+AllowScopeAttachments True
+AllowStockAttachments True
+AllowGripAttachments False
+AllowAttachments mpackverticalgrip mpack.stubby mpackrvg mpack.eotech mpack.docter mpack.jh406 mpack.rx01 mpackafg2tan mpackafg2gray mpackafg2black mpack.vcog mpack.mark4mrtm1 mpack.trubrite mpack.cobrasup mpack.rkobra mpack.pkas mpack.ta11c mpack.harisbipod mpack.compm4 mpack.microt1 mpack.rsrmr mpack.rmr
+//Weapon Settings
+CanForceReload True
+CanShootUnderwater True
+ConsumeGunOnUse False
+
+Mode FULLAUTO
+MoveSpeedModifier .95
+OneHanded False
+
+ReloadTime 60
+SecondaryFunction ADS_ZOOM
+ShootDelay 1
+UsableByMechas False
+UsableByPlayers True
+
+
+//Shield
+
+
+//Zoom
+
+
+//Melee
+
+
+//Deployable Settings
+
+
+//Sound
+ShootSound SMGmpackP90Shoot
+ReloadSound Reload.mpack.e.50
+
+//------------------------------------------------

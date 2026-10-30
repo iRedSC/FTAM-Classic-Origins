@@ -1,0 +1,96 @@
+﻿//---Standard Gun Config for Flans Mod------------
+//Created by Minecraft-SMP Toolbox 2.1.4.2
+
+
+//---Standard-------------------------------------
+// Naming
+Name Lebman M1911
+ShortName lebman
+ItemID Your ID
+
+Description _&8[&7Common&8]
+
+// Visuals
+Model mpack.lebman
+ModelScale 0.12
+Icon TDLebman
+
+
+// Recipe
+
+
+//Misc
+
+//------------------------------------------------
+
+//---Gun------------------------------------------
+//Gun Type
+
+
+//Visual
+Model mpack.lebman
+ModelScale 0.12
+Texture Skin_Gun_lebman
+DeployedModel mpack.lebman
+DeployedTexture Skin_Gun_lebman
+Icon TDLebman
+
+//Damage
+Damage 3
+Damage10m 1.5
+Damage100m -200
+HeadshotDamage 4.01
+HeadshotDamage10m 3.61
+HeadshotDamage100m 0.36
+
+Spread 9
+
+Recoil 2
+RecoilYaw 2 
+
+
+//Ammo
+Ammo pistolmag
+NumBullets 1
+BulletSpeed 40
+
+
+//Attachments
+AllowAllAttachments False
+AllowBarrelAttachments False
+AllowScopeAttachments False
+AllowStockAttachments False
+AllowGripAttachments False
+
+
+//Weapon Settings
+CanForceReload True
+CanShootUnderwater True
+
+Mode FULLAUTO
+OneHanded False
+
+ReloadTime 40
+SecondaryFunction ADS_ZOOM
+ShootDelay 2
+UsableByMechas True
+UsableByPlayers True
+Icon TDLebman
+
+//Shield
+
+
+//Zoom
+
+
+//Melee
+
+
+//Deployable Settings
+
+
+//Sound
+ShootSound MPmpackLebmanM1911Shoot
+ReloadSound Reload.mpack.b.45
+
+//------------------------------------------------

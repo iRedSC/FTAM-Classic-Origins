@@ -1,0 +1,103 @@
+﻿//---Standard Gun Config for Flans Mod------------
+//Created by Minecraft-SMP Toolbox 2.1.4.2
+
+
+//---Standard-------------------------------------
+// Naming
+Name MPX
+ShortName mpx
+
+Description _&8[&5Epic&8]
+
+// Visuals
+Model mpack.mpx
+ModelScale 0.13
+Icon mpxTD
+
+
+// Recipe
+
+
+//Misc
+
+Paintjob mpxorangeTD Skin_Gun_mpx_orange orange 6
+Paintjob mpxblueTD Skin_Gun_mpx_blue blue 6
+Paintjob mpxyellowTD Skin_Gun_mpx_yellow yellow 6
+Paintjob mpxsilverTD Skin_Gun_mpx_silver silver 6
+Paintjob mpxbeigeTD Skin_Gun_mpx_beige brown 3 yellow 3
+Paintjob mpxgreenTD Skin_Gun_mpx_green green 6
+Paintjob mpxbrownTD Skin_Gun_mpx_brown brown 6
+
+//------------------------------------------------
+
+//---Gun------------------------------------------
+//Gun Type
+
+
+//Visual
+Model mpack.mpx
+ModelScale 0.13
+Texture Skin_Gun_mpx
+DeployedModel mpx
+DeployedTexture Skin_Gun_mpx
+Icon mpxTD
+
+Damage 4
+Damage10m 3.2
+Damage100m 1
+HeadshotDamage 4.48
+HeadshotDamage10m 3.58
+HeadshotDamage100m 1.12
+
+Spread 21
+
+Recoil 1
+RecoilYaw 1
+
+//Ammo
+Ammo smgmag
+NumBullets 1
+BulletSpeed 40
+
+
+//Attachments
+AllowAllAttachments False
+AllowBarrelAttachments False
+AllowScopeAttachments True
+AllowStockAttachments False
+AllowGripAttachments True
+AllowAttachments verticalgrip stubbygrip eotech docter jh406 rx01 trubrite rkobra pkas ta11c
+
+//Weapon Settings
+CanForceReload True
+CanShootUnderwater True
+ConsumeGunOnUse False
+
+
+Mode FULLAUTO
+MoveSpeedModifier .95
+OneHanded False
+
+ReloadTime 60
+SecondaryFunction ADS_ZOOM
+UsableByMechas False
+UsableByPlayers True
+Icon mpxTD
+ShootDelay 1
+
+//Shield
+
+
+//Zoom
+
+
+//Melee
+
+
+//Deployable Settings
+
+
+//Sound
+ShootSound SMGmpackMPXShoot
+ReloadSound Reload.mpack.g.65
+//------------------------------------------------

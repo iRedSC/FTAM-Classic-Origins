@@ -1,0 +1,91 @@
+﻿//---Standard Gun Config for Flans Mod------------
+//Created by Minecraft-SMP Toolbox 2.1.4.2
+
+
+//---Standard-------------------------------------
+// Naming
+Name Dragunov SVD
+ShortName dragunov
+
+Description _&8[&bRare&8]
+
+// Visuals
+Model mpack.dragunov
+ModelScale 0.6
+Icon SVDTD
+
+
+// Recipe
+
+
+//Misc
+
+//------------------------------------------------
+
+//---Gun------------------------------------------
+//Gun Type
+
+
+//Visual
+Model mpack.dragunov
+ModelScale 0.54
+Texture Skin_Gun_dragunov
+DeployedModel dragunov
+DeployedTexture Skin_Gun_dragunov
+Icon SVDTD
+
+//Damage
+Damage 8
+Damage10m 8
+Damage100m 7.2
+HeadshotDamage 16
+HeadshotDamage10m 16
+HeadshotDamage100m 14.4
+
+Recoil 8
+
+Spread 0.05
+
+
+//Ammo
+Ammo snipermag
+NumBullets 1
+BulletSpeed 40
+
+
+//Attachments
+
+
+//Weapon Settings
+CanForceReload True
+CanShootUnderwater True
+ConsumeGunOnUse False
+
+
+Mode SEMIAUTO
+
+ReloadTime 100
+ShootDelay 4
+MoveSpeedModifier .90
+Icon SVDTD
+
+//Shield
+
+
+//Zoom
+Scope mpackscope2
+ZoomLevel 5
+FOVZoomLevel 2
+
+
+//Melee
+
+
+//Deployable Settings
+
+
+//Sound
+ShootSound SRmpackSVDShoot
+ReloadSound Reload.mpack.f.90
+
+//------------------------------------------------

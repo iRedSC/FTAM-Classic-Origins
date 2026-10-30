@@ -1,0 +1,100 @@
+﻿//---Standard Gun Config for Flans Mod------------
+//Created by Minecraft-SMP Toolbox 2.1.4.2
+
+
+//---Standard-------------------------------------
+// Naming
+Name M40a5
+ShortName m40
+
+Description _&8[&5Epic&8]
+
+// Visuals
+Model mpack.m40
+ModelScale 0.04
+Icon m40TD
+
+
+// Recipe
+
+
+//Misc
+
+Paintjob m40woodland Skin_Gun_m40_green green 6
+Paintjob m40desert Skin_Gun_m40_tan brown 6
+
+//------------------------------------------------
+
+//---Gun------------------------------------------
+//Gun Type
+Deployable False
+
+
+//Visual
+Model mpack.m40
+ModelScale 0.04
+Texture Skin_Gun_m40
+DeployedModel m40
+DeployedTexture Skin_Gun_m40
+Icon m40TD
+
+//Damage
+Damage 18
+Damage10m 18
+Damage100m 16.2
+HeadshotDamage 36
+HeadshotDamage10m 36
+HeadshotDamage100m 32.4
+
+
+//Ammo
+Ammo snipermag
+NumBullets 1
+BulletSpeed 40
+
+
+//Attachments
+AllowAllAttachments False
+AllowBarrelAttachments False
+AllowScopeAttachments False
+AllowStockAttachments False
+AllowGripAttachments False
+
+
+//Weapon Settings
+CanForceReload True
+CanShootUnderwater True
+ConsumeGunOnUse False
+
+Spread 0.02
+Mode SEMIAUTO
+MoveSpeedModifier .90
+OneHanded False
+Recoil 20
+ReloadTime 80
+SecondaryFunction ADS_ZOOM
+ShootDelay 20
+UsableByMechas False
+UsableByPlayers True
+Icon m40TD
+
+//Shield
+
+
+//Zoom
+Scope mpackscope
+ZoomLevel 5
+FOVZoomLevel 1
+
+
+//Melee
+
+
+//Deployable Settings
+
+
+//Sound
+ShootSound SRmpackM40A5Shoot
+ReloadSound Reload.mpack.f.80
+
+//------------------------------------------------

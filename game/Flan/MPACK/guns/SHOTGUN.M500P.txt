@@ -1,0 +1,104 @@
+//---Standard Gun Config for Flans Mod------------
+//Created by Minecraft-SMP Toolbox 2.1.4.2
+
+
+//---Standard-------------------------------------
+// Naming
+Name Mossberg 500 Persuader
+ShortName m500p
+ItemID Your ID
+
+Description _&8[&aUncommon&8]
+
+// Visuals
+Model mpack.m500p
+ModelScale 0.37
+Icon M500TD
+
+
+// Recipe
+
+
+//Misc
+
+//Paintjob Settings
+//Format is "Paintjob iconName textureName requiredDyeAmount requiredDyeColour" Multiple colours may be listed in order, seperated by a space
+//Dye colours are "black", "red", "green", "brown", "blue", "purple", "cyan", "silver", "gray", "pink", "lime", "yellow", "lightBlue", "magenta", "orange", "white"
+Paintjob Skin_Gun_m500p_blue Skin_Gun_m500p_blue silver 4 blue 4
+
+//------------------------------------------------
+
+//---Gun------------------------------------------
+//Gun Type
+
+
+//Visual
+Model mpack.m500p
+ModelScale 0.37
+Texture Skin_Gun_m500p
+DeployedModel mpack.m500p
+DeployedTexture Skin_Gun_m500p
+Icon M500TD
+
+//Damage
+Damage 3.8
+Damage10m 1.9
+Damage100m -200
+HeadshotDamage 4.18
+HeadshotDamage10m 2.09
+HeadshotDamage100m -200
+
+Spread 13
+
+Recoil 10
+
+//Ammo
+Ammo 12gauge
+NumAmmoSlots 5
+NumAmmoItemsInGun 5
+LoadIntoGun 5
+NumBullets 6
+BulletSpeed 40
+
+//Attachments
+AllowAllAttachments False
+AllowBarrelAttachments True
+AllowScopeAttachments False
+AllowStockAttachments False
+AllowGripAttachments False
+
+
+//Weapon Settings
+CanForceReload True
+CanShootUnderwater True
+ConsumeGunOnUse False
+
+Mode SEMIAUTO
+MoveSpeedModifier .975
+OneHanded False
+
+ReloadTime 100
+SecondaryFunction ADS_ZOOM
+ShootDelay 20
+UsableByMechas False
+UsableByPlayers True
+Icon M500TD
+
+
+//Shield
+
+
+//Zoom
+
+
+//Melee
+
+
+//Deployable Settings
+
+
+//Sound
+ShootSound ShotgunmpackMossberg500Shoot
+ReloadSound ReloadmpackShotgun5RDPump
+
+//------------------------------------------------

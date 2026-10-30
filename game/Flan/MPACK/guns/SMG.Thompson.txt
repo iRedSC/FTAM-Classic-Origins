@@ -1,0 +1,94 @@
+﻿//---Standard Gun Config for Flans Mod------------
+//Created by Minecraft-SMP Toolbox 2.1.4.2
+
+
+//---Standard-------------------------------------
+// Naming
+Name Thompson
+ShortName thompson
+
+Description _&8[&aUncommon&8]
+
+// Visuals
+Model mpack.m1927
+ModelScale 0.08
+Icon m1927TD
+
+
+// Recipe
+
+
+//Misc
+
+
+
+//------------------------------------------------
+
+//---Gun------------------------------------------
+//Gun Type
+
+
+//Visual
+Model mpack.m1927
+ModelScale 0.08
+Texture Skin_Gun_m1927
+DeployedModel m1927
+DeployedTexture Skin_Gun_m1927
+Icon m1927TD
+
+//Damage
+Damage 3.5
+Damage10m 2.8
+Damage100m 0.88
+HeadshotDamage 4.2
+HeadshotDamage10m 3.36
+HeadshotDamage100m 1.05
+
+Spread 20
+
+Recoil .5
+RecoilYaw .5
+
+//Ammo
+Ammo lsmgmag
+NumBullets 1
+BulletSpeed 40
+
+
+//Attachments
+
+
+//Weapon Settings
+CanForceReload True
+CanShootUnderwater True
+ConsumeGunOnUse False
+
+
+Mode FULLAUTO
+MoveSpeedModifier .90
+OneHanded False
+
+ReloadTime 80
+SecondaryFunction ADS_ZOOM
+ShootDelay 1
+UsableByMechas False
+UsableByPlayers True
+Icon m1927TD
+
+//Shield
+
+
+//Zoom
+
+
+//Melee
+
+
+//Deployable Settings
+
+
+//Sound
+ShootSound SMGmpackM1927Shoot
+ReloadSound Reload.mpack.e.55
+
+//------------------------------------------------

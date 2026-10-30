@@ -1,0 +1,99 @@
+//---Standard Gun Config for Flans Mod------------
+//Created by Minecraft-SMP Toolbox 2.2.2.4
+
+
+//---Standard-------------------------------------
+// Naming
+Name MKEK MPT-76
+ShortName mpt76
+ItemID Your ID
+
+Description _&8[&bRare&8]
+
+// Visuals
+Model mpack.mpt76
+ModelScale 0.07
+Icon mpt76TD
+
+
+
+// Recipe
+
+
+//Misc
+
+//------------------------------------------------
+
+//---Gun------------------------------------------
+//Gun Type
+
+
+//Visual
+Model mpack.mpt76
+ModelScale 0.07
+Texture Skin_Gun_mpt76
+DeployedModel mpack.mpt76
+DeployedTexture Skin_Gun_mpt76
+
+
+//Damage
+Damage 4.5
+Damage10m 4.5
+Damage100m 3.38
+HeadshotDamage 5.85
+HeadshotDamage10m 5.85
+HeadshotDamage100m 4.39
+
+Spread 2
+
+Recoil 2
+RecoilYaw 2
+
+//Ammo
+Ammo armag
+NumBullets 1
+BulletSpeed 40
+
+
+//Attachments
+AllowAllAttachments False
+AllowAttachments mpackverticalgrip mpackrvg mpack.stubby mpack.eotech mpack.jh406 mpack.rx01 mpackafg2tan mpackafg2gray mpackafg2black mpack.trubrite mpack.docter mpack.rkobra mpack.pkas mpack.ta11c mpack.vcog mpack.mark4mrtm1 mpack.sandmanti mpack.harisbipod mpack.compm4 mpack.microt1 mpack.rsrmr mpack.rmr
+AllowBarrelAttachments True
+AllowScopeAttachments True
+AllowStockAttachments False
+AllowGripAttachments True
+
+
+//Weapon Settings
+CanForceReload True
+CanShootUnderwater True
+ConsumeGunOnUse False
+
+Mode FULLAUTO
+MoveSpeedModifier .90
+OneHanded False
+
+ReloadTime 80
+SecondaryFunction ADS_ZOOM
+ShootDelay 2
+UsableByMechas False
+UsableByPlayers True
+
+
+//Shield
+
+
+//Zoom
+
+
+//Melee
+
+
+//Deployable Settings
+
+
+//Sound
+ShootSound ARmpackL85A2Shoot
+ReloadSound Reload.mpack.g.60
+
+//------------------------------------------------

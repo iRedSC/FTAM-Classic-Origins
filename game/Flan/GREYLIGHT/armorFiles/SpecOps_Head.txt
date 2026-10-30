@@ -1,0 +1,15 @@
+Name SpecOps Helmet
+ShortName specopshelmet
+Icon skymareValkyrieHelmet
+Colour 255 255 255
+
+Type Head
+Model dwdefence.ValkyrieHead
+Defence 5
+ArmourTexture SkymareValkyrieUniform
+
+Description _&4Tier V_&8[&4SpecOps &7Set&8]
+
+Durability 1024
+
+ModelScale 0.5

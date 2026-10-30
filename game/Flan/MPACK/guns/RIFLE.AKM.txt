@@ -1,0 +1,107 @@
+//---Standard Gun Config for Flans Mod------------
+//Created by Minecraft-SMP Toolbox 2.1.4.2
+
+
+//---Standard-------------------------------------
+// Naming
+Name AKM
+ShortName akm
+
+Description _&8[&6Legendary&8]
+
+// Visuals
+Model mpack.ak
+ModelScale 0.07
+Icon AK47_TD
+
+
+// Recipe
+
+
+//Misc
+
+//Paintjob Settings
+//Format is "Paintjob iconName textureName requiredDyeAmount requiredDyeColour" Multiple colours may be listed in order, seperated by a space
+//Dye colours are "black", "red", "green", "brown", "blue", "purple", "cyan", "silver", "gray", "pink", "lime", "yellow", "lightBlue", "magenta", "orange", "white"
+
+Paintjob akdiamondTD akdiamondTD white 5 silver 5 lightBlue 7 blue 7
+Paintjob akgoldnewTD akgoldnewTD orange 4 yellow 10 silver 2
+Paintjob akjunglenewTD akjunglenewTD green 4 lime 2 brown 2
+Paintjob akcherryTD akcherryTD red 4
+
+//------------------------------------------------
+
+//---Gun------------------------------------------
+//Gun Type
+
+
+//Visual
+Model mpack.ak
+ModelScale 0.07
+Texture Skin_Gun_ak
+DeployedModel ak
+DeployedTexture Skin_Gun_ak
+
+
+//Damage
+Damage 6.50
+Damage10m 6.50
+Damage100m 4.89
+HeadshotDamage 8.86
+HeadshotDamage10m 8.86
+HeadshotDamage100m 6.65
+
+Recoil 2.5
+RecoilYaw .55
+
+Spread 1.75
+
+
+//Ammo
+Ammo armag
+NumBullets 1
+BulletSpeed 40
+
+
+//Attachments
+AllowAllAttachments False
+AllowAttachments akgrip
+AllowBarrelAttachments True
+AllowScopeAttachments False
+AllowStockAttachments False
+AllowGripAttachments True
+
+
+//Weapon Settings
+CanForceReload True
+CanShootUnderwater True
+ConsumeGunOnUse False
+
+
+Mode FULLAUTO
+OneHanded False
+
+ReloadTime 60
+SecondaryFunction ADS_ZOOM
+ShootDelay 2
+UsableByMechas False
+UsableByPlayers True
+MoveSpeedModifier .90
+
+//Shield
+
+
+//Zoom
+
+
+//Melee
+
+
+//Deployable Settings
+
+
+//Sound
+ShootSound ARmpackAKMShoot
+ReloadSound Reload.mpack.g.60
+
+//------------------------------------------------

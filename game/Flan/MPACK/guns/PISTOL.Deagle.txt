@@ -1,0 +1,104 @@
+﻿//---Standard Gun Config for Flans Mod------------
+//Created by Minecraft-SMP Toolbox 2.1.4.2
+
+
+//---Standard-------------------------------------
+// Naming
+Name Desert Eagle
+ShortName deagle
+ItemID Your ID
+
+Description _&8[&6Legendary&8]
+
+// Visuals
+Model mpack.deagle
+ModelScale 0.05
+Icon deagleTD
+
+
+// Recipe
+
+
+//Misc
+
+//Paintjob Settings
+//Format is "Paintjob iconName textureName requiredDyeAmount requiredDyeColour" Multiple colours may be listed in order, seperated by a space
+//Dye colours are "black", "red", "green", "brown", "blue", "purple", "cyan", "silver", "gray", "pink", "lime", "yellow", "lightBlue", "magenta", "orange", "white"
+Paintjob deagleblackTD deagleblackTD black 6
+Paintjob deaglechromeTD Deagle_Chrome_TD silver 10
+Paintjob Deagle_Gold_TD Deagle_Gold_TD yellow 12 white 10
+Paintjob Deagle_Red_TD Deagle_Red_TD red 6
+Paintjob Deagle_Pink_TD Deagle_Pink_TD pink 6
+Paintjob Deagle_Blue_TD Deagle_Blue_TD blue 6
+Paintjob Deagle_Desert_TD Deagle_Desert_TD brown 8 white 8
+
+//------------------------------------------------
+
+//---Gun------------------------------------------
+//Gun Type
+
+
+//Visual
+Model mpack.deagle
+ModelScale 0.05
+Texture Skin_Gun_deagle
+DeployedModel mpack.deagle
+DeployedTexture Skin_Gun_deagle
+Icon deagleTD
+
+//Damage
+Damage 15.5
+Damage10m 13.95
+Damage100m 11.63
+HeadshotDamage 23.25
+HeadshotDamage10m 20.93
+HeadshotDamage100m 17.44
+
+
+//Ammo
+Ammo pistolmag
+NumBullets 1
+BulletSpeed 40
+
+
+//Attachments
+AllowAllAttachments False
+AllowAttachments mpack.docter mpack.rmr mpackglxlaser
+AllowBarrelAttachments False
+AllowScopeAttachments True
+AllowStockAttachments False
+AllowGripAttachments True
+
+
+//Weapon Settings
+CanForceReload True
+CanShootUnderwater True
+ConsumeGunOnUse False
+Spread 1
+Mode SEMIAUTO
+OneHanded True
+Recoil 20
+ReloadTime 100
+SecondaryFunction ADS_ZOOM
+ShootDelay 8
+UsableByMechas True
+UsableByPlayers True
+Icon deagleTD
+
+//Shield
+
+
+//Zoom
+
+
+//Melee
+
+
+//Deployable Settings
+
+
+//Sound
+ShootSound PistolmpackDesertEagleShoot
+ReloadSound Reload.mpack.b.40
+
+//------------------------------------------------

@@ -1,0 +1,100 @@
+﻿//---Standard Gun Config for Flans Mod------------
+//Created by Minecraft-SMP Toolbox 2.1.4.2
+
+
+//---Standard-------------------------------------
+// Naming
+Name Glock 17
+ShortName g17
+
+Description _&8[&7Common&8]
+
+// Visuals
+Model mpack.g17
+ModelScale 0.12
+Icon G17TD
+
+
+// Recipe
+
+
+//Misc
+
+//Paintjob Settings
+//Format is "Paintjob iconName textureName requiredDyeAmount requiredDyeColour" Multiple colours may be listed in order, seperated by a space
+//Dye colours are "black", "red", "green", "brown", "blue", "purple", "cyan", "silver", "gray", "pink", "lime", "yellow", "lightBlue", "magenta", "orange", "white"
+
+Paintjob g17navy g17navy cyan 2 lightBlue 2 blue 2
+Paintjob g17desert g17desert orange 2 yellow 2 brown 2
+Paintjob g17urban g17urban gray 4 silver 4
+Paintjob g17snow g17snow white 4 silver 4
+Paintjob g17woodland g17woodland green 4 brown 4
+Paintjob g17darkearth g17darkearth brown 3
+Paintjob g17pink g17pink pink 3
+
+//------------------------------------------------
+
+//---Gun------------------------------------------
+//Gun Type
+
+
+//Visual
+Model mpack.g17
+ModelScale 0.12
+Texture Skin_Gun_g17
+DeployedModel g17
+DeployedTexture Skin_Gun_g17
+Icon G17TD
+
+//Damage
+Damage 3.5
+Damage10m 3.15
+Damage100m 0.35
+HeadshotDamage 4.01
+HeadshotDamage10m 3.61
+HeadshotDamage100m 0.36
+
+Recoil 1
+RecoilYaw 1
+
+
+//Ammo
+Ammo pistolmag
+NumBullets 1
+BulletSpeed 40
+
+
+//Attachments
+
+//Weapon Settings
+CanForceReload True
+CanShootUnderwater True
+ConsumeGunOnUse False
+
+Spread 7
+Mode SEMIAUTO
+OneHanded False
+ReloadTime 40
+SecondaryFunction ADS_ZOOM
+ShootDelay 1
+UsableByMechas False
+UsableByPlayers True
+Icon G17TD
+
+//Shield
+
+
+//Zoom
+
+
+//Melee
+
+
+//Deployable Settings
+
+
+//Sound
+ShootSound PistolmpackGlock17Shoot
+ReloadSound Reload.mpack.b.40
+
+//------------------------------------------------

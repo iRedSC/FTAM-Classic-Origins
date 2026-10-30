@@ -1,0 +1,100 @@
+﻿//---Standard Gun Config for Flans Mod------------
+//Created by Minecraft-SMP Toolbox 2.1.4.2
+
+
+//---Standard-------------------------------------
+// Naming
+Name HAMR
+ShortName hamr
+ItemID Your ID
+
+Description _&8[&dMythic&8]
+
+// Visuals
+Model mpack.hamr
+ModelScale 0.06
+Icon hamrTDtan
+
+
+// Recipe
+
+
+//Misc
+
+//------------------------------------------------
+
+//---Gun------------------------------------------
+//Gun Type
+
+
+//Visual
+Model mpack.hamr
+ModelScale 0.06
+Texture Skin_Gun_hamr
+DeployedModel mpack.hamr
+DeployedTexture Skin_Gun_hamr
+Icon hamrTDtan
+
+//Damage
+Damage 5.5
+Damage10m 5.5
+Damage100m 4.13
+HeadshotDamage 6.6
+HeadshotDamage10m 6.6
+HeadshotDamage100m 4.95
+
+Recoil .50
+RecoilYaw .15
+
+Spread .15
+
+
+//Ammo
+Ammo lmgbelt
+NumBullets 1
+BulletSpeed 40
+
+
+//Attachments
+AllowAllAttachments False
+AllowAttachments mpackverticalgrip mpackrvg mpack.stubby mpackafg2tan mpackafg2gray mpackafg2black mpack.eotech mpack.jh406 mpacktrubrite mpack.vcog mpack.mark4mrtm1 mpack.docter mpack.rx01 mpack.rkobra mpack.pkas mpack.ta11c mpack.nt4 mpack.harisbipod mpack.microt1 mpack.compm4 mpack.rsrmr mpack.rmr
+AllowBarrelAttachments True
+AllowScopeAttachments True
+AllowStockAttachments True
+AllowGripAttachments True
+
+
+//Weapon Settings
+CanForceReload True
+CanShootUnderwater False
+ConsumeGunOnUse False
+Accuracy 2
+
+Mode FULLAUTO
+OneHanded False
+
+ReloadTime 100
+SecondaryFunction ADS_ZOOM
+ShootDelay 2
+UsableByMechas False
+UsableByPlayers True
+MoveSpeedModifier .85
+Icon hamrTDtan
+
+//Shield
+
+
+//Zoom
+
+
+//Melee
+
+
+//Deployable Settings
+
+
+//Sound
+ShootSound LSWmpackHAMRShoot
+ReloadSound Reload.mpack.f.85
+
+//------------------------------------------------

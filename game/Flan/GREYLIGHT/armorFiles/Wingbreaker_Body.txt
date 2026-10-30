@@ -1,0 +1,16 @@
+Name Wingbreaker Body
+ShortName wingbreakerbody
+Icon ambirconWingbreakerBody
+Colour 255 255 255
+
+Type Body
+Model dwdefence.WingbreakerBody
+Defence 5
+ArmourTexture Ambircon_WingbreakerUniform
+MoveSpeedModifier 1.0
+JumpModifier 2.0
+NegateFallDamage True
+
+Description _&dTier VI_&8[&dWingbreaker &7Set&8]
+
+ModelScale 0.5

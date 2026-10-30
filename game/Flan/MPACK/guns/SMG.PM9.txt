@@ -1,0 +1,97 @@
+﻿//---Standard Gun Config for Flans Mod------------
+//Created by Minecraft-SMP Toolbox 2.1.4.2
+
+
+//---Standard-------------------------------------
+// Naming
+Name PM-9
+ShortName pm9
+ItemID Your ID
+
+Description _&8[&bRare&8]
+
+// Visuals
+Model mpack.pm9
+ModelScale 0.08
+Icon PM9_TD
+
+
+// Recipe
+
+
+//Misc
+
+//------------------------------------------------
+
+//---Gun------------------------------------------
+//Gun Type
+
+
+//Visual
+Model mpack.pm9
+ModelScale 0.08
+Texture Skin_Gun_pm9
+DeployedModel mpack.pm9
+DeployedTexture Skin_Gun_pm9
+Icon PM9_TD
+
+
+//Damage
+Damage 4
+Damage10m 3.2
+Damage100m 1
+HeadshotDamage 4.8
+HeadshotDamage10m 3.84
+HeadshotDamage100m 1.2
+
+Spread 22
+
+Recoil 1
+RecoilYaw 1
+
+
+//Ammo
+Ammo smgmag
+NumBullets 1
+BulletSpeed 40
+
+
+//Attachments
+AllowAllAttachments False
+AllowBarrelAttachments True
+AllowScopeAttachments False
+AllowStockAttachments False
+AllowGripAttachments False
+
+
+//Weapon Settings
+CanShootUnderwater True
+
+Mode FULLAUTO
+MoveSpeedModifier .975
+OneHanded False
+
+ReloadTime 40
+ShootDelay 1
+UsableByMechas False
+UsableByPlayers True
+Icon PM9_TD
+
+
+//Shield
+
+
+//Zoom
+
+
+//Melee
+
+
+//Deployable Settings
+
+
+//Sound
+ShootSound SMGmpackMPXShoot
+ReloadSound Reload.mpack.g.40
+
+//------------------------------------------------

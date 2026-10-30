@@ -1,0 +1,15 @@
+Name Assault Pants
+ShortName assaultlegs
+Icon lupineAssaultLegs
+Colour 255 255 255
+
+Type Legs
+Model dwdefence.AssaultLegs
+Defence 2
+ArmourTexture LupineMilitaryArmor_A
+
+Description _&aTier II_&8[&aAssault &7Set&8]
+
+Durability 128
+
+ModelScale 0.5

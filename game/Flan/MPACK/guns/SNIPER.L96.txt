@@ -1,0 +1,98 @@
+//---Standard Gun Config for Flans Mod------------
+//Created by Minecraft-SMP Toolbox 2.1.3.0
+
+
+//---Standard-------------------------------------
+// Naming
+Name L96
+ShortName l96
+ItemID Your ID
+
+Description _&8[&6Legendary&8]
+
+// Visuals
+Model mpack.l96
+ModelScale 0.75
+Icon l96_TD
+
+
+// Recipe
+
+
+//Misc
+
+//------------------------------------------------
+
+//---Gun------------------------------------------
+//Gun Type
+Deployable False
+
+
+//Visual
+Model mpack.l96
+ModelScale 0.75
+Texture Skin_Gun_l96_odgreen
+DeployedModel mpack.l96
+DeployedTexture Skin_Gun_l96_odgreen
+Icon l96_TD
+
+//Damage
+Damage 28
+Damage10m 28
+Damage100m 25.9
+HeadshotDamage 56
+HeadshotDamage10m 56
+HeadshotDamage100m 51.8
+
+
+//Ammo
+Ammo snipermag
+NumBullets 1
+BulletSpeed 40
+
+
+//Attachments
+AllowAllAttachments False
+AllowBarrelAttachments True
+AllowScopeAttachments True
+AllowStockAttachments False
+AllowGripAttachments False
+
+
+//Weapon Settings
+CanForceReload True
+CanShootUnderwater True
+ConsumeGunOnUse False
+Accuracy 1
+Spread 0.01
+Mode SEMIAUTO
+OneHanded False
+Recoil 6
+ReloadTime 70
+SecondaryFunction ADS_ZOOM
+ShootDelay 30
+UsableByMechas False
+UsableByPlayers True
+MoveSpeedModifier .90
+Icon l96_TD
+
+
+//Shield
+
+
+//Zoom
+Scope mpackscope
+ZoomLevel 5
+FOVZoomLevel 2
+
+
+//Melee
+
+
+//Deployable Settings
+
+
+//Sound
+ShootSound SRmpackL96Shoot
+ReloadSound Reload.mpack.g.70
+//------------------------------------------------

@@ -1,0 +1,103 @@
+﻿//---Standard Gun Config for Flans Mod------------
+//Created by Minecraft-SMP Toolbox 2.1.4.2
+
+
+//---Standard-------------------------------------
+// Naming
+Name XM8
+ShortName xm8
+
+Description _&8[&7Common&8]
+
+// Visuals
+Model mpack.xm8
+ModelScale 0.11
+Icon xm8TD
+
+
+// Recipe
+
+
+//Misc
+//Paintjob Settings
+//Format is "Paintjob iconName textureName requiredDyeAmount requiredDyeColour" Multiple colours may be listed in order, seperated by a space
+//Dye colours are "black", "red", "green", "brown", "blue", "purple", "cyan", "silver", "gray", "pink", "lime", "yellow", "lightBlue", "magenta", "orange", "white"
+
+Paintjob xm8blue xm8blue lightblue 4 blue 4 cyan 2
+Paintjob xm8strawberry xm8strawberry pink 3
+Paintjob xm8woodlandflat xm8woodlandflat green 4
+Paintjob xm8crimson xm8crimson red 3
+
+//------------------------------------------------
+
+//---Gun------------------------------------------
+//Gun Type
+
+
+//Visual
+Model mpack.xm8
+ModelScale 0.11
+Texture Skin_Gun_xm8
+DeployedModel xm8
+DeployedTexture Skin_Gun_xm8
+
+
+//Damage
+Damage 3
+Damage10m 3
+Damage100m 2.25
+HeadshotDamage 3.6
+HeadshotDamage10m 3.6
+HeadshotDamage100m 2.7
+
+Spread 6
+
+Recoil 3.5
+RecoilYaw 1.0
+
+
+//Ammo
+Ammo armag
+NumBullets 1
+BulletSpeed 40
+
+
+//Attachments
+AllowAllAttachments False
+AllowBarrelAttachments False
+AllowScopeAttachments False
+AllowStockAttachments False
+AllowGripAttachments False
+Icon xm8TD
+
+//Weapon Settings
+CanShootUnderwater True
+
+Mode FULLAUTO
+MoveSpeedModifier .90
+OneHanded False
+
+ReloadTime 60
+SecondaryFunction ADS_ZOOM
+ShootDelay 2
+UsableByMechas False
+UsableByPlayers True
+Icon xm8TD
+
+//Shield
+
+
+//Zoom
+FOVZoomLevel 4
+
+
+//Melee
+
+
+//Deployable Settings
+
+
+//Sound
+ShootSound ARmpackXM8Shoot
+ReloadSound Reload.mpack.e.50
+//------------------------------------------------

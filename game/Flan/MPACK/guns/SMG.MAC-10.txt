@@ -1,0 +1,108 @@
+﻿//---Standard Gun Config for Flans Mod------------
+//Created by Minecraft-SMP Toolbox 2.1.4.2
+
+
+//---Standard-------------------------------------
+// Naming
+Name Mac-10
+ShortName mac10
+ItemID Your ID
+
+Description _&8[&aUncommon&8]
+
+// Visuals
+Model mpack.mac10
+ModelScale 0.08
+Icon MAC-10_TD
+
+
+// Recipe
+
+
+//Misc
+
+
+//Attachments
+AllowAllAttachments False
+AllowBarrelAttachments True
+AllowScopeAttachments True
+AllowStockAttachments True
+AllowGripAttachments True
+AllowAttachments mpackverticalgrip mpack.stubby mpackrvg mpack.docter mpack.rmr mpack.mac10sup
+
+//------------------------------------------------
+
+//---Gun------------------------------------------
+//Gun Type
+Deployable False
+
+
+//Visual
+Model mpack.mac10
+ModelScale 0.08
+Texture Skin_Gun_mac10
+DeployedModel mpack.mac10
+DeployedTexture Skin_Gun_mac10
+Icon MAC-10_TD
+
+//Damage
+Damage 3.5
+Damage10m 2.8
+Damage100m 0.88
+HeadshotDamage 4.2
+HeadshotDamage10m 3.36
+HeadshotDamage100m 1.05
+
+Spread 21
+
+Recoil 1.75
+RecoilYaw 1
+
+
+//Ammo
+Ammo smgmag
+NumBullets 1
+BulletSpeed 40
+
+
+//Attachments
+AllowAllAttachments False
+AllowBarrelAttachments True
+AllowScopeAttachments True
+AllowStockAttachments True
+AllowGripAttachments True
+
+
+//Weapon Settings
+CanForceReload True
+CanShootUnderwater True
+ConsumeGunOnUse False
+
+MoveSpeedModifier .975
+Mode FULLAUTO
+OneHanded False
+
+ReloadTime 40
+SecondaryFunction ADS_ZOOM
+ShootDelay 1
+UsableByMechas False
+UsableByPlayers True
+Icon MAC-10_TD
+
+//Shield
+
+
+//Zoom
+
+
+//Melee
+
+
+//Deployable Settings
+
+
+//Sound
+ShootSound MPmpackMAC10Shoot
+ReloadSound Reload.mpack.c.45
+
+//------------------------------------------------

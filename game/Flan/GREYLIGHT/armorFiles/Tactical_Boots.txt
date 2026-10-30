@@ -1,0 +1,15 @@
+Name Tactical Boots
+ShortName tacticalboots
+Icon lupineLMSSBoots
+Colour 255 255 255
+
+Type Boots
+Model dwdefence.LMSSBoots
+Defence 2
+ArmourTexture LupineLMSSUniform
+
+Description _&3Tier III_&8[&3Tactical &7Set&8]
+
+Durability 256
+
+ModelScale 0.5

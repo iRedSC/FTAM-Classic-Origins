@@ -1,0 +1,15 @@
+Name Contractor Body
+ShortName contractorbody
+Icon skymareContractorBody
+Colour 255 255 255
+
+Type Body
+Model dwdefence.ContractorBody
+Defence 4
+ArmourTexture SkymareContractorUniform
+
+Description _&cTier IV_&8[&cContractor &7Set&8]
+
+Durability 512
+
+ModelScale 0.5

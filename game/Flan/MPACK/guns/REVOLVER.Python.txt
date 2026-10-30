@@ -1,0 +1,89 @@
+﻿//---Standard Gun Config for Flans Mod------------
+//Created by Minecraft-SMP Toolbox 2.1.4.2
+
+
+//---Standard-------------------------------------
+// Naming
+Name Python
+ShortName python
+
+Description _&8[&bRare&8]
+
+// Visuals
+Model mpack.python
+ModelScale 0.03
+Icon pythonTD
+
+// Recipe
+
+
+//Misc
+
+//------------------------------------------------
+
+//---Gun------------------------------------------
+//Gun Type
+
+
+//Visual
+Model mpack.python
+ModelScale 0.03
+Texture Skin_Gun_python
+DeployedModel python
+DeployedTexture Skin_Gun_python
+Icon pythonTD
+
+//Damage
+Damage 9.75
+Damage10m 8.78
+Damage100m 4.88
+HeadshotDamage 13.65
+HeadshotDamage10m 12.25
+HeadshotDamage100m 6.83
+
+
+//Ammo
+Ammo bullet357
+NumAmmoSlots 6
+NumAmmoItemsInGun 6
+LoadIntoGun 6
+NumBullets 1
+BulletSpeed 40
+
+
+//Attachments
+AllowAllAttachments False
+AllowBarrelAttachments True
+AllowScopeAttachments True
+AllowStockAttachments False
+AllowGripAttachments False
+
+
+//Weapon Settings
+CanForceReload True
+ConsumeGunOnUse False
+
+OneHanded False
+Spread 0.8
+Mode SEMIAUTO
+Recoil 12
+ReloadTime 80
+ShootDelay 6.6
+Icon pythonTD
+
+//Shield
+
+
+//Zoom
+
+
+//Melee
+
+
+//Deployable Settings
+
+
+//Sound
+ShootSound PistolmpackPythonShoot
+ReloadSound ReloadmpackRevolver3Seconds
+//------------------------------------------------

@@ -1,0 +1,15 @@
+Name Tactical Pants
+ShortName tacticallegs
+Icon lupineLMSSLegs
+Colour 255 255 255
+
+Type Legs
+Model dwdefence.LMSSLegs
+Defence 3
+ArmourTexture LupineLMSSUniform
+
+Description _&3Tier III_&8[&3Tactical &7Set&8]
+
+Durability 256
+
+ModelScale 0.5

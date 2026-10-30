@@ -1,0 +1,104 @@
+﻿//---Standard Gun Config for Flans Mod------------
+//Created by Minecraft-SMP Toolbox 2.2.2.4
+
+
+//---Standard-------------------------------------
+// Naming
+Name HK33A2
+ShortName hk33
+ItemID Your ID
+
+Description _&8[&5Epic&8]
+
+// Visuals
+Model mpack.hk33
+ModelScale 0.12
+Icon hk33TD
+
+
+// Recipe
+
+
+//Misc
+
+//Paintjob Settings
+//Format is "Paintjob iconName textureName requiredDyeAmount requiredDyeColour" Multiple colours may be listed in order, seperated by a space
+//Dye colours are "black", "red", "green", "brown", "blue", "purple", "cyan", "silver", "gray", "pink", "lime", "yellow", "lightBlue", "magenta", "orange", "white"
+
+
+//------------------------------------------------
+
+//---Gun------------------------------------------
+//Gun Type
+
+
+//Visual
+Model mpack.hk33
+ModelScale 0.12
+Texture Skin_Gun_hk33
+DeployedModel mpack.hk33
+DeployedTexture Skin_Gun_hk33
+
+
+//Damage
+Damage 5.0
+Damage10m 5
+Damage100m 3.75
+HeadshotDamage 6.5
+HeadshotDamage10m 6.5
+HeadshotDamage100m 4.88
+
+Recoil .75
+RecoilYaw .25
+
+Spread .75
+
+
+//Ammo
+Ammo armag
+NumBullets 1
+BulletSpeed 40
+
+
+//Attachments
+AllowAllAttachments False
+AllowAttachments verticalgrip stubbygrip eotech jh406 rx01 rkobra trubrite docter pkas ta11c riflesup
+AllowBarrelAttachments True
+AllowScopeAttachments True
+AllowStockAttachments True
+AllowGripAttachments True
+
+
+//Weapon Settings
+CanForceReload True
+CanShootUnderwater False
+ConsumeGunOnUse False
+
+Mode FULLAUTO
+MoveSpeedModifier .9
+OneHanded False
+
+ReloadTime 80
+SecondaryFunction ADS_ZOOM
+ShootDelay 2
+UsableByMechas False
+UsableByPlayers True
+
+
+//Shield
+
+
+//Zoom
+
+
+//Melee
+
+
+//Deployable Settings
+
+
+//Sound
+ShootSound ARmpackM16Shoot
+ReloadSound Reload.mpack.g.65
+
+//------------------------------------------------

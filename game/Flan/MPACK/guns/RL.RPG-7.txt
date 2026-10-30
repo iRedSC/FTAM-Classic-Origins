@@ -1,0 +1,87 @@
+﻿//---Standard Gun Config for Flans Mod------------
+//Created by Minecraft-SMP Toolbox 2.1.4.2
+
+
+//---Standard-------------------------------------
+// Naming
+Name RPG-7
+ShortName rpg7
+
+Description _&8[&6Legendary&8]
+
+// Visuals
+Model rpg7
+ModelScale 0.14
+Icon rpgTD
+
+
+// Recipe
+
+
+//Misc
+
+//------------------------------------------------
+
+//---Gun------------------------------------------
+//Gun Type
+CanForceReload True
+CanShootUnderwater False
+
+//Visual
+Model mpack.rpg7
+ModelScale 0.14
+Texture Skin_Gun_rpg7
+DeployedModel mpack.rpg7
+DeployedTexture Skin_Gun_rpg7
+Icon rpgTD
+
+//Damage
+Damage 0
+
+
+Explode True
+ExplosionSize 2
+
+//Ammo
+Ammo rocketrpg
+NumBullets 1
+
+
+//Attachments
+AllowAllAttachments False
+AllowBarrelAttachments False
+AllowScopeAttachments False
+AllowStockAttachments False
+AllowGripAttachments False
+
+
+//Weapon Settings
+Recoil 15
+Spread 5
+Mode SEMIAUTO
+MoveSpeedModifier .875
+OneHanded False
+ReloadTime 160
+SecondaryFunction ADS_ZOOM
+ShootDelay 20
+UsableByMechas False
+UsableByPlayers True
+Icon rpgTD
+
+//Shield
+
+
+//Zoom
+
+
+//Melee
+
+
+//Deployable Settings
+
+
+//Sound
+ShootSound RLmpackRPG7Shoot
+ReloadSound ReloadmpackRPG7
+
+//------------------------------------------------

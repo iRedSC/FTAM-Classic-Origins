@@ -1,0 +1,95 @@
+﻿//---Standard Gun Config for Flans Mod------------
+//Created by Minecraft-SMP Toolbox 2.1.4.2
+
+
+//---Standard-------------------------------------
+// Naming
+Name CS-LR4
+ShortName cslr4
+
+Description _&8[&bRare&8]
+
+// Visuals
+Model mpack.cslr4
+ModelScale 0.11
+Icon cslr4TD
+
+
+// Recipe
+
+
+//Misc
+
+//------------------------------------------------
+
+//---Gun------------------------------------------
+//Gun Type
+Deployable False
+
+
+//Visual
+Model mpack.cslr4
+ModelScale 0.11
+Texture Skin_Gun_cslr4
+DeployedModel mpack.cslr4
+DeployedTexture Skin_Gun_cslr4
+Icon cslr4TD
+
+//Damage
+Damage 15
+Damage10m 15
+Damage100m 13.5
+HeadshotDamage 30
+HeadshotDamage10m 30
+HeadshotDamage100m 27
+
+
+//Ammo
+Ammo snipermag
+NumBullets 1
+BulletSpeed 40
+
+
+//Attachments
+AllowAllAttachments False
+AllowAttachments eotech jh406 rx01 rkobra trubrite docter pkas ta11c
+AllowBarrelAttachments False
+AllowScopeAttachments True
+AllowStockAttachments False
+AllowGripAttachments False
+
+
+//Weapon Settings
+CanForceReload True
+CanShootUnderwater True
+ConsumeGunOnUse False
+Spread 0.025
+Mode SEMIAUTO
+MoveSpeedModifier .90
+OneHanded False
+Recoil 13
+ReloadTime 80
+SecondaryFunction ADS_ZOOM
+ShootDelay 20
+UsableByMechas False
+UsableByPlayers True
+Icon cslr4TD
+
+//Shield
+
+
+//Zoom
+FOVZoomLevel 3
+
+
+//Melee
+
+
+//Deployable Settings
+
+
+//Sound
+ShootSound SRmpackCSLR4Shoot
+ReloadSound Reload.mpack.g.60
+
+//------------------------------------------------

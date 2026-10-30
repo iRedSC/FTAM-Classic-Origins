@@ -1,0 +1,104 @@
+﻿//---Standard Gun Config for Flans Mod------------
+//Created by Minecraft-SMP Toolbox 2.1.4.2
+
+
+//---Standard-------------------------------------
+// Naming
+Name Kriss Vector
+ShortName vector
+
+Description _&8[&aUncommon&8]
+
+// Visuals
+Model mpack.vector
+ModelScale 0.14
+Icon vectorTD
+
+
+// Recipe
+
+
+//Misc
+
+//Paintjob Settings
+//Format is "Paintjob iconName textureName requiredDyeAmount requiredDyeColour" Multiple colours may be listed in order, seperated by a space
+//Dye colours are "black", "red", "green", "brown", "blue", "purple", "cyan", "silver", "gray", "pink", "lime", "yellow", "lightBlue", "magenta", "orange", "white"
+
+Paintjob vectordiamondTD vectordiamondTD white 5 silver 5 lightBlue 7 blue 7
+Paintjob vectortanTD vectortanTD brown 4 white 4
+Paintjob vectortropicalTD vectortropicalTD brown 4 lime 4 green 4
+
+//------------------------------------------------
+
+//---Gun------------------------------------------
+//Gun Type
+
+
+//Visual
+Model mpack.vector
+ModelScale 0.14
+Texture Skin_Gun_vector
+DeployedModel vector
+DeployedTexture Skin_Gun_vector
+Icon vectorTD
+
+//Damage
+Damage 3.5
+Damage10m 2.8
+Damage100m 0.88
+HeadshotDamage 4.2
+HeadshotDamage10m 3.36
+HeadshotDamage100m 1.05
+
+Spread 8
+
+Recoil .25
+RecoilYaw .15
+
+//Ammo
+Ammo smgmag
+NumBullets 1
+BulletSpeed 40
+
+
+//Attachments
+AllowAllAttachments False
+AllowBarrelAttachments False
+AllowScopeAttachments True
+AllowStockAttachments False
+AllowGripAttachments True
+AllowAttachments verticalgrip stubbygrip eotech docter jh406 rx01 trubrite rkobra pkas ta11c
+
+
+//Weapon Settings
+CanForceReload True
+CanShootUnderwater True
+
+
+Mode FULLAUTO
+OneHanded False
+
+ReloadTime 60
+SecondaryFunction ADS_ZOOM
+ShootDelay 1
+UsableByMechas True
+UsableByPlayers True
+MoveSpeedModifier .925
+Icon vectorTD
+
+//Shield
+
+
+//Zoom
+
+
+//Melee
+
+
+//Deployable Settings
+
+
+//Sound
+ShootSound SMGmpackVECTORShoot
+ReloadSound Reload.mpack.e.55
+//------------------------------------------------

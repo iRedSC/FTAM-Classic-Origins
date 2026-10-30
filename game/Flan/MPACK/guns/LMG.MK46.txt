@@ -1,0 +1,98 @@
+﻿//---Standard Gun Config for Flans Mod------------
+//Created by Minecraft-SMP Toolbox 2.1.4.2
+
+
+//---Standard-------------------------------------
+// Naming
+Name MK46
+ShortName mk46
+
+Description _&8[&6Legendary&8]
+
+// Visuals
+Model mpack.mk46
+ModelScale 0.46
+Icon Mk48TD
+
+
+// Recipe
+
+
+//Misc
+
+//------------------------------------------------
+
+//---Gun------------------------------------------
+//Gun Type
+
+
+//Visual
+Model mpack.mk46
+ModelScale 0.46
+Texture Skin_Gun_mk46
+DeployedModel mk46
+DeployedTexture Skin_Gun_mk46
+Icon Mk48TD
+
+//Damage
+Damage 6
+Damage10m 6
+Damage100m 4.5
+HeadshotDamage 7.2
+HeadshotDamage10m 7.2
+HeadshotDamage100m 5.4
+
+Recoil .75
+RecoilYaw .35
+
+Spread .75
+
+
+//Ammo
+Ammo lmgbelt
+NumBullets 1
+BulletSpeed 40
+
+
+//Attachments
+AllowAllAttachments False
+AllowBarrelAttachments True
+AllowScopeAttachments True
+AllowStockAttachments False
+AllowGripAttachments True
+AllowAttachments verticalgrip stubbygrip eotech jh406 rx01 trubrite docter rkobra pkas ta11c
+
+//Weapon Settings
+CanForceReload True
+CanShootUnderwater True
+ConsumeGunOnUse False
+
+
+Mode FULLAUTO
+MoveSpeedModifier .85
+OneHanded False
+
+ReloadTime 200
+SecondaryFunction ADS_ZOOM
+ShootDelay 2
+UsableByMechas False
+UsableByPlayers True
+Icon Mk48TD
+
+//Shield
+
+
+//Zoom
+
+
+//Melee
+
+
+//Deployable Settings
+
+
+//Sound
+ShootSound LMGmpackMK46Shoot
+ReloadSound Reload.mpack.d.140
+
+//------------------------------------------------

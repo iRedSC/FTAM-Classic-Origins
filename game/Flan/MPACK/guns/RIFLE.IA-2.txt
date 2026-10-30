@@ -1,0 +1,99 @@
+﻿//---Standard Gun Config for Flans Mod------------
+//Created by Minecraft-SMP Toolbox 2.2.2.4
+
+
+//---Standard-------------------------------------
+// Naming
+Name Imbel IA-2
+ShortName ia2
+ItemID Your ID
+
+Description _&8[&5Epic&8]
+
+// Visuals
+Model mpack.ia2
+ModelScale 0.12
+Icon ia2TD
+
+
+// Recipe
+
+
+//Misc
+
+//------------------------------------------------
+
+//---Gun------------------------------------------
+//Gun Type
+
+
+//Visual
+Model mpack.ia2
+ModelScale 0.12
+Texture Skin_Gun_ia2
+DeployedModel mpack.ia2
+DeployedTexture Skin_Gun_ia2
+Icon ia2TD
+
+//Damage
+Damage 5.0
+Damage10m 5
+Damage100m 3.75
+HeadshotDamage 6.5
+HeadshotDamage10m 6.5
+HeadshotDamage100m 4.88
+
+Recoil 1.5
+RecoilYaw .35
+
+Spread .75
+
+
+//Ammo
+Ammo armag
+NumBullets 1
+BulletSpeed 40
+
+
+//Attachments
+AllowAllAttachments False
+AllowAttachments verticalgrip stubbygrip eotech jh406 rx01 rkobra trubrite docter pkas ta11c riflesup
+AllowBarrelAttachments True
+AllowScopeAttachments True
+AllowStockAttachments False
+AllowGripAttachments True
+
+
+//Weapon Settings
+CanForceReload True
+CanShootUnderwater True
+ConsumeGunOnUse False
+
+Mode FULLAUTO
+MoveSpeedModifier .9
+OneHanded False
+
+ReloadTime 100
+SecondaryFunction ADS_ZOOM
+ShootDelay 2
+UsableByMechas False
+UsableByPlayers True
+Icon ia2TD
+
+//Shield
+
+
+//Zoom
+
+
+//Melee
+
+
+//Deployable Settings
+
+
+//Sound
+ShootSound ARmpackHK416Shoot
+ReloadSound Reload.mpack.e.50
+
+//------------------------------------------------

@@ -1,0 +1,16 @@
+Name Wingbreaker Head
+ShortName wingbreakerhead
+Icon ambirconWingbreakerHead
+Colour 255 255 255
+
+Type Head
+Model dwdefence.WingbreakerHead
+Defence 4
+ArmourTexture Ambircon_WingbreakerUniform
+MoveSpeedModifier 1.0
+
+Description _&dTier VI_&8[&dWingbreaker &7Set&8]
+
+ModelScale 0.5
+   
+

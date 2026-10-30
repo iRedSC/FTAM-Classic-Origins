@@ -1,0 +1,99 @@
+﻿//---Standard Gun Config for Flans Mod------------
+//Created by Minecraft-SMP Toolbox 2.1.4.2
+
+
+//---Standard-------------------------------------
+// Naming
+Name APC-9
+ShortName acp9
+ItemID Your ID
+
+Description _&8[&aUncommon&8]
+
+// Visuals
+Model mpack.acp9
+ModelScale 0.07
+Icon Acp9TD
+
+
+// Recipe
+
+
+//Misc
+
+//------------------------------------------------
+
+//---Gun------------------------------------------
+//Gun Type
+
+
+//Visual
+Model mpack.acp9
+ModelScale 0.07
+Texture Skin_Gun_acp9
+DeployedModel mpack.acp9
+DeployedTexture Skin_Gun_acp9
+Icon Acp9TD
+
+//Damage
+Damage 3.75
+Damage10m 3
+Damage100m 0.94
+HeadshotDamage 4.09
+HeadshotDamage10m 3.27
+HeadshotDamage100m 1.02
+
+Spread 4
+
+Recoil 2
+RecoilYaw 2
+
+
+//Ammo
+Ammo smgmag
+NumBullets 1
+BulletSpeed 40
+
+
+//Attachments
+AllowAllAttachments False
+AllowAttachments mpackverticalgrip mpack.stubby mpackrvg mpack.eotech mpack.docter mpack.jh406 mpack.rx01 mpackafg2tan mpackafg2gray mpackafg2black mpack.vcog mpack.mark4mrtm1 mpack.trubrite mpack.cobrasup mpack.rkobra mpack.pkas mpack.ta11c mpack.cobrasup mpack.harisbipod mpack.compm4 mpack.microt1 mpack.rsrmr mpack.rmr
+AllowBarrelAttachments True
+AllowScopeAttachments True
+AllowStockAttachments True
+AllowGripAttachments True
+
+
+//Weapon Settings
+CanForceReload True
+CanShootUnderwater True
+ConsumeGunOnUse False
+
+Mode FULLAUTO
+MoveSpeedModifier .95
+OneHanded False
+
+ReloadTime 80
+SecondaryFunction ADS_ZOOM
+ShootDelay 2
+UsableByMechas False
+UsableByPlayers True
+Icon Acp9TD
+
+//Shield
+
+
+//Zoom
+
+
+//Melee
+
+
+//Deployable Settings
+
+
+//Sound
+ShootSound ARmpackAKMShoot
+ReloadSound Reload.mpack.c.55
+
+//------------------------------------------------

@@ -1,0 +1,13 @@
+Name Wingbreaker Boots
+ShortName wingbreakerboots
+Icon ambirconWingbreakerBoots
+Colour 255 255 255
+Type Boots
+Model dwdefence.WingbreakerPonyBoots
+Defence 5
+ArmourTexture Ambircon_WingbreakerUniform
+MoveSpeedModifier 1.1
+
+Description _&dTier VI_&8[&dWingbreaker &7Set&8]
+
+ModelScale 0.5

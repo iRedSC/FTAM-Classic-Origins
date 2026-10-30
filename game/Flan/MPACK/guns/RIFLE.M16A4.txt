@@ -1,0 +1,98 @@
+﻿//---Standard Gun Config for Flans Mod------------
+//Created by Minecraft-SMP Toolbox 2.1.4.2
+
+
+//---Standard-------------------------------------
+// Naming
+Name M4A1
+ShortName m4a1
+
+Description _&8[&aUncommon&8]
+
+// Visuals
+Model mpack.m164
+ModelScale 0.08
+Icon M16A4_TD
+
+
+// Recipe
+
+
+//Misc
+
+//------------------------------------------------
+
+//---Gun------------------------------------------
+//Gun Type
+
+
+//Visual
+Model mpack.m164
+ModelScale 0.08
+Texture Skin_Gun_m164
+DeployedModel m164
+DeployedTexture Skin_Gun_m164
+Icon M16A4_TD
+
+//Damage
+Damage 4
+Damage10m 4
+Damage100m 3
+HeadshotDamage 5.2
+HeadshotDamage10m 5.2
+HeadshotDamage100m 3.9
+
+Recoil 1.0
+RecoilYaw .25
+
+Spread 1
+
+//Ammo
+Ammo armag
+NumBullets 1
+BulletSpeed 40
+
+
+//Attachments
+AllowAllAttachments False
+AllowAttachments verticalgrip stubbygrip eotech jh406 rx01 rkobra trubrite docter pkas ta11c riflesup
+AllowBarrelAttachments True
+AllowScopeAttachments True
+AllowStockAttachments False
+AllowGripAttachments True
+
+
+//Weapon Settings
+CanForceReload True
+CanShootUnderwater False
+ConsumeGunOnUse False
+
+
+Mode FULLAUTO
+OneHanded False
+
+ReloadTime 60
+SecondaryFunction ADS_ZOOM
+ShootDelay 2
+UsableByMechas False
+UsableByPlayers True
+MoveSpeedModifier .9
+Icon M16A4_TD
+
+//Shield
+
+
+//Zoom
+
+
+//Melee
+
+
+//Deployable Settings
+
+
+//Sound
+ShootSound ARmpackM16Shoot
+ReloadSound Reload.mpack.g.65
+
+//------------------------------------------------

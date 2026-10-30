@@ -1,0 +1,102 @@
+//---Standard Gun Config for Flans Mod------------
+//Created by Minecraft-SMP Toolbox 2.1.2.7
+
+
+//---Standard-------------------------------------
+// Naming
+Name Remington 870
+ShortName remington870
+
+Description _&8[&5Epic&8]
+
+// Visuals
+Model mpack.remington870
+ModelScale 0.27
+Icon Remington870_TD
+
+
+// Recipe
+
+
+//Misc
+
+//Paintjob Settings
+//Format is "Paintjob iconName textureName requiredDyeAmount requiredDyeColour" Multiple colours may be listed in order, seperated by a space
+//Dye colours are "black", "red", "green", "brown", "blue", "purple", "cyan", "silver", "gray", "pink", "lime", "yellow", "lightBlue", "magenta", "orange", "white"
+
+Paintjob r870navy r870navy cyan 2 lightBlue 2 blue 2
+Paintjob r870desert r870desert orange 2 yellow 2 brown 2
+Paintjob r870snow r870snow white 4 silver 4
+Paintjob r870woodland r870woodland green 4 brown 4
+
+
+//------------------------------------------------
+
+//---Gun------------------------------------------
+//Gun Type
+
+
+//Visual
+Model mpack.remington870
+ModelScale 0.27
+Texture Skin_Gun_remington870
+DeployedModel remington870
+DeployedTexture Skin_Gun_remington870
+Icon Remington870_TD
+
+
+
+//Damage
+Damage 5.0
+Damage10m 2.5
+Damage100m -200
+HeadshotDamage 5.5
+HeadshotDamage10m 2.75
+HeadshotDamage100m -200
+
+Spread 13
+
+Recoil 10
+
+
+//Ammo
+Ammo 12gauge
+NumAmmoSlots 7
+NumAmmoItemsInGun 7
+LoadIntoGun 7
+NumBullets 6
+BulletSpeed 40
+
+
+//Attachments
+
+
+//Weapon Settings
+CanForceReload True
+ConsumeGunOnUse False
+
+
+Mode SEMIAUTO
+
+ReloadTime 120
+ShootDelay 20
+MoveSpeedModifier .90
+Icon Remington870_TD
+
+
+//Shield
+
+
+//Zoom
+
+
+//Melee
+
+
+//Deployable Settings
+
+
+//Sound
+ShootSound ShotgunmpackRemington870Shoot
+ReloadSound ReloadmpackShotgun7RDPump
+//------------------------------------------------
