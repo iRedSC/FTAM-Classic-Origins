@@ -1,0 +1,4 @@
+include file("default.recipes")
+
+# Chunk loading is Dimensional Anchors' job, one per faction (config/forgeChunkLoading.cfg).
+chunkloaderUpgrade = false
