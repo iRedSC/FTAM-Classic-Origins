@@ -4,5 +4,5 @@ ItemID 36822
 Icon mgc.iconhelmetmafia
 Colour 255 255 255
 Type Hat
-Defence 0.1
+Defence 1
 ArmourTexture mgc.armormafia

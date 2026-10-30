@@ -4,5 +4,5 @@ ItemID 36823
 Icon mgc.iconbodymafia
 Colour 255 255 255
 Type Chest
-Defence 0.1
+Defence 1
 ArmourTexture mgc.armormafia
