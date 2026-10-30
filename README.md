@@ -28,6 +28,8 @@ It pulls this repo, installs Forge into `server/` (or the folder you pass as the
 - `mods/client`: client only
 - `mods/server`: server only
 
+`mods/shared/CraftTweaker-IC2-stub.jar` holds one empty IndustrialCraft 2 class (`ic2.api.crops.CropCard`, source inside). CraftTweaker 3.4.8 references it from its built-in registry, and without it skips the whole registry, so every `<ore:...>` and `<liquid:...>` in the scripts fails. Remove it only alongside a CraftTweaker that doesn't need it, or with IC2 itself.
+
 ## Settings
 
 `game/` holds the pack's settings: mod configs, MineTweaker `scripts/`, ContentTweaker `contentScripts/` and Flan's Mod content packs (`Flan/`: MPACK guns, GREYLIGHT armor and injectors). `play.cmd` and the server script copy each file in it over the game folder's copy every time they run, so edit them here, not in the instance or server. Files `game/` doesn't have, such as your own options, are left alone.
