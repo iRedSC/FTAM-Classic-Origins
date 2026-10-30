@@ -1,5 +1,7 @@
-# Syncs the FTAM Nostalgia Prism instance with this repo and starts the game.
-# Runs on Windows PowerShell 5.1 and PowerShell 7.
+# Syncs the FTAM Nostalgia Prism instance (or CurseForge profile, see curseforge.ps1) with this repo and starts the game.
+# Runs on Windows PowerShell 5.1 and PowerShell 7. `play.cmd curseforge` or `play.cmd prism` picks the launcher.
+
+param([ValidateSet('prism', 'curseforge')][string]$Launcher)
 
 $ErrorActionPreference = 'Stop'
 
@@ -35,7 +37,7 @@ function Find-Prism {
     }
     $cmd = Get-Command prismlauncher -ErrorAction SilentlyContinue
     if ($cmd) { return $cmd.Source }
-    Fail 'Prism Launcher not found. Install it from https://prismlauncher.org and sign in once.'
+    return $null
 }
 
 function Find-InstancesDir([string]$PrismExe) {
@@ -172,19 +174,32 @@ function Sync-Game([string]$GameDir) {
     Write-Host "Settings: $count updated from game\"
 }
 
-$prism = Find-Prism
-$instanceDir = Join-Path (Find-InstancesDir $prism) $InstanceId
-
 # A pull that changed this script reruns it, so the new version does this run's work.
 if (-not $env:FTAM_PULLED) {
     $before = (Get-FileHash -LiteralPath $PSCommandPath).Hash
     Update-Repo
     if ((Get-FileHash -LiteralPath $PSCommandPath).Hash -ne $before) {
         $env:FTAM_PULLED = '1'
-        & $PSCommandPath
+        & $PSCommandPath @PSBoundParameters
         exit $LASTEXITCODE
     }
 }
+
+# Keep the launcher that already has the pack. A new player gets Prism if it's installed, else CurseForge.
+. "$PSScriptRoot\curseforge.ps1"
+$prism = Find-Prism
+$instanceDir = if ($prism) { Join-Path (Find-InstancesDir $prism) $InstanceId }
+if (-not $Launcher) {
+    $Launcher = if ($prism -and ((Test-Path -LiteralPath $instanceDir) -or -not (Find-CurseForgeProfile))) { 'prism' } else { 'curseforge' }
+}
+if ($Launcher -eq 'curseforge') {
+    Start-CurseForge
+    exit 0
+}
+if (-not $prism) {
+    Fail 'Prism Launcher not found. Install it from https://prismlauncher.org and sign in once.'
+}
+
 Write-InstanceFiles $instanceDir
 Sync-Mods (Join-Path (Get-GameDir $instanceDir) 'mods')
 Sync-Game (Get-GameDir $instanceDir)
