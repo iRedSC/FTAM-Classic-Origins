@@ -175,7 +175,16 @@ function Sync-Game([string]$GameDir) {
 $prism = Find-Prism
 $instanceDir = Join-Path (Find-InstancesDir $prism) $InstanceId
 
-Update-Repo
+# A pull that changed this script reruns it, so the new version does this run's work.
+if (-not $env:FTAM_PULLED) {
+    $before = (Get-FileHash -LiteralPath $PSCommandPath).Hash
+    Update-Repo
+    if ((Get-FileHash -LiteralPath $PSCommandPath).Hash -ne $before) {
+        $env:FTAM_PULLED = '1'
+        & $PSCommandPath
+        exit $LASTEXITCODE
+    }
+}
 Write-InstanceFiles $instanceDir
 Sync-Mods (Join-Path (Get-GameDir $instanceDir) 'mods')
 Sync-Game (Get-GameDir $instanceDir)
