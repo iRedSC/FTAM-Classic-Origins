@@ -1,5 +1,3 @@
-recipes.remove(<minecraft:brewing_stand>);
-<minecraft:brewing_stand>.addTooltip("§4Banned - Potions are disabled.");
 recipes.remove(<ThermalFoundation:armor.legsLead>);
 <ThermalFoundation:armor.legsLead>.addTooltip("§4Banned - Use Flans Mod Armor");
 recipes.remove(<ThermalFoundation:armor.plateLead>);
