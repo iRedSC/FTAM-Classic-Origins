@@ -1,0 +1,74 @@
+{
+  "_name": "Zombie",
+  "drops": [
+    {
+      "_comment": "removing all amror drops from zombies",
+      "function": "all",
+      "functions": [
+        {
+          "function": "remove",
+          "id": "golden_helmet"
+        },
+        {
+          "function": "remove",
+          "id": "golden_chestplate"
+        },
+        {
+          "function": "remove",
+          "id": "golden_leggings"
+        },
+        {
+          "function": "remove",
+          "id": "golden_boots"
+        },
+        {
+          "function": "remove",
+          "id": "chainmail_helmet"
+        },
+        {
+          "function": "remove",
+          "id": "chainmail_chestplate"
+        },
+        {
+          "function": "remove",
+          "id": "chainmail_leggings"
+        },
+        {
+          "function": "remove",
+          "id": "chainmail_boots"
+        },
+        {
+          "function": "remove",
+          "id": "leather_helmet"
+        },
+        {
+          "function": "remove",
+          "id": "leather_chestplate"
+        },
+        {
+          "function": "remove",
+          "id": "leather_leggings"
+        },
+        {
+          "function": "remove",
+          "id": "leather_boots"
+        },
+        {
+          "function": "remove",
+          "id": "iron_sword"
+        },
+        {
+          "function": "remove",
+          "id": "iron_shovel"
+        },
+        {
+          "function": "add",
+          "id": "rotten_flesh",
+          "count": .1~2.5
+        }
+      ]
+    }
+  ],
+  "pre_stats": [],
+  "stats": []
+}

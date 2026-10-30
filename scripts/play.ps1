@@ -149,12 +149,36 @@ function Sync-Mods([string]$ModsDir) {
     Write-Host ("Mods: {0} total, {1} added, {2} updated, {3} removed" -f $wanted.Count, $added, $updated, $removed)
 }
 
+function Sync-Game([string]$GameDir) {
+    # game\ holds the pack's settings: mod configs and MineTweaker scripts. Each file in it replaces the
+    # instance's copy on every launch; files it doesn't have, such as your own options, are left alone.
+    $source = (Resolve-Path -LiteralPath "$Repo\game").Path
+    $count = 0
+    try {
+        foreach ($file in Get-ChildItem -File -Recurse -LiteralPath $source) {
+            $target = Join-Path $GameDir $file.FullName.Substring($source.Length + 1)
+            if ((Test-Path -LiteralPath $target) -and
+                (Get-FileHash -LiteralPath $file.FullName).Hash -eq (Get-FileHash -LiteralPath $target).Hash) {
+                continue
+            }
+            New-Item -ItemType Directory -Force -Path (Split-Path -Parent $target) | Out-Null
+            Copy-Item -LiteralPath $file.FullName -Destination $target -Force
+            $count++
+        }
+    }
+    catch [System.IO.IOException] {
+        Fail "Couldn't change the game's settings: $($_.Exception.Message)`nClose Minecraft and run this again."
+    }
+    Write-Host "Settings: $count updated from game\"
+}
+
 $prism = Find-Prism
 $instanceDir = Join-Path (Find-InstancesDir $prism) $InstanceId
 
 Update-Repo
 Write-InstanceFiles $instanceDir
 Sync-Mods (Join-Path (Get-GameDir $instanceDir) 'mods')
+Sync-Game (Get-GameDir $instanceDir)
 
 if (Get-Process -Name prismlauncher -ErrorAction SilentlyContinue) {
     # A running Prism only rescans when the instances folder itself changes, so poke it

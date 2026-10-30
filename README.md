@@ -23,3 +23,7 @@ It pulls this repo, installs Forge into `server/` (or the folder you pass as the
 - `mods/shared`: client and server
 - `mods/client`: client only
 - `mods/server`: server only
+
+## Settings
+
+`game/` holds the pack's settings: mod configs, MineTweaker `scripts/` and ContentTweaker `contentScripts/`. `play.cmd` and the server script copy each file in it over the game folder's copy every time they run, so edit them here, not in the instance or server. Files `game/` doesn't have, such as your own options, are left alone.
