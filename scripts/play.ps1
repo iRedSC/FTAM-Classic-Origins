@@ -1,4 +1,4 @@
-# Syncs the FTAM Nostalgia Prism instance (or CurseForge profile, see curseforge.ps1) with this repo and starts the game.
+# Syncs the FTAM Classic: Origins Prism instance (or CurseForge profile, see curseforge.ps1) with this repo and starts the game.
 # Runs on Windows PowerShell 5.1 and PowerShell 7. `play.cmd curseforge` or `play.cmd prism` picks the launcher.
 # -SyncOnly is Prism's pre-launch command: it pulls and syncs the instance Prism is about to start, without launching.
 
@@ -6,8 +6,12 @@ param([ValidateSet('prism', 'curseforge')][string]$Launcher, [switch]$SyncOnly)
 
 $ErrorActionPreference = 'Stop'
 
+# The instance's folder, which Prism launches it by. It predates the rename from FTAM Nostalgia and stays,
+# so players keep their instance and everything in it.
 $InstanceId    = 'FTAM-Nostalgia'
-$InstanceName  = 'FTAM Nostalgia'
+$InstanceName  = 'FTAM Classic: Origins'
+# Instances and CurseForge profiles made before the rename still carry this name.
+$OldName       = 'FTAM Nostalgia'
 $Minecraft     = '1.7.10'
 $Forge         = '10.13.4.1614'
 $Lwjgl         = '2.9.4-nightly-20150209'
@@ -24,6 +28,7 @@ if ($LASTEXITCODE -ne 0 -or $Branch -eq 'HEAD') {
 if ($Branch -ne 'main') {
     $InstanceId   = "$InstanceId-$Branch"
     $InstanceName = "$InstanceName ($Branch)"
+    $OldName      = "$OldName ($Branch)"
 }
 
 function Fail([string]$Message) {
@@ -70,6 +75,19 @@ function Update-Repo {
     Fail 'git pull failed. Resolve it in the repo, then run this again.'
 }
 
+function Rename-OldInstance([string]$Dir) {
+    # An instance still on the old name gets the new one. A name the player chose is left alone.
+    # A running Prism keeps showing the old name until it restarts.
+    $cfg = "$Dir\instance.cfg"
+    if (-not (Test-Path -LiteralPath $cfg)) { return }
+    $text = [System.IO.File]::ReadAllText($cfg)
+    $pattern = '(?m)^name="?' + [regex]::Escape($OldName) + '"?(\r?)$'
+    if (-not [regex]::IsMatch($text, $pattern)) { return }
+    $text = [regex]::Replace($text, $pattern, [System.Text.RegularExpressions.MatchEvaluator]{ param($m) "name=$InstanceName" + $m.Groups[1].Value })
+    Write-Utf8 $cfg $text
+    Write-Host "Renamed Prism instance '$OldName' to '$InstanceName'" -ForegroundColor Green
+}
+
 function Write-InstanceFiles([string]$Dir) {
     New-Item -ItemType Directory -Force -Path $Dir | Out-Null
 
@@ -85,6 +103,7 @@ function Write-InstanceFiles([string]$Dir) {
     Write-Utf8 "$Dir\mmc-pack.json" ($pack | ConvertTo-Json -Depth 5)
 
     # Settings are only seeded once so changes made in Prism stick.
+    Rename-OldInstance $Dir
     $cfg = "$Dir\instance.cfg"
     if (-not (Test-Path $cfg)) {
         Write-Utf8 $cfg ((@(
@@ -225,6 +244,7 @@ if (-not $env:FTAM_PULLED) {
 }
 
 if ($SyncOnly) {
+    Rename-OldInstance $env:INST_DIR
     Sync-Mods (Join-Path (Get-GameDir $env:INST_DIR) 'mods')
     Sync-Game (Get-GameDir $env:INST_DIR)
     Write-Host 'Pack ready.' -ForegroundColor Green
