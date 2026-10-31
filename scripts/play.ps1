@@ -1,11 +1,39 @@
-# Syncs the FTAM Classic: Origins Prism instance (or CurseForge profile, see curseforge.ps1) with this repo and starts the game.
-# Runs on Windows PowerShell 5.1 and PowerShell 7. `play.cmd curseforge` or `play.cmd prism` picks the launcher.
-# -SyncOnly is Prism's pre-launch command: it pulls and syncs the instance Prism is about to start, without launching.
+# Syncs the FTAM Classic: Origins Prism instance (or CurseForge profile, see curseforge.ps1) with a branch of this repo
+# and starts the game. Runs on Windows PowerShell 5.1 and PowerShell 7.
+# `play.cmd curseforge` or `play.cmd prism` picks the launcher; `-Branch dev` plays that branch (default main).
+# -SyncOnly is Prism's pre-launch command: it updates and syncs the instance Prism is about to start, without launching.
 # -SyncProfile <folder> is the same for CurseForge, run by ftam-sync.jar when Play starts that profile.
+#
+# The pack always comes from GitHub's copy of the branch, kept in .channels\<branch>, a checkout only this script
+# touches. Which branch this checkout is on, and any edits in it, never change what a player gets.
 
-param([ValidateSet('prism', 'curseforge')][string]$Launcher, [switch]$SyncOnly, [string]$SyncProfile)
+param([ValidateSet('prism', 'curseforge')][string]$Launcher, [string]$Branch, [switch]$SyncOnly, [string]$SyncProfile,
+      # Set when this runs from the branch's freshly updated .channels copy, which does the actual work.
+      [switch]$Ready)
 
 $ErrorActionPreference = 'Stop'
+
+function Fail([string]$Message) {
+    Write-Host $Message -ForegroundColor Red
+    exit 1
+}
+
+function Resolve-Branch {
+    if ($Branch) { return $Branch }
+    # Hooks made before -Branch existed: the instance or profile they start says which branch it plays.
+    if ($SyncOnly) {
+        if ($env:INST_ID -match '^FTAM-Nostalgia-(.+)$') { return $Matches[1] }
+        return 'main'
+    }
+    if ($SyncProfile) {
+        $file = Join-Path $SyncProfile 'minecraftinstance.json'
+        if (Test-Path -LiteralPath $file) {
+            try { $name = ([System.IO.File]::ReadAllText($file) | ConvertFrom-Json).manifest.name } catch { $name = $null }
+            if ($name -match '\(([^()]+)\)$') { return $Matches[1] }
+        }
+    }
+    return 'main'
+}
 
 # The instance's folder, which Prism launches it by. It predates the rename from FTAM Nostalgia and stays,
 # so players keep their instance and everything in it.
@@ -18,23 +46,20 @@ $Forge         = '10.13.4.1614'
 $Lwjgl         = '2.9.4-nightly-20150209'
 $MaxMemoryMb   = 6144
 
+# This script's checkout: the player's own, or with -Ready, the branch's .channels copy, which the pack is read from.
 $Repo = Split-Path -Parent $PSScriptRoot
+# The player's checkout, which holds the .channels folder whichever copy this runs from.
+$Base = Split-Path -Parent (git -C $Repo rev-parse --path-format=absolute --git-common-dir)
+if ($LASTEXITCODE -ne 0) { Fail "$Repo isn't a git checkout of the pack. Download it again." }
+
+$Branch = Resolve-Branch
+$Channel = Join-Path $Base ('.channels\' + ($Branch -replace '[\\/:*?"<>|]', '-'))
 
 # Any branch but main (dev builds) gets its own instance, so it never touches the players' one.
-$Branch = git -C $Repo rev-parse --abbrev-ref HEAD
-if ($LASTEXITCODE -ne 0 -or $Branch -eq 'HEAD') {
-    Write-Host 'Check out main or a pack branch before starting Minecraft.' -ForegroundColor Red
-    exit 1
-}
 if ($Branch -ne 'main') {
     $InstanceId   = "$InstanceId-$Branch"
     $InstanceName = "$InstanceName ($Branch)"
     $OldName      = "$OldName ($Branch)"
-}
-
-function Fail([string]$Message) {
-    Write-Host $Message -ForegroundColor Red
-    exit 1
 }
 
 function Find-Prism {
@@ -65,15 +90,26 @@ function Find-InstancesDir([string]$PrismExe) {
     return Join-Path $dataDir $instanceDir
 }
 
-function Update-Repo {
-    Write-Host 'Pulling latest pack...' -ForegroundColor Cyan
-    # server.cmd pulls the same repo, so a run started alongside it can briefly hit git's lock.
+function Update-Channel {
+    Write-Host "Updating the $Branch pack..." -ForegroundColor Cyan
+    # server.cmd fetches into the same repo, so a run started alongside it can briefly hit git's lock.
+    $ref = "refs/remotes/origin/$Branch"
     foreach ($attempt in 1..5) {
-        git -C $Repo pull --ff-only
-        if ($LASTEXITCODE -eq 0) { return }
+        git -C $Base fetch -q origin "+refs/heads/${Branch}:$ref"
+        if ($LASTEXITCODE -eq 0) { break }
+        if ($attempt -eq 5) { Fail "Couldn't get the '$Branch' pack from GitHub. Check your connection and that the branch exists, then run this again." }
         Start-Sleep -Seconds 2
     }
-    Fail 'git pull failed. Resolve it in the repo, then run this again.'
+    # The channel is this script's alone, so it's reset to GitHub's copy rather than merged.
+    if (Test-Path -LiteralPath "$Channel\.git") {
+        git -C $Channel reset -q --hard $ref
+        if ($LASTEXITCODE -ne 0) { Fail "Couldn't update the '$Branch' pack in $Channel. Close Minecraft and run this again." }
+        return
+    }
+    git -C $Base worktree prune
+    if (Test-Path -LiteralPath $Channel) { Remove-Item -Recurse -Force -LiteralPath $Channel }
+    git -C $Base worktree add -q --detach $Channel $ref
+    if ($LASTEXITCODE -ne 0) { Fail "Couldn't set up the '$Branch' pack in $Channel." }
 }
 
 function Rename-OldInstance([string]$Dir) {
@@ -121,8 +157,8 @@ function Write-InstanceFiles([string]$Dir) {
         New-DesktopShortcut $prism
     }
 
-    # Prism's Play runs this script with -SyncOnly first, so launching from Prism also updates the pack.
-    $command = 'powershell.exe -NoProfile -ExecutionPolicy Bypass -File "{0}" -SyncOnly' -f $PSCommandPath
+    # Prism's Play runs the branch's copy of this script with -SyncOnly first, so launching from Prism also updates the pack.
+    $command = 'powershell.exe -NoProfile -ExecutionPolicy Bypass -File "{0}" -SyncOnly -Branch {1}' -f $PSCommandPath, $Branch
     # Qt's INI format needs a quoted value with escaped inner quotes. Raw quotes
     # are parsed as INI syntax and can swallow the space before -SyncOnly.
     $settings = [ordered]@{
@@ -149,8 +185,9 @@ function New-DesktopShortcut([string]$Icon) {
     $path = Join-Path ([Environment]::GetFolderPath('Desktop')) "$name.lnk"
     if ($env:FTAM_NO_SHORTCUT -or (Test-Path -LiteralPath $path)) { return }
     $shortcut = (New-Object -ComObject WScript.Shell).CreateShortcut($path)
-    $shortcut.TargetPath = "$Repo\play.cmd"
-    $shortcut.WorkingDirectory = $Repo
+    $shortcut.TargetPath = "$Base\play.cmd"
+    $shortcut.Arguments = "-Branch $Branch"
+    $shortcut.WorkingDirectory = $Base
     if ($Icon) { $shortcut.IconLocation = "$Icon,0" }
     $shortcut.Save()
     Write-Host "Added '$name' to your desktop: it updates the pack and starts the game." -ForegroundColor Green
@@ -242,20 +279,19 @@ function Sync-Game([string]$GameDir) {
     Write-Host "Settings: $count updated from game\"
 }
 
-# Prism names the instance it's launching. Refuse before pulling if this checkout is on another instance's branch.
+# Prism names the instance it's launching. Refuse before updating if this hook is for another instance's branch.
 if ($SyncOnly -and $env:INST_ID -ne $InstanceId) {
-    Fail "This checkout is on '$Branch', which plays in '$InstanceName'. Switch the repo to this instance's branch, or play that instance."
+    Fail "This instance's hook plays the '$Branch' pack, which belongs to '$InstanceName'. Run play.cmd -Branch <this instance's branch> once to fix it."
 }
 
-# A pull that changed this script reruns it, so the new version does this run's work.
-if (-not $env:FTAM_PULLED) {
-    $before = Get-Hash $PSCommandPath
-    Update-Repo
-    if ((Get-Hash $PSCommandPath) -ne $before) {
-        $env:FTAM_PULLED = '1'
-        & $PSCommandPath @PSBoundParameters
-        exit $LASTEXITCODE
-    }
+# The branch's updated copy of this script does the work, so it always matches the pack it syncs.
+if (-not $Ready) {
+    Update-Channel
+    $forward = @{} + $PSBoundParameters
+    $forward.Branch = $Branch
+    $forward.Ready = $true
+    & "$Channel\scripts\play.ps1" @forward
+    exit $LASTEXITCODE
 }
 
 if ($SyncOnly) {
