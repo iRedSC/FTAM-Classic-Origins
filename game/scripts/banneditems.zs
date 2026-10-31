@@ -433,7 +433,3 @@ mods.nei.NEI.hide(<minecraft:command_block_minecart>);
 recipes.remove(<minecraft:golden_apple>);
 <minecraft:golden_apple>.addTooltip("§4Banned");
 mods.nei.NEI.hide(<minecraft:golden_apple>);
-
-recipes.remove(<minecraft:potion>);
-<minecraft:potion>.addTooltip("§4Banned");
-mods.nei.NEI.hide(<minecraft:potion>);
