@@ -52,37 +52,19 @@
 <openmodularturrets:hardWallTierThree>.addTooltip("§6§l* §7Takes 45 TNT shots to destroy.");
 <openmodularturrets:hardWallTierFour>.addTooltip("§6§l* §7Takes 55 TNT shots to destroy.");
 <openmodularturrets:hardWallTierFive>.addTooltip("§6§l* §7Takes 80 TNT shots to destroy.");
-<EnderIO:blockReinforcedObsidian>.addTooltip("§6§l* §7Takes 90 TNT shots to destroy.");
 <EnderIO:blockReinforcedObsidian>.addTooltip("§6§l* §7Immune to the Wither Boss.");
 
-<REBR:tile.forstess_block>.addTooltip("§6§l* §7This cannot be destroyed with TNT, you must use Dynamite or C4 to break it.");
-<REBR:tile.forstess_block>.addTooltip("§6§l- §7Requires x5 Dynamite §7or");
-<REBR:tile.forstess_block>.addTooltip("§6§l- §7Requires x2 Dynamite Package §7or");
-<REBR:tile.forstess_block>.addTooltip("§6§l- §7Requires x1 C4 to break it.");
 
-<REBR:tile.forstess_blockL2>.addTooltip("§6§l* §7This cannot be destroyed with TNT, you must use Dynamite or C4 to break it.");
-<REBR:tile.forstess_blockL2>.addTooltip("§6§l- §7Requires x8 Dynamite §7or");
-<REBR:tile.forstess_blockL2>.addTooltip("§6§l- §7Requires x4 Dynamite Package §7or");
-<REBR:tile.forstess_blockL2>.addTooltip("§6§l- §7Requires x2 C4 to break it.");
 
-<REBR:tile.forstess_blockL3>.addTooltip("§6§l* §7This cannot be destroyed with TNT, you must use Dynamite or C4 to break.");
-<REBR:tile.forstess_blockL3>.addTooltip("§6§l- §7Requires x12 Dynamite §7or");
-<REBR:tile.forstess_blockL3>.addTooltip("§6§l- §7Requires x6 Dynamite Package §7or");
-<REBR:tile.forstess_blockL3>.addTooltip("§6§l- §7Requires x3 C4 to break it.");
 
 <minecraft:potato>.addTooltip("§6§l* §7Used to check durability of protection blocks like Obsidian or Hard Wall.");
 
-<REBR:potassium_nitrateOre>.addTooltip("§6§l* §7This is a key component in making TNT, and can only be obtained from the PVP Mine.");
-<REBR:potassium_nitrate>.addTooltip("§6§l* §7This is a key component in making TNT, and can only be obtained from the PVP Mine.");
-<REBR:explosive>.addTooltip("§6§l* §7This is a key component any type of explosive.");
-<REBR:insulating_tape>.addTooltip("§6§l* §7This is a key component in making TNT, and can be found in bulk around the United Warehouse.");
-<REBR:lcd_display>.addTooltip("§6§l* §7This is a key component in making machines, and can be found around the United Warehouse.");
-<REBR:chip>.addTooltip("§6§l* §7This is a key component in making machines, and can be found around the United Warehouse.");
-<REBR:rope>.addTooltip("§6§l* §7This is a key component in making TNT, and can be found in bulk around the Warehouse.");
+<contenttweaker:insulating_tape>.addTooltip("§6§l* §7This is a key component in making TNT, and can be found in bulk around the United Warehouse.");
+<contenttweaker:lcd_display>.addTooltip("§6§l* §7This is a key component in making machines, and can be found around the United Warehouse.");
+<contenttweaker:chip>.addTooltip("§6§l* §7This is a key component in making machines, and can be found around the United Warehouse.");
+<contenttweaker:cloth>.addTooltip("§6§l* §7This is a key component in making TNT and clothing, and can be found around the United Warehouse.");
 
-<REBR:dynamite_stick>.addTooltip("§6§l* §7An essential item required for destroying special blocks.");
-<REBR:dpacket>.addTooltip("§6§l* §7An essential item required for destroying special blocks.");
-<REBR:c4>.addTooltip("§6§l* §7Required to blow into Bank Vault rooms during a Heist.");
+<contenttweaker:c4>.addTooltip("§6§l* §7Required to blow into Bank Vault rooms during a Heist.");
 
 <psychedelicraft:hop_cones>.addTooltip("§6§l* §7Can be sold at the Admin Shop.");
 <psychedelicraft:coffeaCherries>.addTooltip("§6§l* §7Can be sold at the Admin Shop.");
