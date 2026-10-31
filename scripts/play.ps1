@@ -1,8 +1,9 @@
 # Syncs the FTAM Classic: Origins Prism instance (or CurseForge profile, see curseforge.ps1) with this repo and starts the game.
 # Runs on Windows PowerShell 5.1 and PowerShell 7. `play.cmd curseforge` or `play.cmd prism` picks the launcher.
 # -SyncOnly is Prism's pre-launch command: it pulls and syncs the instance Prism is about to start, without launching.
+# -SyncProfile <folder> is the same for CurseForge, run by ftam-sync.jar when Play starts that profile.
 
-param([ValidateSet('prism', 'curseforge')][string]$Launcher, [switch]$SyncOnly)
+param([ValidateSet('prism', 'curseforge')][string]$Launcher, [switch]$SyncOnly, [string]$SyncProfile)
 
 $ErrorActionPreference = 'Stop'
 
@@ -117,6 +118,7 @@ function Write-InstanceFiles([string]$Dir) {
             'MinMemAlloc=1024'
         ) -join "`r`n") + "`r`n")
         Write-Host "Created Prism instance '$InstanceName'" -ForegroundColor Green
+        New-DesktopShortcut $prism
     }
 
     # Prism's Play runs this script with -SyncOnly first, so launching from Prism also updates the pack.
@@ -139,6 +141,19 @@ function Write-InstanceFiles([string]$Dir) {
         }
     }
     Write-Utf8 $cfg $text
+}
+
+function New-DesktopShortcut([string]$Icon) {
+    # Made once, when the pack is first set up, so a shortcut the player deleted stays deleted.
+    $name = ($InstanceName.Split([System.IO.Path]::GetInvalidFileNameChars()) -join '') -replace '\s+', ' '
+    $path = Join-Path ([Environment]::GetFolderPath('Desktop')) "$name.lnk"
+    if ($env:FTAM_NO_SHORTCUT -or (Test-Path -LiteralPath $path)) { return }
+    $shortcut = (New-Object -ComObject WScript.Shell).CreateShortcut($path)
+    $shortcut.TargetPath = "$Repo\play.cmd"
+    $shortcut.WorkingDirectory = $Repo
+    if ($Icon) { $shortcut.IconLocation = "$Icon,0" }
+    $shortcut.Save()
+    Write-Host "Added '$name' to your desktop: it updates the pack and starts the game." -ForegroundColor Green
 }
 
 function Write-Utf8([string]$Path, [string]$Text) {
@@ -251,8 +266,13 @@ if ($SyncOnly) {
     exit 0
 }
 
-# Keep the launcher that already has the pack. A new player gets Prism if it's installed, else CurseForge.
 . "$PSScriptRoot\curseforge.ps1"
+if ($SyncProfile) {
+    Sync-CurseForgeProfile $SyncProfile
+    exit 0
+}
+
+# Keep the launcher that already has the pack. A new player gets Prism if it's installed, else CurseForge.
 $prism = Find-Prism
 $instanceDir = if ($prism) { Join-Path (Find-InstancesDir $prism) $InstanceId }
 if (-not $Launcher) {
