@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Installs or updates an FTAM Nostalgia Forge server from this repo and starts it.
+# Installs or updates an FTAM Classic: Origins Forge server from this repo and starts it.
 # Runs on Linux and in Git Bash on Windows.
 #
 #   scripts/server.sh [server-dir]

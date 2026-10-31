@@ -22,13 +22,28 @@ function Find-CurseForgeProfile {
         $file = Join-Path $dir.FullName 'minecraftinstance.json'
         if (-not (Test-Path -LiteralPath $file)) { continue }
         $text = [System.IO.File]::ReadAllText($file)
-        if (-not $text.Contains($InstanceName)) { continue }
+        if (-not ($text.Contains($InstanceName) -or $text.Contains($OldName))) { continue }
         try { $info = $text | ConvertFrom-Json } catch { continue }
-        if ($info.manifest -and $info.manifest.name -eq $InstanceName) {
+        if ($info.manifest -and ($info.manifest.name -eq $InstanceName -or $info.manifest.name -eq $OldName)) {
             return [pscustomobject]@{ Dir = $dir.FullName; Info = $info }
         }
     }
     return $null
+}
+
+function Rename-OldProfile($Found) {
+    # A profile still on the old name gets the new one; a name the player chose is left alone.
+    # A running CurseForge would write its own copy back, so this waits for a run with it closed.
+    if ($Found.Info.name -ne $OldName) { return }
+    if (Get-Process -Name CurseForge -ErrorAction SilentlyContinue) { return }
+    $file = Join-Path $Found.Dir 'minecraftinstance.json'
+    # A text edit, so the rest of CurseForge's file stays exactly as it wrote it.
+    $pattern = '"name"(\s*):(\s*)"' + [regex]::Escape($OldName) + '"'
+    $text = [regex]::Replace([System.IO.File]::ReadAllText($file), $pattern,
+        [System.Text.RegularExpressions.MatchEvaluator]{ param($m) '"name"' + $m.Groups[1].Value + ':' + $m.Groups[2].Value + '"' + $InstanceName + '"' })
+    [System.IO.File]::WriteAllText($file, $text, (New-Object System.Text.UTF8Encoding $false))
+    $Found.Info.name = $InstanceName
+    Write-Host "Renamed CurseForge profile '$OldName' to '$InstanceName'" -ForegroundColor Green
 }
 
 function New-CurseForgeImport {
@@ -47,7 +62,9 @@ function New-CurseForgeImport {
         overrides = 'overrides'
     }
     # Only the profile: play.cmd copies the mods in once CurseForge has created it.
-    $zip = Join-Path $env:TEMP "$InstanceName.zip"
+    # Windows file names can't hold some characters a pack name can, such as the colon.
+    $fileName = ($InstanceName.Split([System.IO.Path]::GetInvalidFileNameChars()) -join '') -replace '\s+', ' '
+    $zip = Join-Path $env:TEMP "$fileName.zip"
     Add-Type -AssemblyName System.IO.Compression
     $stream = [System.IO.File]::Open($zip, [System.IO.FileMode]::Create)
     try {
@@ -86,6 +103,8 @@ function Start-CurseForge {
         }
         Write-Host "Found CurseForge profile '$($found.Info.name)'" -ForegroundColor Green
     }
+
+    Rename-OldProfile $found
 
     # The import pins the versions, so a pack that moved to new ones needs a fresh profile.
     $loader = $found.Info.baseModLoader
