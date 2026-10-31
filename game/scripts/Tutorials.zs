@@ -52,7 +52,6 @@
 <openmodularturrets:hardWallTierThree>.addTooltip("§6§l* §7Takes 45 TNT shots to destroy.");
 <openmodularturrets:hardWallTierFour>.addTooltip("§6§l* §7Takes 55 TNT shots to destroy.");
 <openmodularturrets:hardWallTierFive>.addTooltip("§6§l* §7Takes 80 TNT shots to destroy.");
-<EnderIO:blockReinforcedObsidian>.addTooltip("§6§l* §7Takes 90 TNT shots to destroy.");
 <EnderIO:blockReinforcedObsidian>.addTooltip("§6§l* §7Immune to the Wither Boss.");
 
 
