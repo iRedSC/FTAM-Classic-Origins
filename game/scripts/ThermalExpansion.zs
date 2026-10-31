@@ -4,13 +4,10 @@ mods.thermalexpansion.Smelter.addRecipe(3000, <psychedelicraft:driedTobacco> * 2
 
 mods.thermalexpansion.Smelter.addRecipe(3000, <minecraft:skull:1> * 64, <ThermalFoundation:material:76> * 64, <minecraft:nether_star>);
 
-mods.thermalexpansion.Smelter.addRecipe(4200, <REBR:sulfur_briquette> * 4, <REBR:powder_briquette> * 8, <REBR:explosive>);
 
-mods.thermalexpansion.Smelter.addRecipe(4200, <EnderIO:itemMaterial:2> * 8, <minecraft:gunpowder> * 64, <REBR:powder>);
-mods.thermalexpansion.Smelter.addRecipe(4200, <EnderIO:itemMaterial:2> * 8, <ThermalFoundation:material:16> * 64, <REBR:sulfur>);
-mods.thermalexpansion.Smelter.addRecipe(4200, <EnderIO:itemMaterial:2> * 8, <ThermalFoundation:material:17> * 64, <REBR:potassium_nitrate>);
-mods.thermalexpansion.Smelter.addRecipe(4200, <REBR:potassium_nitrate> * 1, <REBR:powder> * 8, <REBR:powder_briquette>);
-mods.thermalexpansion.Smelter.addRecipe(4200, <REBR:potassium_nitrate> * 1, <REBR:sulfur> * 8, <REBR:sulfur_briquette>);
+mods.thermalexpansion.Smelter.addRecipe(4200, <EnderIO:itemMaterial:2> * 8, <minecraft:gunpowder> * 64, <contenttweaker:industrial_powder>);
+mods.thermalexpansion.Smelter.addRecipe(4200, <EnderIO:itemMaterial:2> * 8, <ThermalFoundation:material:17> * 64, <contenttweaker:potassium_nitrate>);
+mods.thermalexpansion.Smelter.addRecipe(4200, <contenttweaker:potassium_nitrate> * 1, <contenttweaker:industrial_powder> * 8, <contenttweaker:powder_briquette>);
 
 mods.thermalexpansion.Smelter.addRecipe(6500, <psychedelicraft:cannabisLeaf> * 5, <ThermalExpansion:material:516> * 3, <psychedelicraft:driedCannabisLeaves>);
 mods.thermalexpansion.Smelter.addRecipe(6500, <psychedelicraft:cannabisBuds> * 5, <ThermalExpansion:material:516> * 3, <psychedelicraft:driedCannabisBuds>);
@@ -28,11 +25,9 @@ mods.thermalexpansion.Pulverizer.addRecipe(500, <minecraft:dye:3>, <harvestcraft
 mods.thermalexpansion.Pulverizer.addRecipe(30000, <Mekanism:Polyethene:2>, <MineFactoryReloaded:plastic.raw> * 5);
 mods.thermalexpansion.Pulverizer.removeRecipe(<minecraft:wool:*>);
 
-mods.thermalexpansion.Pulverizer.addRecipe(3000, <BiomesOPlenty:gems:7>, <REBR:sulfur> * 2, <REBR:sulfur>, 20);
 
-mods.thermalexpansion.Pulverizer.addRecipe(3000, <BiomesOPlenty:gems:4>, <REBR:potassium_nitrate> * 1, <REBR:potassium_nitrate>, 15);
+mods.thermalexpansion.Pulverizer.addRecipe(3000, <BiomesOPlenty:gems:4>, <contenttweaker:potassium_nitrate> * 1, <contenttweaker:potassium_nitrate>, 15);
 
 mods.thermalexpansion.Smelter.addRecipe(1000, <contenttweaker:clayandgravel> * 1, <MineFactoryReloaded:plastic.raw> * 1, <contenttweaker:polymer>);
 
-mods.thermalexpansion.Furnace.removeRecipe(<REBR:sulfur_ore>);
 mods.thermalexpansion.Furnace.removeRecipe(<roadstuff:itemBitumen>);

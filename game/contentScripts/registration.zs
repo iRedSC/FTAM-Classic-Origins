@@ -47,4 +47,13 @@ mods.content.Item.registerItem("Military Radio On", "Military_Radio_on", "Milita
 mods.content.Item.registerItem("Protein Bar", "protein_bar", "protein_bar");
 mods.content.Item.registerItem("RAM", "ram", "ram");
 mods.content.Item.registerItem("Splint", "Splint", "Splint");
-mods.content.Item.registerItem("SSD", "ssd", "ssd");
+mods.content.Item.registerItem("SSD", "ssd", "ssd");mods.content.Item.registerItem("C4", "c4", "c4");
+mods.content.Item.registerItem("Woolen Cloth", "cloth", "cloth");
+mods.content.Item.registerItem("Chip", "chip", "chip");
+mods.content.Item.registerItem("LCD Display", "lcd_display", "lcd_display");
+mods.content.Item.registerItem("Insulating Tape", "insulating_tape", "insulating_tape");
+mods.content.Item.registerItem("Industrial Gunpowder", "industrial_powder", "industrial_powder");
+mods.content.Item.registerItem("Industrial Powder Briquette", "powder_briquette", "powder_briquette");
+mods.content.Item.registerItem("Bickford Fuse", "bickford_fuse", "bickford_fuse");
+mods.content.Item.registerItem("Potassium Nitrate", "potassium_nitrate", "potassium_nitrate");
+mods.content.Item.registerItem("Logical Element", "logic_element", "logic_element");
