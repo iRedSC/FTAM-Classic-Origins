@@ -50,9 +50,11 @@ function Sync-CurseForgeProfile([string]$Dir) {
     # ftam-sync.jar runs this as CurseForge starts the profile, before Forge loads the mods.
     $found = Read-CurseForgeProfile $Dir
     if (-not $found) {
-        Fail "This checkout is on '$Branch', which plays in the '$InstanceName' profile. Switch the repo to this profile's branch, or play that profile."
+        Fail "This profile isn't one of the pack's. Run play.cmd curseforge to set the pack up."
     }
     Assert-ProfileVersions $found
+    # ftam-sync.jar runs play.ps1 from here; profiles set up before .channels pointed at the player's checkout.
+    Write-Utf8 (Join-Path $found.Dir 'ftam-sync.repo') $Repo
     Sync-Mods (Join-Path $found.Dir 'mods')
     Sync-Game $found.Dir
     Write-Host 'Pack ready.' -ForegroundColor Green

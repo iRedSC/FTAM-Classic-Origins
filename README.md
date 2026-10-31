@@ -4,13 +4,13 @@ Minecraft 1.7.10, Forge 10.13.4.1614.
 
 ## Play
 
-New player: get `FTAM Classic Origins.cmd` from someone in the pack, put it on your desktop and double-click it. It installs Git if needed, downloads this repo to `%USERPROFILE%\FTAM-Classic-Origins` (you need access to it), and runs `play.cmd` below. Double-click it again to play; it updates the pack every time.
+New player: download [`FTAM Classic Origins.cmd`](https://raw.githubusercontent.com/iRedSC/FTAM-Classic-Origins/main/FTAM%20Classic%20Origins.cmd), or [`FTAM Classic Origins (dev).cmd`](https://raw.githubusercontent.com/iRedSC/FTAM-Classic-Origins/main/FTAM%20Classic%20Origins%20(dev).cmd) for dev builds, put it on your desktop and double-click it. It installs Git if needed, downloads this repo to `%USERPROFILE%\FTAM-Classic-Origins`, and runs `play.cmd` below for its branch. Double-click it again to play; it updates the pack every time.
 
-Install [Prism Launcher](https://prismlauncher.org) and sign in once, then run `play.cmd`.
+Install [Prism Launcher](https://prismlauncher.org) and sign in once, then run `play.cmd` (main) or `play.cmd -Branch dev`.
 
-It pulls this repo, creates or updates the `FTAM Classic: Origins` Prism instance, mirrors `mods/shared` and `mods/client` into it, and starts the game. Anything else in the instance's mods folder is removed.
+It fetches that branch from GitHub into `.channels\<branch>`, a checkout only the script touches, creates or updates the `FTAM Classic: Origins` Prism instance, mirrors `mods/shared` and `mods/client` into it, and starts the game. Anything else in the instance's mods folder is removed.
 
-After that, **Play** in Prism works too: the instance's pre-launch command pulls and syncs the pack first, and Prism stops the launch if that fails. Keep this checkout where it is, and on the branch the instance belongs to. Close Prism the first time you run `play.cmd`, or it may keep its old copy of the instance's settings.
+After that, **Play** in Prism works too: the instance's pre-launch command updates and syncs the pack first, and Prism stops the launch if that fails. Each instance remembers its branch, so it doesn't matter which branch this checkout is on or what you edit in it; keep the checkout where it is. Close Prism the first time you run `play.cmd`, or it may keep its old copy of the instance's settings.
 
 The first run also puts an `FTAM Classic Origins` shortcut to `play.cmd` on the desktop.
 
@@ -26,13 +26,13 @@ From then on, **Play** in CurseForge updates the pack first, like Prism's pre-la
 
 Tell your agent: *"Set up the FTAM Classic: Origins pack from github.com/iRedSC/FTAM-Classic-Origins following its README."* For the agent:
 
-1. Needs Git, and read access to this repo (it's private). Clone it somewhere permanent, such as `%USERPROFILE%\FTAM-Classic-Origins`; the launcher runs scripts from this checkout on every Play, so it must not be moved or deleted.
-2. Run `play.cmd` (or `play.cmd curseforge` / `play.cmd prism` to pick). It's non-interactive apart from what it prints in yellow, which is for the human: with CurseForge, the one-time Import and quitting CurseForge. It waits up to 15 minutes for each.
+1. Needs Git. Clone the repo somewhere permanent, such as `%USERPROFILE%\FTAM-Classic-Origins`; the launcher runs scripts from this checkout on every Play, so it must not be moved or deleted.
+2. Run `play.cmd -Branch main` (or `-Branch dev` for dev builds; add `curseforge` or `prism` to pick the launcher). It's non-interactive apart from what it prints in yellow, which is for the human: with CurseForge, the one-time Import and quitting CurseForge. It waits up to 15 minutes for each.
 3. Done when it prints `Starting Minecraft`. The human then plays from the desktop shortcut or the launcher's Play, both of which update the pack first.
 
 ## Dev builds
 
-The `dev` branch has the newest builds of our mods plus dev-only tools. Run `git switch dev`, then `play.cmd`; it plays in a separate `FTAM Classic: Origins (dev)` instance. `git switch main` to go back.
+The `dev` branch has the newest builds of our mods plus dev-only tools. `play.cmd -Branch dev`, or the dev desktop file, plays it in a separate `FTAM Classic: Origins (dev)` instance or profile; the main one is untouched. No `git switch` needed.
 
 ## Server
 
