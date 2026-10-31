@@ -139,7 +139,17 @@ sync_game() {
         count=$((count + 1))
     done < <(cd "$REPO/game" && find . -type f -printf '%P\0')
     rm -f "$tmp"
-    echo "Settings: $count updated from game/"
+    # A file the pack used to ship and has since deleted goes too, or a removed mod's script keeps running
+    # against items that no longer exist. Files the pack never shipped are left alone.
+    local removed=0
+    while IFS= read -r file; do
+        file="${file#game/}"
+        [ -n "$file" ] && [ ! -e "$REPO/game/$file" ] && [ -f "$SERVER/$file" ] || continue
+        rm -f "$SERVER/$file"
+        printf '\033[31m  - %s\033[0m\n' "$file"
+        removed=$((removed + 1))
+    done < <(git -C "$REPO" -c core.quotePath=false log --format= --name-only --no-renames --diff-filter=D HEAD -- game | sort -u)
+    echo "Settings: $count updated, $removed removed from game/"
 }
 
 sync_bans() {
