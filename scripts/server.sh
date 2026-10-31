@@ -174,5 +174,7 @@ sync_bans
 
 say "Starting server with $JAVA ($MEMORY)..."
 cd "$SERVER"
+# fml.queryResult=confirm answers Forge's startup questions, such as "the world has blocks from a mod that's gone,
+# continue?", with yes. Otherwise a restart with no one at the console waits forever for /fml confirm.
 exec "$JAVA" -Xms1G "-Xmx$MEMORY" -XX:+UseG1GC -XX:+UnlockExperimentalVMOptions -XX:MaxGCPauseMillis=100 \
-    -XX:+DisableExplicitGC -jar "$FORGE_JAR" nogui
+    -XX:+DisableExplicitGC -Dfml.queryResult=confirm -jar "$FORGE_JAR" nogui
