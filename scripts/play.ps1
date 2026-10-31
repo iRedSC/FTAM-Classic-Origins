@@ -276,7 +276,26 @@ function Sync-Game([string]$GameDir) {
     catch [System.IO.IOException] {
         Fail "Couldn't change the game's settings: $($_.Exception.Message)`nClose Minecraft and run this again."
     }
-    Write-Host "Settings: $count updated from game\"
+    # A file the pack used to ship and has since deleted goes too, or a removed mod's script keeps running
+    # against items that no longer exist. Files the pack never shipped are left alone.
+    $removed = 0
+    $deleted = git -C $Repo -c core.quotePath=false log --format= --name-only --no-renames --diff-filter=D HEAD -- game
+    if ($LASTEXITCODE -ne 0) { Fail "Couldn't read the pack's history from $Repo." }
+    try {
+        foreach ($path in ($deleted | Where-Object { $_ -like 'game/*' } | Sort-Object -Unique)) {
+            $rel = $path.Substring(5) -replace '/', '\'
+            if (Test-Path -LiteralPath (Join-Path $source $rel)) { continue }
+            $target = Join-Path $GameDir $rel
+            if (-not (Test-Path -LiteralPath $target -PathType Leaf)) { continue }
+            Remove-Item -LiteralPath $target -Force
+            Write-Host "  - $rel" -ForegroundColor Red
+            $removed++
+        }
+    }
+    catch [System.IO.IOException] {
+        Fail "Couldn't remove an old setting: $($_.Exception.Message)`nClose Minecraft and run this again."
+    }
+    Write-Host "Settings: $count updated, $removed removed from game\"
 }
 
 # Prism names the instance it's launching. Refuse before updating if this hook is for another instance's branch.
