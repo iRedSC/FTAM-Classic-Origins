@@ -49,7 +49,6 @@ MiningLaser.addOre(<appliedenergistics2:item.ItemMultiMaterial:0>);
 MiningLaser.addOre(<appliedenergistics2:item.ItemMultiMaterial:1>);
 MiningLaser.addOre(<BigReactors:BRIngot:0>);
 MiningLaser.addOre(<appliedenergistics2:tile.BlockSkyStone>);
-MiningLaser.addOre(<ProjRed|Core:projectred.core.part:55>);
 MiningLaser.addOre(<ThermalFoundation:material:69>);
 
 //Remove old focusses
@@ -142,7 +141,6 @@ MiningLaser.addPreferredOre(9, <appliedenergistics2:item.ItemMultiMaterial:0>);
 MiningLaser.addPreferredOre(9, <appliedenergistics2:item.ItemMultiMaterial:1>);
 
 MiningLaser.addPreferredOre(10, <ThermalFoundation:material:67>);
-MiningLaser.addPreferredOre(10, <ProjRed|Core:projectred.core.part:55>);
 
 MiningLaser.addPreferredOre(11, <minecraft:dye:4>);
 

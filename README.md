@@ -4,15 +4,31 @@ Minecraft 1.7.10, Forge 10.13.4.1614.
 
 ## Play
 
+New player: get `FTAM Classic Origins.cmd` from someone in the pack, put it on your desktop and double-click it. It installs Git if needed, downloads this repo to `%USERPROFILE%\FTAM-Classic-Origins` (you need access to it), and runs `play.cmd` below. Double-click it again to play; it updates the pack every time.
+
 Install [Prism Launcher](https://prismlauncher.org) and sign in once, then run `play.cmd`.
 
 It pulls this repo, creates or updates the `FTAM Classic: Origins` Prism instance, mirrors `mods/shared` and `mods/client` into it, and starts the game. Anything else in the instance's mods folder is removed.
 
 After that, **Play** in Prism works too: the instance's pre-launch command pulls and syncs the pack first, and Prism stops the launch if that fails. Keep this checkout where it is, and on the branch the instance belongs to. Close Prism the first time you run `play.cmd`, or it may keep its old copy of the instance's settings.
 
+The first run also puts an `FTAM Classic Origins` shortcut to `play.cmd` on the desktop.
+
 ### CurseForge
 
-Without Prism, `play.cmd` uses the CurseForge app instead (`play.cmd curseforge` picks it when both are installed). The first run opens CurseForge and a generated `FTAM Classic Origins.zip`: import it with **Create Custom Profile > Import**, and the script fills the new profile with the pack's mods and settings. After that, run `play.cmd` before playing to update, then press **Play** in CurseForge. It can't launch the game or update on its own.
+Without Prism, `play.cmd` uses the CurseForge app instead (`play.cmd curseforge` picks it when both are installed). The first run opens CurseForge and a generated `FTAM Classic Origins.zip`: import it with **Create Custom Profile > Import**. Then quit CurseForge from its tray icon when asked: the script can only change a profile's Java arguments while CurseForge is closed. It adds `-javaagent:ftam-sync.jar` to them, fills the profile with the pack's mods and settings, and starts the game.
+
+From then on, **Play** in CurseForge updates the pack first, like Prism's pre-launch command: `ftam-sync.jar` runs `play.ps1 -SyncProfile` before Forge loads, shows a small window while it works, and asks whether to quit or play anyway if the update fails. `play.cmd` and the desktop shortcut also start the game through CurseForge.
+
+`scripts/ftam-sync.jar` is built from `scripts/ftam-sync/` by `scripts/ftam-sync/build.ps1` (needs a JDK 9+). Rebuild it after changing the source.
+
+### Setting up with an AI agent
+
+Tell your agent: *"Set up the FTAM Classic: Origins pack from github.com/iRedSC/FTAM-Classic-Origins following its README."* For the agent:
+
+1. Needs Git, and read access to this repo (it's private). Clone it somewhere permanent, such as `%USERPROFILE%\FTAM-Classic-Origins`; the launcher runs scripts from this checkout on every Play, so it must not be moved or deleted.
+2. Run `play.cmd` (or `play.cmd curseforge` / `play.cmd prism` to pick). It's non-interactive apart from what it prints in yellow, which is for the human: with CurseForge, the one-time Import and quitting CurseForge. It waits up to 15 minutes for each.
+3. Done when it prints `Starting Minecraft`. The human then plays from the desktop shortcut or the launcher's Play, both of which update the pack first.
 
 ## Dev builds
 
@@ -36,6 +52,13 @@ It pulls this repo, installs Forge into `server/` (or the folder you pass as the
 - CraftTweaker 3.1.0's MineFactoryReloaded module (`minetweaker.mods.mfr`), unchanged. 3.4.8 still loads it if present but no longer ships it, and `scripts/MFR.zs` needs it for the laser drill and harvester.
 
 Remove it only alongside a CraftTweaker that covers both.
+
+Two jars are patched in place, each by rewriting one string in its class files:
+
+- `mods/shared/ThermalTinkering-1.7.10-1.2.1-gtnhmantle.jar` requires any `Mantle` instead of `Mantle@[1.7.10-0.3.2,)`. GTNH's Mantle is versioned `0.5.4`, which FML sorts below that, so the original refuses to load.
+- `mods/server/BlockEditor.jar` catches `Throwable` where it caught `Exception`. Its scan of every block class hit MalisisDoors fields whose types only exist on the client, and the resulting `NoClassDefFoundError` stopped the server. Those blocks are now skipped and logged.
+
+`mods/client/World-Stripper-*.jar` stays client only: its strip packet has no permission check, so on a server any player could clear blocks around them. Without it on the server, it only works in single player.
 
 ## Settings
 
