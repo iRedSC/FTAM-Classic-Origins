@@ -40,3 +40,7 @@ Remove it only alongside a CraftTweaker that covers both.
 ## Settings
 
 `game/` holds the pack's settings: mod configs, MineTweaker `scripts/`, ContentTweaker `contentScripts/` and Flan's Mod content packs (`Flan/`: MPACK guns, GREYLIGHT armor and injectors). `play.cmd` and the server script copy each file in it over the game folder's copy every time they run, so edit them here, not in the instance or server. Files `game/` doesn't have, such as your own options, are left alone.
+
+### Banned items
+
+`game/scripts/banneditems.zs` is the one ban list. An item tagged with a red `§4` tooltip there loses its recipe and its NEI entry, and the server script turns every tagged item into Item Blacklist's `config/ItemBlacklist.json`, so players can't hold, place or use it (ops can). `<mod:item>` without a meta bans every variant; write `:0` to ban only the base one. A name the game doesn't know stops the server on start.

@@ -134,6 +134,19 @@ sync_game() {
     echo "Settings: $count updated from game/"
 }
 
+sync_bans() {
+    # Item Blacklist enforces exactly what scripts/banneditems.zs tags "§4...", so that file is the one ban list.
+    # <mod:item> without a meta bans every variant, which covers damaged tools and armor. Item Blacklist stops
+    # the server over a name it doesn't know, so a typo there fails loudly on start instead of banning nothing.
+    local entries
+    entries="$(sed -n 's/^<\([^>]*\)>\.addTooltip("§4.*/\1/p' "$REPO/game/scripts/banneditems.zs" | awk -F: '
+        !seen[$0]++ { printf "%s    {\"item\": \"%s:%s\", \"damage\": \"%s\"}", (n++ ? ",\n" : ""), $1, $2, (NF > 2 ? $3 : "*") }')"
+    [ -n "$entries" ] || fail "game/scripts/banneditems.zs bans nothing, so Item Blacklist would let everything through."
+    mkdir -p "$SERVER/config"
+    printf '{\n  "__GLOBAL__": [\n%s\n  ]\n}\n' "$entries" > "$SERVER/config/ItemBlacklist.json"
+    echo "Bans: $(grep -c '"item"' "$SERVER/config/ItemBlacklist.json") items from banneditems.zs"
+}
+
 mkdir -p "$SERVER"
 JAVA="$(find_java8)"
 
@@ -146,6 +159,7 @@ fi
 install_forge
 sync_mods
 sync_game
+sync_bans
 
 # Running this script is agreeing to the Minecraft EULA: https://aka.ms/MinecraftEULA
 [ -f "$SERVER/eula.txt" ] || echo 'eula=true' > "$SERVER/eula.txt"
