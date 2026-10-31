@@ -129,29 +129,6 @@ mods.nei.NEI.hide(<EnderIO:itemBrokenSpawner>);
 <OpenBlocks:blockbreaker>.addTooltip("§4Banned");
 mods.nei.NEI.hide(<OpenBlocks:blockbreaker>);
 
-<OpenComputers:item:69>.addTooltip("§4Banned");
-mods.nei.NEI.hide(<OpenComputers:item:69>);
-<OpenComputers:item:93>.addTooltip("§4Banned");
-mods.nei.NEI.hide(<OpenComputers:item:93>);
-<OpenComputers:item:90>.addTooltip("§4Banned");
-mods.nei.NEI.hide(<OpenComputers:item:90>);
-<OpenComputers:item:113>.addTooltip("§4Banned");
-mods.nei.NEI.hide(<OpenComputers:item:113>);
-<OpenComputers:item:103>.addTooltip("§4Banned");
-mods.nei.NEI.hide(<OpenComputers:item:103>);
-<OpenComputers:caseCreative>.addTooltip("§4Banned");
-mods.nei.NEI.hide(<OpenComputers:caseCreative>);
-<OpenComputers:item:62>.addTooltip("§4Banned");
-mods.nei.NEI.hide(<OpenComputers:item:62>);
-<OpenComputers:item:91>.addTooltip("§4Banned");
-mods.nei.NEI.hide(<OpenComputers:item:91>);
-<OpenComputers:item:83>.addTooltip("§4Banned");
-mods.nei.NEI.hide(<OpenComputers:item:83>);
-<OpenComputers:item:87>.addTooltip("§4Banned");
-mods.nei.NEI.hide(<OpenComputers:item:87>);
-<OpenComputers:item:84>.addTooltip("§4Banned");
-mods.nei.NEI.hide(<OpenComputers:item:84>);
-recipes.remove(<OpenComputers:item:84>);
 
 <openmodularturrets:teleporterTurret>.addTooltip("§4Banned");
 mods.nei.NEI.hide(<openmodularturrets:teleporterTurret>);
@@ -172,27 +149,6 @@ mods.nei.NEI.hide(<appliedenergistics2:item.ToolMassCannon>);
 mods.nei.NEI.hide(<appliedenergistics2:item.ToolChargedStaff>);
 <appliedenergistics2:item.ToolEntropyManipulator>.addTooltip("§4Banned");
 mods.nei.NEI.hide(<appliedenergistics2:item.ToolEntropyManipulator>);
-
-<Growthcraft|Apples:grc.appleCider:2>.addTooltip("§4Banned");
-mods.nei.NEI.hide(<Growthcraft|Apples:grc.appleCider:2>);
-<Growthcraft|Apples:grc.appleCider:4>.addTooltip("§4Banned");
-mods.nei.NEI.hide(<Growthcraft|Apples:grc.appleCider:4>);
-<Growthcraft|Apples:grc.appleCider:5>.addTooltip("§4Banned");
-mods.nei.NEI.hide(<Growthcraft|Apples:grc.appleCider:5>);
-<Growthcraft|Bees:grc.honeyMead:2>.addTooltip("§4Banned");
-mods.nei.NEI.hide(<Growthcraft|Bees:grc.honeyMead:2>);
-<Growthcraft|Bees:grc.honeyMead:4>.addTooltip("§4Banned");
-mods.nei.NEI.hide(<Growthcraft|Bees:grc.honeyMead:4>);
-<Growthcraft|Bees:grc.honeyMead:5>.addTooltip("§4Banned");
-mods.nei.NEI.hide(<Growthcraft|Bees:grc.honeyMead:5>);
-<Growthcraft|Grapes:grc.grapeWine:2>.addTooltip("§4Banned");
-mods.nei.NEI.hide(<Growthcraft|Grapes:grc.grapeWine:2>);
-<Growthcraft|Grapes:grc.grapeWine:4>.addTooltip("§4Banned");
-mods.nei.NEI.hide(<Growthcraft|Grapes:grc.grapeWine:4>);
-<Growthcraft|Grapes:grc.grapeWine:5>.addTooltip("§4Banned");
-mods.nei.NEI.hide(<Growthcraft|Grapes:grc.grapeWine:5>);
-<Growthcraft|Grapes:grc.grapeWine:6>.addTooltip("§4Banned");
-mods.nei.NEI.hide(<Growthcraft|Grapes:grc.grapeWine:6>);
 
 
 <harvestcraft:hardenedleatherhelmItem>.addTooltip("§4Banned");
@@ -354,9 +310,6 @@ recipes.remove(<MineFactoryReloaded:rocket>);
 <MineFactoryReloaded:rocket>.addTooltip("§4Banned");
 mods.nei.NEI.hide(<MineFactoryReloaded:rocket>);
 
-recipes.remove(<OpenComputers:robot>);
-<OpenComputers:robot>.addTooltip("§4Banned");
-mods.nei.NEI.hide(<OpenComputers:robot>);
 
 recipes.remove(<ThermalExpansion:florb>);
 <ThermalExpansion:florb>.addTooltip("§4Banned");
