@@ -37,6 +37,13 @@ It pulls this repo, installs Forge into `server/` (or the folder you pass as the
 
 Remove it only alongside a CraftTweaker that covers both.
 
+Two jars are patched in place, each by rewriting one string in its class files:
+
+- `mods/shared/ThermalTinkering-1.7.10-1.2.1-gtnhmantle.jar` requires any `Mantle` instead of `Mantle@[1.7.10-0.3.2,)`. GTNH's Mantle is versioned `0.5.4`, which FML sorts below that, so the original refuses to load.
+- `mods/server/BlockEditor.jar` catches `Throwable` where it caught `Exception`. Its scan of every block class hit MalisisDoors fields whose types only exist on the client, and the resulting `NoClassDefFoundError` stopped the server. Those blocks are now skipped and logged.
+
+`mods/client/World-Stripper-*.jar` stays client only: its strip packet has no permission check, so on a server any player could clear blocks around them. Without it on the server, it only works in single player.
+
 ## Settings
 
 `game/` holds the pack's settings: mod configs, MineTweaker `scripts/`, ContentTweaker `contentScripts/` and Flan's Mod content packs (`Flan/`: MPACK guns, GREYLIGHT armor and injectors). `play.cmd` and the server script copy each file in it over the game folder's copy every time they run, so edit them here, not in the instance or server. Files `game/` doesn't have, such as your own options, are left alone.
