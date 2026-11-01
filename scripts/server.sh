@@ -120,6 +120,40 @@ sync_mods() {
     echo "Mods: ${#wanted[@]} total, $added added, $updated updated, $removed removed"
 }
 
+sync_plugins() {
+    # Foundation loads plugins from the server's plugins/, not mods/, so it can reload one while the server runs.
+    # Its top-level jars mirror mods/plugin exactly; folders (plugins' own data) and other files are left alone.
+    local plugins="$SERVER/plugins" jar name existing
+    declare -A wanted=()
+    for jar in "$REPO/mods/plugin"/*.jar; do
+        [ -e "$jar" ] || continue
+        wanted[$(basename "$jar")]="$jar"
+    done
+    mkdir -p "$plugins"
+    local added=0 updated=0 removed=0
+    for existing in "$plugins"/*.jar; do
+        [ -f "$existing" ] || continue
+        name="$(basename "$existing")"
+        if [ -z "${wanted[$name]:-}" ]; then
+            rm -f "$existing"
+            printf '\033[33m  - %s\033[0m\n' "$name"
+            removed=$((removed + 1))
+        fi
+    done
+    for name in "${!wanted[@]}"; do
+        if [ ! -f "$plugins/$name" ]; then
+            cp "${wanted[$name]}" "$plugins/$name"
+            printf '\033[32m  + %s\033[0m\n' "$name"
+            added=$((added + 1))
+        elif ! cmp -s "${wanted[$name]}" "$plugins/$name"; then
+            cp "${wanted[$name]}" "$plugins/$name"
+            printf '\033[36m  ~ %s\033[0m\n' "$name"
+            updated=$((updated + 1))
+        fi
+    done
+    echo "Plugins: ${#wanted[@]} total, $added added, $updated updated, $removed removed"
+}
+
 sync_game() {
     # game/ holds the server's settings: mod configs and MineTweaker scripts. Each file in it replaces the
     # server's copy on every start; files it doesn't have, such as ones mods write themselves, are left alone.
@@ -176,6 +210,7 @@ if [ -z "${FTAM_PULLED:-}" ]; then
 fi
 install_forge
 sync_mods
+sync_plugins
 sync_game
 sync_bans
 
