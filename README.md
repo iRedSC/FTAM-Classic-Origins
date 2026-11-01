@@ -38,13 +38,14 @@ The `dev` branch has the newest builds of our mods plus dev-only tools. `play.cm
 
 Run `scripts/server.sh` on Linux, or `server.cmd` on Windows (needs Git for Windows). It needs Java 8 and finds most installs on its own; set `JAVA8` if it doesn't.
 
-It pulls this repo, installs Forge into `server/` (or the folder you pass as the first argument), mirrors `mods/shared` and `mods/server` into it, and starts the server. On `dev` it uses `server-dev/` instead. `FTAM_SERVER_MEMORY` sets the max heap (default `6G`). Running it accepts the [Minecraft EULA](https://aka.ms/MinecraftEULA).
+It pulls this repo, installs Forge into `server/` (or the folder you pass as the first argument), mirrors `mods/shared` and `mods/server` into its `mods/` and `mods/plugin` into its `plugins/`, and starts the server. On `dev` it uses `server-dev/` instead. `FTAM_SERVER_MEMORY` sets the max heap (default `6G`). Running it accepts the [Minecraft EULA](https://aka.ms/MinecraftEULA).
 
 ## Mods
 
 - `mods/shared`: client and server
 - `mods/client`: client only
 - `mods/server`: server only
+- `mods/plugin`: Foundation plugins, server only. `scripts/server.sh` mirrors them into the server's `plugins/`, where Foundation loads them and reloads one whenever its jar changes.
 
 `mods/shared/CraftTweaker-addons.jar` fills two gaps in CraftTweaker 3.4.8:
 
