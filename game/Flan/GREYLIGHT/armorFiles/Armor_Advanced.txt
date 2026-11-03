@@ -5,7 +5,7 @@ Colour 255 255 255
 
 Type Body
 Model dwdefence.LupineArmorStandardB
-Defence 7
+Defence 6
 ArmourTexture LupineMilitaryArmor_A
 
 Description _&cTier IV

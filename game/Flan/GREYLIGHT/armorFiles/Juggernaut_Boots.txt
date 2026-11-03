@@ -5,7 +5,7 @@ Colour 255 255 255
 
 Type Boots
 Model dwdefence.ChamberlainBoots
-Defence 6
+Defence 5
 Set 10
 ArmourTexture Ambircon_ChamberlainUniform
 MoveSpeedModifier 0.95
