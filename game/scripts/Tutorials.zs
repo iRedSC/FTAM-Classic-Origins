@@ -47,10 +47,10 @@
 
 <minecraft:obsidian>.addTooltip("§6§l* §7Takes 12 TNT shots to destroy");
 <ExtraUtilities:color_obsidian>.addTooltip("§6§l* §7Takes 12 TNT shots to destroy");
-<openmodularturrets:hardWallTierOne>.addTooltip("§6§l* §7Takes 20 TNT shots to destroy.");
-<openmodularturrets:hardWallTierTwo>.addTooltip("§6§l* §7Takes 30 TNT shots to destroy.");
-<openmodularturrets:hardWallTierThree>.addTooltip("§6§l* §7Takes 45 TNT shots to destroy.");
-<openmodularturrets:hardWallTierFour>.addTooltip("§6§l* §7Takes 55 TNT shots to destroy.");
+<openmodularturrets:hardWallTierOne>.addTooltip("§6§l* §7Takes 5 TNT shots to destroy.");
+<openmodularturrets:hardWallTierTwo>.addTooltip("§6§l* §7Takes 10 TNT shots to destroy.");
+<openmodularturrets:hardWallTierThree>.addTooltip("§6§l* §7Takes 20 TNT shots to destroy.");
+<openmodularturrets:hardWallTierFour>.addTooltip("§6§l* §7Takes 40 TNT shots to destroy.");
 <openmodularturrets:hardWallTierFive>.addTooltip("§6§l* §7Takes 80 TNT shots to destroy.");
 <EnderIO:blockReinforcedObsidian>.addTooltip("§6§l* §7Immune to the Wither Boss.");
 
