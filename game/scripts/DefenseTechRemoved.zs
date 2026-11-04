@@ -3,6 +3,7 @@
 // Kept: the block and missile of each ladder explosive (condensed, sonic, thermobaric, hypersonic, nuclear); gas
 // (debilitation, chemical, contagious) and EMP as missiles only, made from a nuke (DefenseTech.zs); the missile
 // module (every missile's casing); the condensed grenade, which breaks no blocks.
+// Debilitation and chemical grenades stay usable but can't be made: they lose only their recipes, at the end.
 // Meta is DefenseTech's explosive id, in its registration order.
 
 // shrapnel
@@ -159,14 +160,6 @@ mods.nei.NEI.hide(<DefenseTech:grenade:1>);
 recipes.remove(<DefenseTech:grenade:2>);
 <DefenseTech:grenade:2>.addTooltip("§4Banned");
 mods.nei.NEI.hide(<DefenseTech:grenade:2>);
-// debilitation grenade
-recipes.remove(<DefenseTech:grenade:3>);
-<DefenseTech:grenade:3>.addTooltip("§4Banned");
-mods.nei.NEI.hide(<DefenseTech:grenade:3>);
-// chemical grenade
-recipes.remove(<DefenseTech:grenade:4>);
-<DefenseTech:grenade:4>.addTooltip("§4Banned");
-mods.nei.NEI.hide(<DefenseTech:grenade:4>);
 // anvil grenade
 recipes.remove(<DefenseTech:grenade:5>);
 <DefenseTech:grenade:5>.addTooltip("§4Banned");
@@ -184,3 +177,7 @@ mods.nei.NEI.hide(<DefenseTech:grenade:7>);
 recipes.remove(<DefenseTech:minecart:*>);
 <DefenseTech:minecart:*>.addTooltip("§4Banned");
 mods.nei.NEI.hide(<DefenseTech:minecart:*>);
+
+// Debilitation and chemical grenades: no recipe, but those already made still work.
+recipes.remove(<DefenseTech:grenade:3>);
+recipes.remove(<DefenseTech:grenade:4>);
