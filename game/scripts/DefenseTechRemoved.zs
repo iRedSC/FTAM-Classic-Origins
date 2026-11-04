@@ -1,8 +1,8 @@
-// DefenseTech explosives that are gone: no recipe, hidden from NEI, marked banned. They can't go off either
-// (DefenseTech.cfg turns them off), so a leftover one is a dud.
-// Kept: the block and missile of each ladder explosive (condensed, sonic, thermobaric, hypersonic, nuclear), gas
-// (debilitation, chemical, contagious) and EMP; the missile module (every missile's casing); condensed, debilitation
-// and chemical grenades, which break no blocks. Repulsive stays as a block only, as an ingredient of gas and EMP.
+// DefenseTech items that are gone: no recipe, hidden from NEI, marked banned. Explosives among them can't go off
+// either (DefenseTech.cfg turns them off), so a leftover one is a dud.
+// Kept: the block and missile of each ladder explosive (condensed, sonic, thermobaric, hypersonic, nuclear); gas
+// (debilitation, chemical, contagious) and EMP as missiles only, made from a nuke (DefenseTech.zs); the missile
+// module (every missile's casing); the condensed grenade, which breaks no blocks.
 // Meta is DefenseTech's explosive id, in its registration order.
 
 // shrapnel
@@ -13,10 +13,22 @@ mods.nei.NEI.hide(<DefenseTech:explosives:1>);
 recipes.remove(<DefenseTech:explosives:2>);
 <DefenseTech:explosives:2>.addTooltip("§4Banned");
 mods.nei.NEI.hide(<DefenseTech:explosives:2>);
+// debilitation
+recipes.remove(<DefenseTech:explosives:3>);
+<DefenseTech:explosives:3>.addTooltip("§4Banned");
+mods.nei.NEI.hide(<DefenseTech:explosives:3>);
+// chemical
+recipes.remove(<DefenseTech:explosives:4>);
+<DefenseTech:explosives:4>.addTooltip("§4Banned");
+mods.nei.NEI.hide(<DefenseTech:explosives:4>);
 // anvil
 recipes.remove(<DefenseTech:explosives:5>);
 <DefenseTech:explosives:5>.addTooltip("§4Banned");
 mods.nei.NEI.hide(<DefenseTech:explosives:5>);
+// repulsive
+recipes.remove(<DefenseTech:explosives:6>);
+<DefenseTech:explosives:6>.addTooltip("§4Banned");
+mods.nei.NEI.hide(<DefenseTech:explosives:6>);
 // attractive
 recipes.remove(<DefenseTech:explosives:7>);
 <DefenseTech:explosives:7>.addTooltip("§4Banned");
@@ -25,6 +37,10 @@ mods.nei.NEI.hide(<DefenseTech:explosives:7>);
 recipes.remove(<DefenseTech:explosives:8>);
 <DefenseTech:explosives:8>.addTooltip("§4Banned");
 mods.nei.NEI.hide(<DefenseTech:explosives:8>);
+// contagious
+recipes.remove(<DefenseTech:explosives:9>);
+<DefenseTech:explosives:9>.addTooltip("§4Banned");
+mods.nei.NEI.hide(<DefenseTech:explosives:9>);
 // breaching
 recipes.remove(<DefenseTech:explosives:11>);
 <DefenseTech:explosives:11>.addTooltip("§4Banned");
@@ -37,6 +53,10 @@ mods.nei.NEI.hide(<DefenseTech:explosives:12>);
 recipes.remove(<DefenseTech:explosives:14>);
 <DefenseTech:explosives:14>.addTooltip("§4Banned");
 mods.nei.NEI.hide(<DefenseTech:explosives:14>);
+// emp
+recipes.remove(<DefenseTech:explosives:16>);
+<DefenseTech:explosives:16>.addTooltip("§4Banned");
+mods.nei.NEI.hide(<DefenseTech:explosives:16>);
 // exothermic
 recipes.remove(<DefenseTech:explosives:17>);
 <DefenseTech:explosives:17>.addTooltip("§4Banned");
@@ -139,6 +159,14 @@ mods.nei.NEI.hide(<DefenseTech:grenade:1>);
 recipes.remove(<DefenseTech:grenade:2>);
 <DefenseTech:grenade:2>.addTooltip("§4Banned");
 mods.nei.NEI.hide(<DefenseTech:grenade:2>);
+// debilitation grenade
+recipes.remove(<DefenseTech:grenade:3>);
+<DefenseTech:grenade:3>.addTooltip("§4Banned");
+mods.nei.NEI.hide(<DefenseTech:grenade:3>);
+// chemical grenade
+recipes.remove(<DefenseTech:grenade:4>);
+<DefenseTech:grenade:4>.addTooltip("§4Banned");
+mods.nei.NEI.hide(<DefenseTech:grenade:4>);
 // anvil grenade
 recipes.remove(<DefenseTech:grenade:5>);
 <DefenseTech:grenade:5>.addTooltip("§4Banned");
