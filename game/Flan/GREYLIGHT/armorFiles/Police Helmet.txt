@@ -4,5 +4,5 @@ ItemID 36816
 Icon mgc.iconhelmetpolice
 Colour 255 255 255
 Type Helmet
-Defence 1
+Defence 2
 ArmourTexture mgc.armorpolice

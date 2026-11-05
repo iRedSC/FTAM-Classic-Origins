@@ -6,7 +6,6 @@ recipes.remove(<ThermalExpansion:Workbench:*>);
 <ThermalExpansion:Workbench:*>.addTooltip("§4Banned");
 mods.nei.NEI.hide(<ThermalExpansion:Workbench:*>);
 
-
 recipes.remove(<BigReactors:BRMetalBlock>);
 <BigReactors:BRMetalBlock:0>.addTooltip("§4Banned");
 mods.nei.NEI.hide(<BigReactors:BRMetalBlock:0>);
@@ -62,7 +61,6 @@ mods.nei.NEI.hide(<EnderTech:endertech.exchanger:2>);
 recipes.remove(<EnderTech:endertech.exchanger:1>);
 <EnderTech:endertech.exchanger:1>.addTooltip("§4Banned");
 mods.nei.NEI.hide(<EnderTech:endertech.exchanger:1>);
-
 
 recipes.remove(<psychedelicraft:dryingTable>);
 <psychedelicraft:dryingTable>.addTooltip("§4Banned");
@@ -125,10 +123,8 @@ mods.nei.NEI.hide(<EnderTech:chargePad:0>);
 <EnderIO:itemBrokenSpawner>.addTooltip("§4Banned");
 mods.nei.NEI.hide(<EnderIO:itemBrokenSpawner>);
 
-
 <OpenBlocks:blockbreaker>.addTooltip("§4Banned");
 mods.nei.NEI.hide(<OpenBlocks:blockbreaker>);
-
 
 <openmodularturrets:teleporterTurret>.addTooltip("§4Banned");
 mods.nei.NEI.hide(<openmodularturrets:teleporterTurret>);
@@ -150,30 +146,17 @@ mods.nei.NEI.hide(<appliedenergistics2:item.ToolChargedStaff>);
 <appliedenergistics2:item.ToolEntropyManipulator>.addTooltip("§4Banned");
 mods.nei.NEI.hide(<appliedenergistics2:item.ToolEntropyManipulator>);
 
-
-<harvestcraft:hardenedleatherhelmItem>.addTooltip("§4Banned");
-mods.nei.NEI.hide(<harvestcraft:hardenedleatherhelmItem>);
-<harvestcraft:hardenedleatherchestItem>.addTooltip("§4Banned");
-mods.nei.NEI.hide(<harvestcraft:hardenedleatherchestItem>);
-<harvestcraft:hardenedleatherleggingsItem>.addTooltip("§4Banned");
-mods.nei.NEI.hide(<harvestcraft:hardenedleatherleggingsItem>);
-<harvestcraft:hardenedleatherbootsItem>.addTooltip("§4Banned");
-mods.nei.NEI.hide(<harvestcraft:hardenedleatherbootsItem>);
 <harvestcraft:market>.addTooltip("§4Banned");
 mods.nei.NEI.hide(<harvestcraft:market>);
 
-
 <Mekanism:ElectricBow>.addTooltip("§4Banned");
 mods.nei.NEI.hide(<Mekanism:ElectricBow>);
-<Mekanism:ArmoredJetpack>.addTooltip("§4Banned");
-mods.nei.NEI.hide(<Mekanism:ArmoredJetpack>);
 <Mekanism:PortableTeleporter>.addTooltip("§4Banned");
 mods.nei.NEI.hide(<Mekanism:PortableTeleporter>);
 <Mekanism:ObsidianTNT>.addTooltip("§4Banned");
 mods.nei.NEI.hide(<Mekanism:ObsidianTNT>);
 <Mekanism:MachineBlock:13>.addTooltip("§4Banned");
 mods.nei.NEI.hide(<Mekanism:MachineBlock:13>);
-
 
 <MineFactoryReloaded:rubberwood.sapling:1>.addTooltip("§4Banned");
 mods.nei.NEI.hide(<MineFactoryReloaded:rubberwood.sapling:1>);
@@ -205,39 +188,6 @@ mods.nei.NEI.hide(<MineFactoryReloaded:syringe.health>);
 mods.nei.NEI.hide(<MineFactoryReloaded:syringe.zombie>);
 <MineFactoryReloaded:syringe.slime>.addTooltip("§4Banned");
 mods.nei.NEI.hide(<MineFactoryReloaded:syringe.slime>);
-
-<minecraft:leather_chestplate>.addTooltip("§4Banned");
-mods.nei.NEI.hide(<minecraft:leather_chestplate>);
-<minecraft:leather_leggings>.addTooltip("§4Banned");
-mods.nei.NEI.hide(<minecraft:leather_leggings>);
-<minecraft:leather_helmet>.addTooltip("§4Banned");
-mods.nei.NEI.hide(<minecraft:leather_helmet>);
-<minecraft:leather_boots>.addTooltip("§4Banned");
-mods.nei.NEI.hide(<minecraft:leather_boots>);
-<minecraft:iron_chestplate>.addTooltip("§4Banned");
-mods.nei.NEI.hide(<minecraft:iron_chestplate>);
-<minecraft:iron_leggings>.addTooltip("§4Banned");
-mods.nei.NEI.hide(<minecraft:iron_leggings>);
-<minecraft:iron_helmet>.addTooltip("§4Banned");
-mods.nei.NEI.hide(<minecraft:iron_helmet>);
-<minecraft:iron_boots>.addTooltip("§4Banned");
-mods.nei.NEI.hide(<minecraft:iron_boots>);
-<minecraft:golden_chestplate>.addTooltip("§4Banned");
-mods.nei.NEI.hide(<minecraft:golden_chestplate>);
-<minecraft:golden_leggings>.addTooltip("§4Banned");
-mods.nei.NEI.hide(<minecraft:golden_leggings>);
-<minecraft:golden_helmet>.addTooltip("§4Banned");
-mods.nei.NEI.hide(<minecraft:golden_helmet>);
-<minecraft:golden_boots>.addTooltip("§4Banned");
-mods.nei.NEI.hide(<minecraft:golden_boots>);
-<minecraft:diamond_chestplate>.addTooltip("§4Banned");
-mods.nei.NEI.hide(<minecraft:diamond_chestplate>);
-<minecraft:diamond_leggings>.addTooltip("§4Banned");
-mods.nei.NEI.hide(<minecraft:diamond_leggings>);
-<minecraft:diamond_helmet>.addTooltip("§4Banned");
-mods.nei.NEI.hide(<minecraft:diamond_helmet>);
-<minecraft:diamond_boots>.addTooltip("§4Banned");
-mods.nei.NEI.hide(<minecraft:diamond_boots>);
 
 <ExtraUtilities:generator:5>.addTooltip("§4Overpowered | Disabled");
 mods.nei.NEI.hide(<ExtraUtilities:generator:5>);
@@ -290,26 +240,9 @@ recipes.remove(<Mekanism:Flamethrower>);
 <Mekanism:Flamethrower>.addTooltip("§4Banned");
 mods.nei.NEI.hide(<Mekanism:Flamethrower>);
 
-recipes.remove(<MineFactoryReloaded:plastic.boots>);
-<MineFactoryReloaded:plastic.boots>.addTooltip("§4Banned");
-mods.nei.NEI.hide(<MineFactoryReloaded:plastic.boots>);
-
-recipes.remove(<MineFactoryReloaded:plastic.chest>);
-<MineFactoryReloaded:plastic.chest>.addTooltip("§4Banned");
-mods.nei.NEI.hide(<MineFactoryReloaded:plastic.chest>);
-
-recipes.remove(<MineFactoryReloaded:plastic.helm>);
-<MineFactoryReloaded:plastic.helm>.addTooltip("§4Banned");
-mods.nei.NEI.hide(<MineFactoryReloaded:plastic.helm>);
-
-recipes.remove(<MineFactoryReloaded:plastic.legs>);
-<MineFactoryReloaded:plastic.legs>.addTooltip("§4Banned");
-mods.nei.NEI.hide(<MineFactoryReloaded:plastic.legs>);
-
 recipes.remove(<MineFactoryReloaded:rocket>);
 <MineFactoryReloaded:rocket>.addTooltip("§4Banned");
 mods.nei.NEI.hide(<MineFactoryReloaded:rocket>);
-
 
 recipes.remove(<ThermalExpansion:florb>);
 <ThermalExpansion:florb>.addTooltip("§4Banned");
@@ -358,22 +291,6 @@ mods.nei.NEI.hide(<minecraft:bedrock>);
 recipes.remove(<minecraft:brewing_stand>);
 <minecraft:brewing_stand>.addTooltip("§4Banned");
 mods.nei.NEI.hide(<minecraft:brewing_stand>);
-
-recipes.remove(<minecraft:chainmail_boots>);
-<minecraft:chainmail_boots>.addTooltip("§4Banned");
-mods.nei.NEI.hide(<minecraft:chainmail_boots>);
-
-recipes.remove(<minecraft:chainmail_chestplate>);
-<minecraft:chainmail_chestplate>.addTooltip("§4Banned");
-mods.nei.NEI.hide(<minecraft:chainmail_chestplate>);
-
-recipes.remove(<minecraft:chainmail_helmet>);
-<minecraft:chainmail_helmet>.addTooltip("§4Banned");
-mods.nei.NEI.hide(<minecraft:chainmail_helmet>);
-
-recipes.remove(<minecraft:chainmail_leggings>);
-<minecraft:chainmail_leggings>.addTooltip("§4Banned");
-mods.nei.NEI.hide(<minecraft:chainmail_leggings>);
 
 recipes.remove(<minecraft:command_block>);
 <minecraft:command_block>.addTooltip("§4Banned");

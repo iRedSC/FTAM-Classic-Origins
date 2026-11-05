@@ -4,5 +4,5 @@ ItemID 36811
 Icon mgc.iconbodyrebel
 Colour 255 255 255
 Type Chest
-Defence 1
+Defence 2
 ArmourTexture mgc.armorrebel

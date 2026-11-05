@@ -4,7 +4,7 @@ Icon skymareContractorBoots
 Colour 255 255 255
 Type Boots
 Model dwdefence.ContractorBoots
-Defence 4
+Defence 6
 ArmourTexture SkymareContractorUniform
 
 Description _&cTier IV_&8[&cContractor &7Set&8]

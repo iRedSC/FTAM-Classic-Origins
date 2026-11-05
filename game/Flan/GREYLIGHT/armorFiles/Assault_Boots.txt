@@ -5,7 +5,7 @@ Colour 255 255 255
 
 Type Boots
 Model dwdefence.AssaultBoots
-Defence 2
+Defence 3
 ArmourTexture LupineMilitaryArmor_A
 
 Description _&aTier II_&8[&aAssault &7Set&8]
