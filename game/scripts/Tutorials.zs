@@ -2,29 +2,29 @@
 <flansmod:medkit>.addTooltip("§aTIP: Heals 7 health (3.5 hearts).");
 <minecraft:mob_spawner>.addTooltip("§aTIP: There is a 75% chance a spawner will drop by blowing it up.");
 
-<MineFactoryReloaded:machine.2>.addTooltip("§6§l* §7These can only be obtained from the loot rooms in the §2§nBank Vault");
-<MekanismGenerators:Reactor>.addTooltip("§6§l* §7These can only be obtained from the loot rooms in the §2§nBank Vault");
-<openmodularturrets:railGunTurret>.addTooltip("§6§l* §7These can only be obtained from the §2§nBank Vault");
-<openmodularturrets:laserTurret>.addTooltip("§6§l* §7These can only be obtained from the §2§nBank Vault");
+<MineFactoryReloaded:machine.2>.addTooltip("§6§l* §7Dropped by Envoy and Bosses");
+<MekanismGenerators:Reactor>.addTooltip("§6§l* §7Dropped by Envoy and Bosses");
+<openmodularturrets:railGunTurret>.addTooltip("§6§l* §7Dropped by Envoy and Bosses");
+<openmodularturrets:laserTurret>.addTooltip("§6§l* §7Dropped by Envoy and Bosses");
 
-<openmodularturrets:baseTierFourBlock>.addTooltip("§6§l* §7These can only be obtained from chests around the Docks.");
-<openmodularturrets:baseTierThreeBlock>.addTooltip("§6§l* §7These can only be obtained from chests around the Docks.");
-<openmodularturrets:baseTierTwoBlock>.addTooltip("§6§l* §7These can only be obtained from chests around the Docks.");
-<openmodularturrets:rocketTurret>.addTooltip("§6§l* §7These can only be obtained from chests around the Docks.");
-<openmodularturrets:grenadeTurret>.addTooltip("§6§l* §7These can only be obtained from chests around the Docks.");
-<flansmod:r700>.addTooltip("§6§l* §7These can only be obtained from chests around the Docks.");
-<flansmod:auga1>.addTooltip("§6§l* §7These can only be obtained from chests around the Docks.");
-<flansmod:mp5a4>.addTooltip("§6§l* §7These can only be obtained from chests around the Docks.");
-<flansmod:python>.addTooltip("§6§l* §7These can only be obtained from chests around the Docks.");
-<flansmod:l85>.addTooltip("§6§l* §7These can only be obtained from chests around the Docks.");
-<flansmod:mac10>.addTooltip("§6§l* §7These can only be obtained from chests around the Docks.");
-<flansmod:type89>.addTooltip("§6§l* §7These can only be obtained from chests around the Docks.");
-<flansmod:lebman>.addTooltip("§6§l* §7These can only be obtained from chests around the Docks.");
+<openmodularturrets:baseTierFourBlock>.addTooltip("§6§l* §7Dropped by Envoy and Bosses");
+<openmodularturrets:baseTierThreeBlock>.addTooltip("§6§l* §7Dropped by Envoy and Bosses");
+<openmodularturrets:baseTierTwoBlock>.addTooltip("§6§l* §7Dropped by Envoy and Bosses");
+<openmodularturrets:rocketTurret>.addTooltip("§6§l* §7Dropped by Envoy and Bosses");
+<openmodularturrets:grenadeTurret>.addTooltip("§6§l* §7Dropped by Envoy and Bosses");
+<flansmod:r700>.addTooltip("§6§l* §7Dropped by Envoy and Bosses");
+<flansmod:auga1>.addTooltip("§6§l* §7Dropped by Envoy and Bosses");
+<flansmod:mp5a4>.addTooltip("§6§l* §7Dropped by Envoy and Bosses");
+<flansmod:python>.addTooltip("§6§l* §7Dropped by Envoy and Bosses");
+<flansmod:l85>.addTooltip("§6§l* §7Dropped by Envoy and Bosses");
+<flansmod:mac10>.addTooltip("§6§l* §7Dropped by Envoy and Bosses");
+<flansmod:type89>.addTooltip("§6§l* §7Dropped by Envoy and Bosses");
+<flansmod:lebman>.addTooltip("§6§l* §7Dropped by Envoy and Bosses");
 
-<flansmod:thompson>.addTooltip("§6§l* §7These can only be obtained from chests around the United Warehouse building.");
-<flansmod:vector>.addTooltip("§6§l* §7These can only be obtained from chests around the United Warehouse building.");
-<flansmod:acp9>.addTooltip("§6§l* §7These can only be obtained from chests around the United Warehouse building.");
-<flansmod:g17>.addTooltip("§6§l* §7These can only be obtained from chests around the United Warehouse building.");
+<flansmod:thompson>.addTooltip("§6§l* §7Dropped by Envoy and Bosses");
+<flansmod:vector>.addTooltip("§6§l* §7Dropped by Envoy and Bosses");
+<flansmod:acp9>.addTooltip("§6§l* §7Dropped by Envoy and Bosses");
+<flansmod:g17>.addTooltip("§6§l* §7Dropped by Envoy and Bosses");
 
 <flansmod:m1014>.addTooltip("§6§l* §7Only obtainable from Vote Crates.");
 <flansmod:cz805>.addTooltip("§6§l* §7Only obtainable from Vote Crates.");
@@ -33,15 +33,15 @@
 <mcheli:uh-1c>.addTooltip("§6§l* §7Only obtainable from Vote Crates.");
 <mcheli:emb314>.addTooltip("§6§l* §7Only obtainable from Vote Crates.");
 
-<flansmod:csls06>.addTooltip("§6§l* §7Only obtainable from Rare Crates.");
-<flansmod:pm9>.addTooltip("§6§l* §7Only obtainable from Rare Crates.");
-<flansmod:cslr4>.addTooltip("§6§l* §7Only obtainable from Rare Crates.");
-<flansmod:hk33>.addTooltip("§6§l* §7Only obtainable from Rare Crates.");
-<mcheli:a6m2>.addTooltip("§6§l* §7Only obtainable from Rare Crates.");
-<mcheli:ec665>.addTooltip("§6§l* §7Only obtainable from Rare Crates.");
+<flansmod:csls06>.addTooltip("§6§l* §7Found in Weapon Crates.");
+<flansmod:pm9>.addTooltip("§6§l* §7Found in Weapon Crates.");
+<flansmod:cslr4>.addTooltip("§6§l* §7Found in Weapon Crates.");
+<flansmod:hk33>.addTooltip("§6§l* §7Found in Weapon Crates.");
+<mcheli:a6m2>.addTooltip("§6§l* §7Found in Weapon Crates.");
+<mcheli:ec665>.addTooltip("§6§l* §7Found in Weapon Crates.");
 
-<minecraft:nether_star>.addTooltip("§6§l* §7These can be obtained from the §3§nQuarry Loot Room");
-<Mekanism:MachineBlock:4>.addTooltip("§6§l* §7These can be crafted or obtained from the §3§nQuarry Loot Room");
+<minecraft:nether_star>.addTooltip("§6§l* §7Dropped by Envoy and Bosses");
+<Mekanism:MachineBlock:4>.addTooltip("§6§l* §7Crafted, or dropped by Envoy and Bosses");
 
 <contenttweaker:scrap_metal>.addTooltip("§6§l* §7Scrap Metal can be obtained by recycling weapons in a pulverizer.");
 
@@ -60,10 +60,10 @@
 
 <minecraft:potato>.addTooltip("§6§l* §7Used to check durability of protection blocks like Obsidian or Hard Wall.");
 
-<contenttweaker:insulating_tape>.addTooltip("§6§l* §7This is a key component in making TNT, and can be found in bulk around the United Warehouse.");
-<contenttweaker:lcd_display>.addTooltip("§6§l* §7This is a key component in making machines, and can be found around the United Warehouse.");
-<contenttweaker:chip>.addTooltip("§6§l* §7This is a key component in making machines, and can be found around the United Warehouse.");
-<contenttweaker:cloth>.addTooltip("§6§l* §7This is a key component in making TNT and clothing, and can be found around the United Warehouse.");
+<contenttweaker:insulating_tape>.addTooltip("§6§l* §7This is a key component in making TNT; dropped by Envoy and Bosses");
+<contenttweaker:lcd_display>.addTooltip("§6§l* §7This is a key component in making machines; dropped by Envoy and Bosses");
+<contenttweaker:chip>.addTooltip("§6§l* §7This is a key component in making machines; dropped by Envoy and Bosses");
+<contenttweaker:cloth>.addTooltip("§6§l* §7This is a key component in making TNT and clothing; dropped by Envoy and Bosses");
 
 <contenttweaker:c4>.addTooltip("§6§l* §7Required to blow into Bank Vault rooms during a Heist.");
 
@@ -95,9 +95,9 @@
 
 <customnpcs:npcAncientCoin>.addTooltip("§6§l* §7These can be looted from Supply Drops.");
 
-<OpenBlocks:sprinkler>.addTooltip("§6§l* §7These can be looted from United Warehouse § Docks");
+<OpenBlocks:sprinkler>.addTooltip("§6§l* §7Dropped by Envoy and Bosses");
 <OpenBlocks:sprinkler>.addTooltip("§6§l* §7Sprinklers can speed up growth speed in a 7x7 area and work faster when given bonemeal.");
-<BiomesOPlenty:gems:0>.addTooltip("§6§l* §7These can be looted from United Warehouse § Docks");
+<BiomesOPlenty:gems:0>.addTooltip("§6§l* §7Dropped by Envoy and Bosses");
 
 <minecraft:wooden_sword>.addTooltip("§6§l* §7These can only be used for crafting");
 <minecraft:iron_sword>.addTooltip("§6§l* §7These can only be used for crafting");
@@ -118,7 +118,7 @@
 <customnpcs:npcMoney>.addTooltip("");
 <customnpcs:npcMoney>.addTooltip("§6§l* §eBring this token to the City Bank to start a Bank Heist (x-225, z150)");
 
-<Mekanism:AtomicDisassembler>.addTooltip("§6§l* §3Only obtainable from Bank Vault and Quarry Loot Room");
+<Mekanism:AtomicDisassembler>.addTooltip("§6§l* §7Dropped by Envoy and Bosses");
 <Mekanism:CardboardBox>.addTooltip("§6§l* §2I can be used to move Monster Spawners");
 
 <minecraft:shears>.addTooltip("§6§l* §bEnchant Shears with Silktouch to mine Cobwebs!");
