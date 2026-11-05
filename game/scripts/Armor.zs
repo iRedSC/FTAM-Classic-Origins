@@ -1,6 +1,7 @@
 // Each armor set's tier, on the scale Flan's armor shows on its own (game/Flan/GREYLIGHT/armorFiles).
 // A set lands in the tier whose Flan's set its total armor points are nearest:
 // I Casual 6, II Assault 12, III Tactical 17, IV Contractor 24, V SpecOps 30, VI Juggernaut 35.
+// At 25 points Forge blocks every hit, so from IV up the tiers differ in how long they last.
 // Each piece's own points show under it (Visuals). Tier V is §4 like Flan's; only banneditems.zs's §4 lines ban.
 
 // Mud, 4
@@ -198,7 +199,7 @@
 <MekanismTools:ObsidianLeggings>.addTooltip("§4Tier V");
 <MekanismTools:ObsidianBoots>.addTooltip("§4Tier V");
 
-// Stellar, 47
+// Stellar, 47: charged, it lasts about as long as Juggernaut (Ender IO absorbs at most 60% of its wear)
 <EnderIO:item.stellar_helmet>.addTooltip("§dTier VI");
 <EnderIO:item.stellar_chestplate>.addTooltip("§dTier VI");
 <EnderIO:item.stellar_leggings>.addTooltip("§dTier VI");
