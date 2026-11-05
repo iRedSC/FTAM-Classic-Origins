@@ -104,17 +104,6 @@
 <minecraft:golden_sword>.addTooltip("§6§l* §7These can only be used for crafting");
 <minecraft:diamond_sword>.addTooltip("§6§l* §7These can only be used for crafting");
 
-<customnpcs:npcCrystal>.addTooltip("§6§l* §7Used to summon the §3Quarry Boss §7@ the §3Quarry Mine §7(left behind spawn)");
-<customnpcs:npcCrystal>.addTooltip("§6§l* §7You must defeat this boss for a chance to obtain the §4Ring Leader Boss Summoner");
-<customnpcs:npcCrystal>.addTooltip("");
-<customnpcs:npcCrystal>.addTooltip("§6§l* §2Drop Chances:");
-<customnpcs:npcMoney>.addTooltip("");
-<customnpcs:npcCrystal>.addTooltip("§6§l* §a100% - §3Quarry Loot Room Key");
-<customnpcs:npcCrystal>.addTooltip("§6§l* §a20% - §4Ring Leader Boss Summoner");
-<customnpcs:npcCrystal>.addTooltip("§6§l* §a25% - §bAtomic Disassembler");
-<customnpcs:npcCrystal>.addTooltip("");
-<customnpcs:npcCrystal>.addTooltip("§6§l* §eDeliver this to the Boss Summoner infront of Spawn to summon. (/warp BossSummoner)");
-
 <customnpcs:npcMoney>.addTooltip("§6§l* §7Used to start a §2Bank Heist §7@ the §3City Bank §7(left of park)");
 <customnpcs:npcMoney>.addTooltip("§6§l* §7Raid the §2Bank Vault §7for §6Legendary Rewards!");
 <customnpcs:npcMoney>.addTooltip("§6§l* §7Make sure to bring §4C4 §7to blow the §2Vault Rooms!");
@@ -128,16 +117,6 @@
 <customnpcs:npcMoney>.addTooltip("§6§l* §4Unique Crate Key");
 <customnpcs:npcMoney>.addTooltip("");
 <customnpcs:npcMoney>.addTooltip("§6§l* §eBring this token to the City Bank to start a Bank Heist (x-225, z150)");
-
-<customnpcs:npcRing>.addTooltip("§6§l* §7Used to summon the §4Ring Leader Boss §7above the §5Black Market §7(§ax-290, z215§7)");
-<customnpcs:npcRing>.addTooltip("§6§l* §7You must defeat this boss for a 75% chance to obtain the §2Bank Heist Token");
-<customnpcs:npcRing>.addTooltip("");
-<customnpcs:npcRing>.addTooltip("§6§l* §2Drop Chances:");
-<customnpcs:npcMoney>.addTooltip("");
-<customnpcs:npcRing>.addTooltip("§6§l* §a75% - §2Bank Heist Token");
-<customnpcs:npcRing>.addTooltip("§6§l* §a10% - §6Legendary Weapon Case");
-<customnpcs:npcRing>.addTooltip("");
-<customnpcs:npcRing>.addTooltip("§6§l* §eDeliver this to the Boss Summoner infront of Spawn to summon. (/warp BossSummoner)");
 
 <Mekanism:AtomicDisassembler>.addTooltip("§6§l* §3Only obtainable from Bank Vault and Quarry Loot Room");
 <Mekanism:CardboardBox>.addTooltip("§6§l* §2I can be used to move Monster Spawners");
