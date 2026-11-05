@@ -26,10 +26,8 @@
 <BiomesOPlenty:gems:4>.displayName = "Nitrocalite Ore";
 <customnpcs:npcAncientCoin>.displayName = "§cKoTH Token";
 <customnpcs:npcKey>.displayName = "§3Quarry Loot Room Key";
-<customnpcs:npcRing>.displayName = "§4Ring Leader Summoner";
 <customnpcs:npcMoney>.displayName = "§2Bank Heist Token";
 <GardenStuff:metal_block>.displayName = "§fBlock of Polymer";
-<customnpcs:npcCrystal>.displayName = "§3Quarry Boss Summoner";
 <militarybasedecor:barbed_bundled_wire>.displayName = "§fBundle of Scraps";
 <contenttweaker:CarBattery>.displayName = "§fCar Battery";
 <contenttweaker:Chemicals>.displayName = "§fChemicals";
