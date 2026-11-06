@@ -309,4 +309,5 @@ recipes.addShaped(<ComputerCraft:pocketComputer:1>, [[<ore:ingotElectrum>, <ore:
 recipes.addShaped(<ComputerCraft:pocketComputer>, [[<ore:ingotIron>, <ore:ingotIron>, <ore:ingotIron>], [<ore:ingotIron>, <ore:nuggetGold>, <ore:ingotIron>], [<ore:ingotIron>, <ore:paneGlassColorless>, <ore:ingotIron>]]);
 recipes.addShaped(<MineFactoryReloaded:machine.1:14>, [[<ore:sheetPlastic>, <minecraft:piston>, <ore:sheetPlastic>], [<minecraft:brick_block>, <ThermalExpansion:Frame:0>, <minecraft:brick_block>], [<minecraft:brick_block>, <ThermalExpansion:material:1>, <minecraft:brick_block>]]);
 recipes.addShaped(<minecraft:paper> * 3, [[<minecraft:reeds>, <minecraft:reeds>, <minecraft:reeds>], [<minecraft:reeds>, <minecraft:reeds>, <minecraft:reeds>]]);
-
+// PortaSpawner: no recipe on this server.
+recipes.remove(<MineFactoryReloaded:portaspawner>);
