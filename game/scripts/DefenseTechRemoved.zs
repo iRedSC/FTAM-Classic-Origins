@@ -1,9 +1,8 @@
 // DefenseTech items that are gone: no recipe, hidden from NEI, marked banned. Explosives among them can't go off
 // either (DefenseTech.cfg turns them off), so a leftover one is a dud.
-// Kept: the block and missile of each ladder explosive (condensed, sonic, thermobaric, hypersonic, nuclear); gas
-// (debilitation, chemical, contagious) and EMP as missiles only, made from a nuke (DefenseTech.zs); the missile
-// module (every missile's casing); the condensed grenade, which breaks no blocks.
-// Debilitation and chemical grenades stay usable but can't be made: they lose only their recipes, at the end.
+// Kept, but only from crates, envoy and bosses (DefenseTech.zs takes their recipes and bans the ladder's explosive
+// blocks): the missiles of the ladder explosives (condensed, sonic, thermobaric, hypersonic, nuclear), gas
+// (debilitation, chemical, contagious) and EMP; the condensed, debilitation and chemical grenades.
 // Meta is DefenseTech's explosive id, in its registration order.
 
 // shrapnel
@@ -177,7 +176,3 @@ mods.nei.NEI.hide(<DefenseTech:grenade:7>);
 recipes.remove(<DefenseTech:minecart:*>);
 <DefenseTech:minecart:*>.addTooltip("§4Banned");
 mods.nei.NEI.hide(<DefenseTech:minecart:*>);
-
-// Debilitation and chemical grenades: no recipe, but those already made still work.
-recipes.remove(<DefenseTech:grenade:3>);
-recipes.remove(<DefenseTech:grenade:4>);
