@@ -169,7 +169,7 @@
 <ThermalFoundation:armor.legsPlatinum>.addTooltip("§3Tier III");
 <ThermalFoundation:armor.bootsPlatinum>.addTooltip("§3Tier III");
 
-// Flux, 20, powered: never wears out while charged
+// Flux, 20 (blocks 90%), powered: lasts while charged, but a refill takes ~100 s a piece (RF_Transfer 200)
 <RedstoneArsenal:armor.helmetFlux>.addTooltip("§cTier IV");
 <RedstoneArsenal:armor.plateFlux>.addTooltip("§cTier IV");
 <RedstoneArsenal:armor.legsFlux>.addTooltip("§cTier IV");
