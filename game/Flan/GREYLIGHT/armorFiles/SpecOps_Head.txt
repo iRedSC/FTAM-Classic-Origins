@@ -5,7 +5,7 @@ Colour 255 255 255
 
 Type Head
 Model dwdefence.ValkyrieHead
-Defence 5
+Defence 7
 ArmourTexture SkymareValkyrieUniform
 
 Description _&4Tier V_&8[&4SpecOps &7Set&8]

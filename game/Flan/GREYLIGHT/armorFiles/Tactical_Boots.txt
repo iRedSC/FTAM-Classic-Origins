@@ -5,7 +5,7 @@ Colour 255 255 255
 
 Type Boots
 Model dwdefence.LMSSBoots
-Defence 2
+Defence 3
 ArmourTexture LupineLMSSUniform
 
 Description _&3Tier III_&8[&3Tactical &7Set&8]

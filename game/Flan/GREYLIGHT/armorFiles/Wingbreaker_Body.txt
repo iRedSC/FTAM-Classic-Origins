@@ -5,7 +5,7 @@ Colour 255 255 255
 
 Type Body
 Model dwdefence.WingbreakerBody
-Defence 5
+Defence 8
 ArmourTexture Ambircon_WingbreakerUniform
 MoveSpeedModifier 1.0
 JumpModifier 2.0

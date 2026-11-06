@@ -5,7 +5,7 @@ Colour 255 255 255
 
 Type Legs
 Model dwdefence.LMSSLegs
-Defence 3
+Defence 5
 ArmourTexture LupineLMSSUniform
 
 Description _&3Tier III_&8[&3Tactical &7Set&8]
