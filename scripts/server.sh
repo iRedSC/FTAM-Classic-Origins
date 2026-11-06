@@ -187,16 +187,17 @@ sync_game() {
 }
 
 sync_bans() {
-    # Item Blacklist enforces exactly what scripts/banneditems.zs tags "§4...", so that file is the one ban list.
+    # Item Blacklist enforces exactly what scripts/banned-*.zs tag "§4...". The forge-1.7.10-mods release writes those
+    # from House Rules' list, so it stays the one ban list.
     # <mod:item> without a meta bans every variant, which covers damaged tools and armor. Item Blacklist stops
     # the server over a name it doesn't know, so a typo there fails loudly on start instead of banning nothing.
     local entries
-    entries="$(sed -n 's/^<\([^>]*\)>\.addTooltip("§4.*/\1/p' "$REPO/game/scripts/banneditems.zs" | awk -F: '
+    entries="$(sed -n 's/^<\([^>]*\)>\.addTooltip("§4.*/\1/p' "$REPO"/game/scripts/banned-*.zs 2>/dev/null | awk -F: '
         !seen[$0]++ { printf "%s    {\"item\": \"%s:%s\", \"damage\": \"%s\"}", (n++ ? ",\n" : ""), $1, $2, (NF > 2 ? $3 : "*") }')"
-    [ -n "$entries" ] || fail "game/scripts/banneditems.zs bans nothing, so Item Blacklist would let everything through."
+    [ -n "$entries" ] || fail "game/scripts/banned-*.zs ban nothing, so Item Blacklist would let everything through."
     mkdir -p "$SERVER/config"
     printf '{\n  "__GLOBAL__": [\n%s\n  ]\n}\n' "$entries" > "$SERVER/config/ItemBlacklist.json"
-    echo "Bans: $(grep -c '"item"' "$SERVER/config/ItemBlacklist.json") items from banneditems.zs"
+    echo "Bans: $(grep -c '"item"' "$SERVER/config/ItemBlacklist.json") items from banned-*.zs"
 }
 
 mkdir -p "$SERVER"
