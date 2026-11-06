@@ -4,7 +4,7 @@ Icon skymareValkyrieBoots
 Colour 255 255 255
 Type Boots
 Model dwdefence.ValkyrieBoots
-Defence 5
+Defence 7
 Set 10
 ArmourTexture SkymareValkyrieUniform
 

@@ -4,7 +4,7 @@ Icon ambirconWingbreakerBoots
 Colour 255 255 255
 Type Boots
 Model dwdefence.WingbreakerPonyBoots
-Defence 5
+Defence 7
 ArmourTexture Ambircon_WingbreakerUniform
 MoveSpeedModifier 1.1
 

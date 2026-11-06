@@ -4,7 +4,7 @@ Icon ambirconWingbreakerLegs
 Colour 255 255 255
 Type Legs
 Model dwdefence.WingbreakerLegs
-Defence 5
+Defence 8
 ArmourTexture Ambircon_WingbreakerUniform
 MoveSpeedModifier 1.2
 

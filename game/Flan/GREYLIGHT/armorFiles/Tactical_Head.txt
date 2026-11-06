@@ -5,7 +5,7 @@ Colour 255 255 255
 
 Type Head
 Model dwdefence.LMSSHead
-Defence 2
+Defence 3
 ArmourTexture LupineLMSSUniform
 NightVision true
 
