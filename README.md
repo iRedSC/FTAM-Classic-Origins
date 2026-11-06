@@ -67,4 +67,4 @@ Two jars are patched in place, each by rewriting one string in its class files:
 
 ### Banned items
 
-`game/scripts/banneditems.zs` is the one ban list. An item tagged with a red `§4` tooltip there loses its recipe and its NEI entry, and the server script turns every tagged item into Item Blacklist's `config/ItemBlacklist.json`, so players can't hold, place or use it (ops can). `<mod:item>` without a meta bans every variant; write `:0` to ban only the base one. A name the game doesn't know stops the server on start.
+House Rules' list (`dev/config/houserules.json` in forge-1.7.10-mods) is the one ban list. Each release writes it into `game/scripts/banned-*.zs`; never edit those by hand. An item tagged with a red `§4` tooltip there loses its recipe and its NEI entry, and the server script turns every tagged item into Item Blacklist's `config/ItemBlacklist.json`, so players can't hold, place or use it (ops can). `<mod:item>` without a meta bans every variant; write `:0` to ban only the base one. A name the game doesn't know stops the server on start.
