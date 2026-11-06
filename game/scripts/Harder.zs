@@ -84,3 +84,8 @@ recipes.addShaped(<appliedenergistics2:tile.BlockGrinder>, [[<ore:crystalCertusQ
 recipes.addShaped(<appliedenergistics2:tile.BlockCharger>, [[<EnderIO:itemBasicCapacitor>, <ore:crystalFluix>, <ore:nuggetElectrum>], [<ore:ingotElectricalSteel>, null, null], [<ore:ingotElectricalSteel>, <ore:crystalFluix>, <ore:nuggetElectrum>]]);
 recipes.addShaped(<appliedenergistics2:tile.BlockSkyCompass>, [[<ore:nuggetPulsatingIron>, null, <ore:nuggetPulsatingIron>], [<ThermalExpansion:material:2>, <ore:crystalCertusQuartz>, <ThermalExpansion:material:1>], [<ore:ingotLead>, <ore:ingotLead>, <ore:ingotLead>]]);
 mods.thermalexpansion.Smelter.addRecipe(800, <EnderIO:itemPowderIngot:7> * 2, <appliedenergistics2:item.ItemMultiMaterial:2> * 2, <appliedenergistics2:tile.BlockQuartzGlass> * 2, <appliedenergistics2:tile.BlockQuartzGlass>, 20);
+// The one chunk loader: one per faction, loading only on its land (Factions enforces it).
+recipes.addShaped(<DimensionalAnchors:chunkloader>, [
+    [<minecraft:diamond_block>, <minecraft:ender_eye>, <minecraft:diamond_block>],
+    [<minecraft:ender_eye>, <minecraft:nether_star>, <minecraft:ender_eye>],
+    [<minecraft:diamond_block>, <minecraft:ender_eye>, <minecraft:diamond_block>]]);
