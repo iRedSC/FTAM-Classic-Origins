@@ -1,34 +1,10 @@
 // DefenseTech weapons can't be made: missiles and grenades come only from crates, envoy supply drops and bosses
-// (forge-1.7.10-mods's crates.json and phatloots.json). The explosive blocks behind the kept missiles are banned
-// like the rest in DefenseTechRemoved.zs: no recipe, hidden from NEI, marked banned, and HouseRules confiscates
-// them. Their explosives stay on in DefenseTech.cfg, since the missiles go off with them.
+// (forge-1.7.10-mods's crates.json and phatloots.json). The explosive blocks behind the kept missiles and the bomb
+// carts are banned in forge-1.7.10-mods's houserules.json, which writes banneditems.zs: no recipe, marked banned in
+// NEI, and House Rules confiscates them. Their explosives stay on in DefenseTech.cfg, since the missiles go off with
+// them.
 // Launchers, radar and the other machines keep their recipes.
 // Meta is DefenseTech's explosive id, in its registration order.
-
-// condensed
-recipes.remove(<DefenseTech:explosives:0>);
-<DefenseTech:explosives:0>.addTooltip("§4Banned");
-mods.nei.NEI.hide(<DefenseTech:explosives:0>);
-
-// sonic
-recipes.remove(<DefenseTech:explosives:10>);
-<DefenseTech:explosives:10>.addTooltip("§4Banned");
-mods.nei.NEI.hide(<DefenseTech:explosives:10>);
-
-// thermobaric
-recipes.remove(<DefenseTech:explosives:13>);
-<DefenseTech:explosives:13>.addTooltip("§4Banned");
-mods.nei.NEI.hide(<DefenseTech:explosives:13>);
-
-// nuclear
-recipes.remove(<DefenseTech:explosives:15>);
-<DefenseTech:explosives:15>.addTooltip("§4Banned");
-mods.nei.NEI.hide(<DefenseTech:explosives:15>);
-
-// hypersonic
-recipes.remove(<DefenseTech:explosives:20>);
-<DefenseTech:explosives:20>.addTooltip("§4Banned");
-mods.nei.NEI.hide(<DefenseTech:explosives:20>);
 
 // Every missile and grenade loses its recipe, the missile module (only a crafting part) too; the kept ones say
 // where they come from.
