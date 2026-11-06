@@ -41,7 +41,6 @@ recipes.remove(<appliedenergistics2:tile.BlockSecurity>);
 recipes.remove(<openmodularturrets:baseTierOneBlock>);
 recipes.remove(<ExtraUtilities:peaceful_table_top>);
 recipes.remove(<Mekanism:Robit>);
-recipes.remove(<DimensionalAnchors:chunkloader>);
 recipes.remove(<psychedelicraft:syringe>);
 recipes.remove(<Mekanism:FactoryInstaller:3>);
 recipes.remove(<BigReactors:BRReactorPart:5>);
