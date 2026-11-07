@@ -1,8 +1,9 @@
 <ThermalExpansion:material:16>.addTooltip("§aTIP: Only Tesseracts can be locked.");
 <flansmod:medkit>.addTooltip("§aTIP: Heals 7 health (3.5 hearts).");
+<contenttweaker:CarBattery>.addTooltip("§aTIP: Fuel for Laser Drills and Dimensional Anchors.");
 <minecraft:mob_spawner>.addTooltip("§aTIP: There is a 75% chance a spawner will drop by blowing it up.");
 
-<MineFactoryReloaded:machine.2>.addTooltip("§6§l* §7Dropped by Envoy and Bosses");
+<MineFactoryReloaded:machine.2>.addTooltip("§6§l* §7Dropped by Envoy");
 <MekanismGenerators:Reactor>.addTooltip("§6§l* §7Dropped by Envoy and Bosses");
 <openmodularturrets:railGunTurret>.addTooltip("§6§l* §7Dropped by Envoy and Bosses");
 <openmodularturrets:laserTurret>.addTooltip("§6§l* §7Dropped by Envoy and Bosses");
