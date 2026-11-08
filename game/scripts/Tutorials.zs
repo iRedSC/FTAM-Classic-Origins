@@ -66,8 +66,6 @@
 <contenttweaker:chip>.addTooltip("§6§l* §7This is a key component in making machines; dropped by Envoy and Bosses");
 <contenttweaker:cloth>.addTooltip("§6§l* §7This is a key component in making TNT and clothing; dropped by Envoy and Bosses");
 
-<contenttweaker:c4>.addTooltip("§6§l* §7Required to blow into Bank Vault rooms during a Heist.");
-
 <psychedelicraft:hop_cones>.addTooltip("§6§l* §7Can be sold at the Admin Shop.");
 <psychedelicraft:coffeaCherries>.addTooltip("§6§l* §7Can be sold at the Admin Shop.");
 <psychedelicraft:coffeeBeans>.addTooltip("§6§l* §7Can be sold at the Admin Shop.");
@@ -104,20 +102,6 @@
 <minecraft:iron_sword>.addTooltip("§6§l* §7These can only be used for crafting");
 <minecraft:golden_sword>.addTooltip("§6§l* §7These can only be used for crafting");
 <minecraft:diamond_sword>.addTooltip("§6§l* §7These can only be used for crafting");
-
-<customnpcs:npcMoney>.addTooltip("§6§l* §7Used to start a §2Bank Heist §7@ the §3City Bank §7(left of park)");
-<customnpcs:npcMoney>.addTooltip("§6§l* §7Raid the §2Bank Vault §7for §6Legendary Rewards!");
-<customnpcs:npcMoney>.addTooltip("§6§l* §7Make sure to bring §4C4 §7to blow the §2Vault Rooms!");
-<customnpcs:npcMoney>.addTooltip("");
-<customnpcs:npcMoney>.addTooltip("§6§l* §2Potential Loot:");
-<customnpcs:npcMoney>.addTooltip("");
-<customnpcs:npcMoney>.addTooltip("§6§l* §aUp to $75,000 Per Loot Room");
-<customnpcs:npcMoney>.addTooltip("§6§l* §6Legendary Weapon");
-<customnpcs:npcMoney>.addTooltip("§6§l* §3Laser Drill");
-<customnpcs:npcMoney>.addTooltip("§6§l* §cSupply Drop Flare");
-<customnpcs:npcMoney>.addTooltip("§6§l* §4Unique Crate Key");
-<customnpcs:npcMoney>.addTooltip("");
-<customnpcs:npcMoney>.addTooltip("§6§l* §eBring this token to the City Bank to start a Bank Heist (x-225, z150)");
 
 <Mekanism:AtomicDisassembler>.addTooltip("§6§l* §7Dropped by Envoy and Bosses");
 <Mekanism:CardboardBox>.addTooltip("§6§l* §2I can be used to move Monster Spawners");
