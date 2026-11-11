@@ -1,0 +1,60 @@
+name: Attach Technic pack to release
+
+# A GitHub release gets ftam-classic-origins-technic.zip: unzipped over Technic's .minecraft it is the whole
+# client, the same mods and settings play.cmd syncs (mods/shared + mods/client + game/), with Forge as
+# bin/modpack.jar. The name never changes, so a Technic pack can point at
+# https://github.com/iRedSC/FTAM-Classic-Origins/releases/latest/download/ftam-classic-origins-technic.zip
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Release tag to build and attach to
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  technic:
+    runs-on: ubuntu-latest
+    env:
+      TAG: ${{ github.event.release.tag_name || inputs.tag }}
+      ZIP: ftam-classic-origins-technic.zip
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ env.TAG }}
+
+      - name: Build the Technic zip
+        run: |
+          set -euo pipefail
+          # play.ps1 owns the Minecraft and Forge versions; read them so the zip can't drift from the launcher.
+          mc=$(sed -nE "s/^\\\$Minecraft *= *'([^']+)'.*/\1/p" scripts/play.ps1)
+          forge=$(sed -nE "s/^\\\$Forge *= *'([^']+)'.*/\1/p" scripts/play.ps1)
+          [ -n "$mc" ] && [ -n "$forge" ] || { echo "::error::couldn't read \$Minecraft/\$Forge from scripts/play.ps1"; exit 1; }
+          echo "Minecraft $mc, Forge $forge"
+
+          out=technic; mkdir -p "$out/mods" "$out/bin"
+
+          # Same rule as play.ps1's Sync-Mods: top-level jars only, and a jar in both folders is an error.
+          dupes=$(find mods/shared mods/client -maxdepth 1 -type f -name '*.jar' -printf '%f\n' | sort | uniq -d)
+          [ -z "$dupes" ] || { echo "::error::in both mods/shared and mods/client: $dupes"; exit 1; }
+          find mods/shared mods/client -maxdepth 1 -type f -name '*.jar' -exec cp -t "$out/mods" {} +
+
+          cp -r game/. "$out/"
+
+          # 1.7.10 Forge ships as one universal jar, which Technic loads as bin/modpack.jar.
+          v="$mc-$forge-$mc"
+          curl -fsSL -o "$out/bin/modpack.jar" \
+            "https://maven.minecraftforge.net/net/minecraftforge/forge/$v/forge-$v-universal.jar"
+
+          (cd "$out" && zip -qr -X "../$ZIP" .)
+          echo "$(find "$out/mods" -name '*.jar' | wc -l) mods"
+          ls -lh "$ZIP"
+
+      - name: Attach to the release
+        run: gh release upload "$TAG" "$ZIP" --clobber
