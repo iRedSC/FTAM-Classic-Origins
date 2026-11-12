@@ -32,6 +32,19 @@ say() {
     printf '\033[36m%s\033[0m\n' "$*"
 }
 
+# Each step before Java starts is timed, and one line before launch says where the wait went.
+now_ms() { date +%s%3N; }
+seconds() { printf '%d.%d' $(($1 / 1000)) $(($1 % 1000 / 100)); }
+START_MS="${FTAM_START_MS:-$(now_ms)}"
+STEPS="${FTAM_STEPS:-}"
+timed() {
+    local label="$1" start
+    shift
+    start="$(now_ms)"
+    "$@"
+    STEPS+="${STEPS:+, }$label $(seconds $(($(now_ms) - start)))"
+}
+
 is_java8() {
     [ -x "$1" ] && "$1" -version 2>&1 | head -n 1 | grep -q '"1\.8\.'
 }
@@ -159,20 +172,25 @@ sync_game() {
     # server's copy on every start; files it doesn't have, such as ones mods write themselves, are left alone.
     # NEI is client only, and one mods.nei call the server can't resolve makes MineTweaker skip the whole
     # script, so scripts reach the server without those lines.
-    local file count=0 tmp
-    tmp="$(mktemp)"
+    # Comparing file by file forked thousands of processes (18s on the dev box, worse on Windows), so the server's
+    # copy is built in a staging folder and one md5sum pass names the files that differ.
+    local file count=0 stage sums
+    stage="$(mktemp -d)"
+    sums="$(mktemp)"
+    cp -R "$REPO/game/." "$stage/"
     while IFS= read -r -d '' file; do
+        grep -v '^[[:space:]]*mods\.nei\.' "$REPO/game/$file" > "$stage/$file" || true
+    done < <(cd "$REPO/game" && find . -type f -name '*.zs' -printf '%P\0')
+    (cd "$stage" && find . -type f -print0 | xargs -0 md5sum) > "$sums"
+    # A file the server lacks or holds differently fails the check; the rest pass silently.
+    while IFS= read -r file; do
+        file="${file#./}"
         mkdir -p "$SERVER/$(dirname "$file")"
-        case "$file" in
-            *.zs) grep -v '^[[:space:]]*mods\.nei\.' "$REPO/game/$file" > "$tmp" || true ;;
-            *) cp "$REPO/game/$file" "$tmp" ;;
-        esac
-        cmp -s "$tmp" "$SERVER/$file" && continue
-        cp "$tmp" "$SERVER/$file"
+        cp "$stage/$file" "$SERVER/$file"
         printf '\033[36m  ~ %s\033[0m\n' "$file"
         count=$((count + 1))
-    done < <(cd "$REPO/game" && find . -type f -printf '%P\0')
-    rm -f "$tmp"
+    done < <(cd "$SERVER" && md5sum -c --quiet "$sums" 2>/dev/null | sed -n 's/: FAILED.*$//p')
+    rm -rf "$stage" "$sums"
     # A file the pack used to ship and has since deleted goes too, or a removed mod's script keeps running
     # against items that no longer exist. Files the pack never shipped are left alone.
     local removed=0
@@ -206,21 +224,23 @@ JAVA="$(find_java8)"
 # A pull that changed this script reruns it, so the new version does this run's work.
 if [ -z "${FTAM_PULLED:-}" ]; then
     before="$(git -C "$REPO" hash-object "${BASH_SOURCE[0]}")"
-    update_repo
-    [ "$(git -C "$REPO" hash-object "${BASH_SOURCE[0]}")" = "$before" ] || FTAM_PULLED=1 exec bash "${BASH_SOURCE[0]}" "$@"
+    timed pull update_repo
+    [ "$(git -C "$REPO" hash-object "${BASH_SOURCE[0]}")" = "$before" ] \
+        || FTAM_PULLED=1 FTAM_START_MS="$START_MS" FTAM_STEPS="$STEPS" exec bash "${BASH_SOURCE[0]}" "$@"
 fi
-install_forge
-sync_mods
-sync_plugins
-sync_game
-sync_bans
+timed forge install_forge
+timed mods sync_mods
+timed plugins sync_plugins
+timed settings sync_game
+timed bans sync_bans
 
 # Running this script is agreeing to the Minecraft EULA: https://aka.ms/MinecraftEULA
 [ -f "$SERVER/eula.txt" ] || echo 'eula=true' > "$SERVER/eula.txt"
 
-say "Starting server with $JAVA ($MEMORY)..."
+say "Ready in $(seconds $(($(now_ms) - START_MS)))s ($STEPS). Starting server with $JAVA ($MEMORY)..."
 cd "$SERVER"
 # fml.queryResult=confirm answers Forge's startup questions, such as "the world has blocks from a mod that's gone,
 # continue?", with yes. Otherwise a restart with no one at the console waits forever for /fml confirm.
-exec "$JAVA" -Xms1G "-Xmx$MEMORY" -XX:+UseG1GC -XX:+UnlockExperimentalVMOptions -XX:MaxGCPauseMillis=100 \
+# The heap starts at its full size: loading 130k classes would otherwise make G1 grow it again and again.
+exec "$JAVA" "-Xms$MEMORY" "-Xmx$MEMORY" -XX:+UseG1GC -XX:+UnlockExperimentalVMOptions -XX:MaxGCPauseMillis=100 \
     -XX:+DisableExplicitGC -Dfml.queryResult=confirm -jar "$FORGE_JAR" nogui
