@@ -241,5 +241,6 @@ say "Ready in $(seconds $(($(now_ms) - START_MS)))s ($STEPS). Starting server wi
 cd "$SERVER"
 # fml.queryResult=confirm answers Forge's startup questions, such as "the world has blocks from a mod that's gone,
 # continue?", with yes. Otherwise a restart with no one at the console waits forever for /fml confirm.
-exec "$JAVA" -Xms1G "-Xmx$MEMORY" -XX:+UseG1GC -XX:+UnlockExperimentalVMOptions -XX:MaxGCPauseMillis=100 \
+# The heap starts at its full size: loading 130k classes would otherwise make G1 grow it again and again.
+exec "$JAVA" "-Xms$MEMORY" "-Xmx$MEMORY" -XX:+UseG1GC -XX:+UnlockExperimentalVMOptions -XX:MaxGCPauseMillis=100 \
     -XX:+DisableExplicitGC -Dfml.queryResult=confirm -jar "$FORGE_JAR" nogui
