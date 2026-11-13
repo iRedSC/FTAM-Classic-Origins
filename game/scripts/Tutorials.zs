@@ -44,7 +44,6 @@
 <minecraft:nether_star>.addTooltip("§6§l* §7Dropped by Envoy and Bosses");
 <Mekanism:MachineBlock:4>.addTooltip("§6§l* §7Crafted, or dropped by Envoy and Bosses");
 
-<contenttweaker:scrap_metal>.addTooltip("§6§l* §7Scrap Metal can be obtained by recycling weapons in a pulverizer.");
 
 <minecraft:obsidian>.addTooltip("§6§l* §7Takes 12 TNT shots to destroy");
 <ExtraUtilities:color_obsidian>.addTooltip("§6§l* §7Takes 12 TNT shots to destroy");
