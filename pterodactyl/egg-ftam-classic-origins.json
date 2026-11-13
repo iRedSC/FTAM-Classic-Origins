@@ -1,45 +1,45 @@
 {
-    "meta": {
-        "version": "PTDL_v2",
-        "update_url": "https://raw.githubusercontent.com/iRedSC/FTAM-Classic-Origins/main/pterodactyl/egg-ftam-classic-origins.json"
-    },
-    "exported_at": "2026-11-13T00:00:00+00:00",
-    "name": "FTAM Classic: Origins",
-    "author": "redstonecharger@gmail.com",
-    "description": "Minecraft 1.7.10 Forge modpack server. Each start updates to the pack's latest GitHub release (the one the Technic pack uses), or to the release set in Pack release.",
-    "features": [
-        "eula",
-        "java_version",
-        "pid_limit"
-    ],
-    "docker_images": {
-        "Java 8": "ghcr.io/pterodactyl/yolks:java_8"
-    },
-    "file_denylist": [],
-    "startup": "bash start.sh",
-    "config": {
-        "files": "{\n    \"server.properties\": {\n        \"parser\": \"properties\",\n        \"find\": {\n            \"server-ip\": \"0.0.0.0\",\n            \"server-port\": \"{{server.build.default.port}}\",\n            \"query.port\": \"{{server.build.default.port}}\"\n        }\n    }\n}",
-        "startup": "{\n    \"done\": \")! For help, type \"\n}",
-        "logs": "{}",
-        "stop": "stop"
-    },
-    "scripts": {
-        "installation": {
-            "script": "#!/bin/bash\n# Runs once in Pterodactyl's installer container (as root, server files at /mnt/server).\n# Clones the pack and puts its start script in place; the first start installs Forge, mods and settings.\n# Reinstalling keeps the world and configs, and only refreshes the pack and start.sh.\nset -euo pipefail\napt-get update -qq\napt-get install -y -qq git ca-certificates > /dev/null\ncd /mnt/server\nif [ -d pack/.git ]; then\n    git -C pack fetch -q --tags --force origin\nelse\n    rm -rf pack\n    git clone -q https://github.com/iRedSC/FTAM-Classic-Origins.git pack\nfi\ngit -C pack show origin/main:pterodactyl/start.sh > start.sh\necho \"Installed. Start the server to download Forge and the pack's latest release.\"\n",
-            "container": "ghcr.io/pterodactyl/installers:debian",
-            "entrypoint": "bash"
-        }
-    },
-    "variables": [
-        {
-            "name": "Pack release",
-            "description": "latest follows the newest release on every start. A tag such as curseforge-dev-9e0abdc pins that release, for example to roll back; set it back to latest to follow again. Tags: https://github.com/iRedSC/FTAM-Classic-Origins/releases",
-            "env_variable": "PACK_RELEASE",
-            "default_value": "latest",
-            "user_viewable": true,
-            "user_editable": true,
-            "rules": "required|string|max:100|regex:/^[A-Za-z0-9._\\-]+$/",
-            "field_type": "text"
-        }
-    ]
+  "meta": {
+    "version": "PTDL_v2",
+    "update_url": "https://raw.githubusercontent.com/iRedSC/FTAM-Classic-Origins/main/pterodactyl/egg-ftam-classic-origins.json"
+  },
+  "exported_at": "2026-11-13T00:00:00+00:00",
+  "name": "FTAM Classic: Origins",
+  "author": "redstonecharger@gmail.com",
+  "description": "Minecraft 1.7.10 Forge modpack. Each start runs the pack's latest release, or the one set in Pack release.",
+  "features": [
+    "eula",
+    "java_version",
+    "pid_limit"
+  ],
+  "docker_images": {
+    "Java 8": "ghcr.io/pterodactyl/yolks:java_8"
+  },
+  "file_denylist": [],
+  "startup": "bash start.sh",
+  "config": {
+    "files": "{\"server.properties\": {\"parser\": \"properties\", \"find\": {\"server-ip\": \"0.0.0.0\", \"server-port\": \"{{server.build.default.port}}\", \"query.port\": \"{{server.build.default.port}}\"}}}",
+    "startup": "{\"done\": \")! For help, type \"}",
+    "logs": "{}",
+    "stop": "stop"
+  },
+  "scripts": {
+    "installation": {
+      "script": "#!/bin/bash\nset -euo pipefail\napt-get update -qq && apt-get install -y -qq git ca-certificates > /dev/null\ncd /mnt/server\n[ -d pack/.git ] || { rm -rf pack; git clone -q https://github.com/iRedSC/FTAM-Classic-Origins.git pack; }\ngit -C pack fetch -q --tags --force origin\ngit -C pack show origin/main:pterodactyl/start.sh > start.sh\n",
+      "container": "ghcr.io/pterodactyl/installers:debian",
+      "entrypoint": "bash"
+    }
+  },
+  "variables": [
+    {
+      "name": "Pack release",
+      "description": "latest, or a release tag to pin or roll back to.",
+      "env_variable": "PACK_RELEASE",
+      "default_value": "latest",
+      "user_viewable": true,
+      "user_editable": true,
+      "rules": "required|string|max:100",
+      "field_type": "text"
+    }
+  ]
 }
