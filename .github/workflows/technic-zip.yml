@@ -22,7 +22,8 @@ jobs:
     runs-on: ubuntu-latest
     env:
       TAG: ${{ github.event.release.tag_name || inputs.tag }}
-      ZIP: ftam-classic-origins-technic.zip
+      # Not ZIP: zip reads $ZIP as extra options, which made it write nothing.
+      TECHNIC_ZIP: ftam-classic-origins-technic.zip
       GH_TOKEN: ${{ github.token }}
     steps:
       - uses: actions/checkout@v4
@@ -52,9 +53,9 @@ jobs:
           curl -fsSL -o "$out/bin/modpack.jar" \
             "https://maven.minecraftforge.net/net/minecraftforge/forge/$v/forge-$v-universal.jar"
 
-          (cd "$out" && zip -qr -X "../$ZIP" .)
+          (cd "$out" && zip -qr -X "../$TECHNIC_ZIP" .)
           echo "$(find "$out/mods" -name '*.jar' | wc -l) mods"
-          ls -lh "$ZIP"
+          ls -lh "$TECHNIC_ZIP"
 
       - name: Attach to the release
-        run: gh release upload "$TAG" "$ZIP" --clobber
+        run: gh release upload "$TAG" "$TECHNIC_ZIP" --clobber

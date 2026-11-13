@@ -1,0 +1,45 @@
+{
+  "meta": {
+    "version": "PTDL_v2",
+    "update_url": "https://raw.githubusercontent.com/iRedSC/FTAM-Classic-Origins/main/pterodactyl/egg-ftam-classic-origins.json"
+  },
+  "exported_at": "2026-11-13T00:00:00+00:00",
+  "name": "FTAM Classic: Origins",
+  "author": "redstonecharger@gmail.com",
+  "description": "Minecraft 1.7.10 Forge modpack. Each start runs the pack's latest release, or the one set in Pack release.",
+  "features": [
+    "eula",
+    "java_version",
+    "pid_limit"
+  ],
+  "docker_images": {
+    "Java 8": "ghcr.io/pterodactyl/yolks:java_8"
+  },
+  "file_denylist": [],
+  "startup": "bash start.sh",
+  "config": {
+    "files": "{\"server.properties\": {\"parser\": \"properties\", \"find\": {\"server-ip\": \"0.0.0.0\", \"server-port\": \"{{server.build.default.port}}\", \"query.port\": \"{{server.build.default.port}}\"}}}",
+    "startup": "{\"done\": \")! For help, type \"}",
+    "logs": "{}",
+    "stop": "stop"
+  },
+  "scripts": {
+    "installation": {
+      "script": "#!/bin/bash\nset -euo pipefail\napt-get update -qq && apt-get install -y -qq git ca-certificates > /dev/null\ncd /mnt/server\n[ -d pack/.git ] || { rm -rf pack; git clone -q https://github.com/iRedSC/FTAM-Classic-Origins.git pack; }\ngit -C pack fetch -q --tags --force origin\ngit -C pack show origin/main:pterodactyl/start.sh > start.sh\n",
+      "container": "ghcr.io/pterodactyl/installers:debian",
+      "entrypoint": "bash"
+    }
+  },
+  "variables": [
+    {
+      "name": "Pack release",
+      "description": "latest, or a release tag to pin or roll back to.",
+      "env_variable": "PACK_RELEASE",
+      "default_value": "latest",
+      "user_viewable": true,
+      "user_editable": true,
+      "rules": "required|string|max:100",
+      "field_type": "text"
+    }
+  ]
+}
