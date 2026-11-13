@@ -256,6 +256,9 @@ function Sync-Mods([string]$ModsDir) {
     Write-Host ("Mods: {0} total, {1} added, {2} updated, {3} removed" -f $wanted.Count, $added, $updated, $removed)
 }
 
+# Line-level pack settings in files players also own (settings\always, settings\once); see settings.ps1.
+. (Join-Path $PSScriptRoot 'settings.ps1')
+
 function Sync-Game([string]$GameDir) {
     # game\ holds the pack's settings: mod configs and MineTweaker scripts. Each file in it replaces the
     # instance's copy on every launch; files it doesn't have, such as your own options, are left alone.
@@ -285,6 +288,8 @@ function Sync-Game([string]$GameDir) {
         foreach ($path in ($deleted | Where-Object { $_ -like 'game/*' } | Sort-Object -Unique)) {
             $rel = $path.Substring(5) -replace '/', '\'
             if (Test-Path -LiteralPath (Join-Path $source $rel)) { continue }
+            # Moved to settings\, which now owns only some of its lines; the rest are the player's.
+            if (Test-OwnedSettingPath $Repo $rel) { continue }
             $target = Join-Path $GameDir $rel
             if (-not (Test-Path -LiteralPath $target -PathType Leaf)) { continue }
             Remove-Item -LiteralPath $target -Force
@@ -296,6 +301,12 @@ function Sync-Game([string]$GameDir) {
         Fail "Couldn't remove an old setting: $($_.Exception.Message)`nClose Minecraft and run this again."
     }
     Write-Host "Settings: $count updated, $removed removed from game\"
+    try {
+        Sync-Settings $Repo $GameDir
+    }
+    catch [System.IO.IOException] {
+        Fail "Couldn't change the game's settings: $($_.Exception.Message)`nClose Minecraft and run this again."
+    }
 }
 
 # Prism names the instance it's launching. Refuse before updating if this hook is for another instance's branch.
