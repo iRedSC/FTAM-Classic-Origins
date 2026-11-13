@@ -71,7 +71,7 @@ Recoil 5
 RecoilYaw 1
 ReloadTime 80
 SecondaryFunction ADS_ZOOM
-ShootDelay 6.6
+ShootDelay 7
 UsableByMechas False
 UsableByPlayers True
 Icon MK20SSRTD

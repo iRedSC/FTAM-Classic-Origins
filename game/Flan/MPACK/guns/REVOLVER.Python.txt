@@ -68,7 +68,7 @@ Spread 0.8
 Mode SEMIAUTO
 Recoil 12
 ReloadTime 80
-ShootDelay 6.6
+ShootDelay 7
 Icon pythonTD
 
 //Shield
