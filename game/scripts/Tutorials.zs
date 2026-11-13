@@ -87,6 +87,7 @@
 <appliedenergistics2:item.ItemBasicStorageCell.4k>.addTooltip("§cPlease don't put me in a §4satchel or strongbox§c. I will §4corrupt §cyour inventory...");
 <appliedenergistics2:item.ItemBasicStorageCell.16k>.addTooltip("§cPlease don't put me in a §4satchel or strongbox§c. I will §4corrupt §cyour inventory...");
 <appliedenergistics2:item.ItemBasicStorageCell.64k>.addTooltip("§cPlease don't put me in a §4satchel or strongbox§c. I will §4corrupt §cyour inventory...");
+<appliedenergistics2:item.ItemMultiMaterial:48>.addTooltip("§6§l* §7Both ends of a Quantum Bridge must be chunk loaded.");
 <ThermalExpansion:satchel:*>.addTooltip("§cPlease don't put §4storage cells§c in me.");
 <ThermalExpansion:satchel:*>.addTooltip("§cI will §4corrupt §cyour inventory...");
 <ThermalExpansion:Strongbox:*>.addTooltip("§cPlease don't put §4storage cells§c in me.");
