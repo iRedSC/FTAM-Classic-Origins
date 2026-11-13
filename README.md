@@ -40,6 +40,8 @@ Run `scripts/server.sh` on Linux, or `server.cmd` on Windows (needs Git for Wind
 
 It pulls this repo, installs Forge into `server/` (or the folder you pass as the first argument), mirrors `mods/shared` and `mods/server` into its `mods/` and `mods/plugin` into its `plugins/`, and starts the server. On `dev` it uses `server-dev/` instead. `FTAM_SERVER_MEMORY` sets the max heap (default `6G`). Running it accepts the [Minecraft EULA](https://aka.ms/MinecraftEULA).
 
+On a Pterodactyl panel, import the egg in [`pterodactyl/`](pterodactyl/README.md) instead. It runs the latest GitHub release rather than a branch.
+
 ## Mods
 
 - `mods/shared`: client and server
