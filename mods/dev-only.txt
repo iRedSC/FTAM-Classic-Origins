@@ -1,0 +1,4 @@
+# Jars only the dev branch ships; written by forge-1.7.10-mods' ./release dev. Sentry reads it.
+mods/client/clientmcp-0.4.0+f009080.jar
+mods/client/replaymod-1.7.10-2.5.2-ftam.jar
+mods/server/bootcache-0.1.0+2c16fd8.jar

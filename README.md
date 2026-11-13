@@ -40,6 +40,8 @@ Run `scripts/server.sh` on Linux, or `server.cmd` on Windows (needs Git for Wind
 
 It pulls this repo, installs Forge into `server/` (or the folder you pass as the first argument), mirrors `mods/shared` and `mods/server` into its `mods/` and `mods/plugin` into its `plugins/`, and starts the server. On `dev` it uses `server-dev/` instead. `FTAM_SERVER_MEMORY` sets the max heap (default `6G`). Running it accepts the [Minecraft EULA](https://aka.ms/MinecraftEULA).
 
+It also tells Sentry where this checkout is, so players may join only with the jars in `mods/client` and `mods/shared`. On `dev`, the release lists its dev-only jars in `mods/dev-only.txt`; players with one are kicked unless staff turn on `/sentry devmode`.
+
 On a Pterodactyl panel, import the egg in [`pterodactyl/`](pterodactyl/README.md) instead. It runs the latest GitHub release rather than a branch.
 
 ## Mods
@@ -65,6 +67,17 @@ One jar is patched in place, by rewriting one string in its class files:
 ## Settings
 
 `game/` holds the pack's settings: mod configs, MineTweaker `scripts/`, ContentTweaker `contentScripts/` and Flan's Mod content packs (`Flan/`: MPACK guns, GREYLIGHT armor and injectors). `play.cmd` and the server script copy each file in it over the game folder's copy every time they run, so edit them here, not in the instance or server. Files `game/` doesn't have, such as your own options, are left alone.
+
+### Lines in files players own
+
+When a file is partly the player's (key bindings, `options.txt`), put only the lines the pack cares about in `settings/always/<path>` or `settings/once/<path>`, where `<path>` is under the game folder, such as `settings/once/options.txt` or `settings/always/config/MCHeli/mcheli.cfg`. Write them as they appear in the file, under the same `[section]` or Forge `category {` they belong to. Every other line stays as the player or server has it.
+
+- `always`: put back on every launch and server start. For values players must not change.
+- `once`: put in the first time the pack ships that exact line, then left alone, so a player who changes it keeps their change. Edit the line and it applies once more. For defaults. `always` wins if both name a line.
+
+A line is matched by its section and key: the text before `=`, or before `:` in `.txt` files such as `options.txt`. Where lines share a first word, as Xaero's `interface:<name>:...` lines do, put `# key: interface:gui.xaero_minimap` on the line above to name the longer key. The pack's lines replace every line with that key in that section, so a key repeated as a list is replaced as a whole. A key the file lacks goes at the end of its section, and a missing file is created with just the pack's lines. Each game folder and server remembers its applied `once` lines in `.ftam-settings-once`.
+
+`play.ps1` (`scripts/settings.ps1`) does this on players' PCs and the server script (`scripts/merge-settings.awk`) on servers; `scripts/test-settings.sh` checks they agree (it needs `pwsh` for the `play.ps1` half). A file can't be in both `game/` and `settings/`; moving one from `game/` to `settings/` keeps it from being deleted as a removed file.
 
 ### Banned items
 
