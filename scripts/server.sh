@@ -178,6 +178,10 @@ sync_game() {
     stage="$(mktemp -d)"
     sums="$(mktemp)"
     cp -R "$REPO/game/." "$stage/"
+    # The server crashes on an entity or tile entity that errors instead of deleting it: a deleted machine, chest or
+    # NPC is a player's work gone with one log line, while a crash report names the culprit. Clients keep removing
+    # theirs, since a client's copy is only a picture of the server's.
+    sed -i -E 's/^([[:space:]]*B:removeErroring(Entities|TileEntities))=true/\1=false/' "$stage/config/forge.cfg"
     while IFS= read -r -d '' file; do
         grep -v '^[[:space:]]*mods\.nei\.' "$REPO/game/$file" > "$stage/$file" || true
     done < <(cd "$REPO/game" && find . -type f -name '*.zs' -printf '%P\0')
