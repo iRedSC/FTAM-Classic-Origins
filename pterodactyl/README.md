@@ -8,6 +8,12 @@
 2. **Create a server** with that egg. Give it at least 6 GB of memory; the server's heap is 85% of whatever it gets. One port is enough.
 3. **Start it.** Installing only downloads the pack. The first start also downloads Forge and copies the mods, so it takes a few minutes before `Done`.
 
+## Without the egg
+
+If the panel won't let you change a server's egg, use `ftam-server.jar` on any Java egg (such as Vanilla Minecraft): **upload it as the server's jar (usually `server.jar`) and start.** Its first start clones the pack, puts `start.sh` beside it, and downloads a Java 8 runtime into `.local/jdks/` when the image's Java is newer. Then it runs `start.sh`, so updates and **Pack release** work as above, except that Pack release is set as a `PACK_RELEASE` environment variable rather than a panel field.
+
+The jar is built from `server-jar/` by `server-jar/build.sh`.
+
 ## Updating
 
 **Restart the server** to update it. Each start looks up the newest release, checks it out in `pack/`, and syncs Forge, mods, plugins and settings from it. The console's first lines say which release is running and which ran before.
