@@ -197,11 +197,44 @@ sync_game() {
     while IFS= read -r file; do
         file="${file#game/}"
         [ -n "$file" ] && [ ! -e "$REPO/game/$file" ] && [ -f "$SERVER/$file" ] || continue
+        # Moved to settings/, which now owns only some of its lines.
+        [ ! -e "$REPO/settings/always/$file" ] && [ ! -e "$REPO/settings/once/$file" ] || continue
         rm -f "$SERVER/$file"
         printf '\033[31m  - %s\033[0m\n' "$file"
         removed=$((removed + 1))
     done < <(git -C "$REPO" -c core.quotePath=false log --format= --name-only --no-renames --diff-filter=D HEAD -- game | sort -u)
     echo "Settings: $count updated, $removed removed from game/"
+}
+
+sync_settings() {
+    # settings/always and settings/once hold only the pack's lines in files the server also owns; the rest of each
+    # file is left alone. always lines are put back on every start, once lines only the first time the pack ships
+    # them (remembered in .ftam-settings-once). scripts/merge-settings.awk says how lines are matched; play.ps1 does
+    # the same on players' PCs.
+    local rel sep always once state="$SERVER/.ftam-settings-once" new tmp count=0
+    touch "$state"
+    while IFS= read -r rel; do
+        sep='='
+        case "$rel" in *.txt) sep=':' ;; esac
+        always="$REPO/settings/always/$rel"; [ -f "$always" ] || always=/dev/null
+        once="$REPO/settings/once/$rel"; [ -f "$once" ] || once=/dev/null
+        new="$(mktemp)"; tmp="$(mktemp)"
+        local target="$SERVER/$rel"
+        [ -f "$target" ] || target=/dev/null
+        awk -v SEP="$sep" -v FILE="$rel" -v NEWSTATE="$new" -f "$REPO/scripts/merge-settings.awk" \
+            part=state "$state" part=once "$once" part=always "$always" part=target "$target" > "$tmp" \
+            || fail "Couldn't merge the pack's lines into $rel"
+        if [ "$target" = /dev/null ] || ! cmp -s "$tmp" "$target"; then
+            mkdir -p "$SERVER/$(dirname "$rel")"
+            cp "$tmp" "$SERVER/$rel"
+            printf '\033[36m  ~ %s\033[0m\n' "$rel"
+            count=$((count + 1))
+        fi
+        # Recorded only once the file is written, so a failed write tries again next start.
+        cat "$new" >> "$state"
+        rm -f "$new" "$tmp"
+    done < <(cd "$REPO/settings" 2>/dev/null && find always once -type f 2>/dev/null | sed 's#^[^/]*/##' | sort -u)
+    echo "Pack lines: $count files updated"
 }
 
 sync_bans() {
@@ -232,6 +265,7 @@ timed forge install_forge
 timed mods sync_mods
 timed plugins sync_plugins
 timed settings sync_game
+timed pack-lines sync_settings
 timed bans sync_bans
 
 # Running this script is agreeing to the Minecraft EULA: https://aka.ms/MinecraftEULA
