@@ -56,10 +56,9 @@ On a Pterodactyl panel, import the egg in [`pterodactyl/`](pterodactyl/README.md
 
 Remove it only alongside a CraftTweaker that covers both.
 
-Two jars are patched in place, each by rewriting one string in its class files:
+One jar is patched in place, by rewriting one string in its class files:
 
 - `mods/shared/ThermalTinkering-1.7.10-1.2.1-gtnhmantle.jar` requires any `Mantle` instead of `Mantle@[1.7.10-0.3.2,)`. GTNH's Mantle is versioned `0.5.4`, which FML sorts below that, so the original refuses to load.
-- `mods/server/BlockEditor.jar` catches `Throwable` where it caught `Exception`. Its scan of every block class hit MalisisDoors fields whose types only exist on the client, and the resulting `NoClassDefFoundError` stopped the server. Those blocks are now skipped and logged.
 
 `mods/client/World-Stripper-*.jar` stays client only: its strip packet has no permission check, so on a server any player could clear blocks around them. Without it on the server, it only works in single player.
 
