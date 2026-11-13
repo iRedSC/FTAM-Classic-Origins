@@ -242,5 +242,9 @@ cd "$SERVER"
 # fml.queryResult=confirm answers Forge's startup questions, such as "the world has blocks from a mod that's gone,
 # continue?", with yes. Otherwise a restart with no one at the console waits forever for /fml confirm.
 # The heap starts at its full size: loading 130k classes would otherwise make G1 grow it again and again.
+# sentry.pack is this checkout: Sentry lets players have only the jars in its mods/client and mods/shared. Java on
+# Windows can't read Git Bash's /c/... paths, so it gets the Windows one there.
+PACK_DIR="$REPO"
+if command -v cygpath > /dev/null; then PACK_DIR="$(cygpath -w "$REPO")"; fi
 exec "$JAVA" "-Xms$MEMORY" "-Xmx$MEMORY" -XX:+UseG1GC -XX:+UnlockExperimentalVMOptions -XX:MaxGCPauseMillis=100 \
-    -XX:+DisableExplicitGC -Dfml.queryResult=confirm -jar "$FORGE_JAR" nogui
+    -XX:+DisableExplicitGC -Dfml.queryResult=confirm "-Dsentry.pack=$PACK_DIR" -jar "$FORGE_JAR" nogui
