@@ -2,8 +2,10 @@
 # is under the game folder (config\..., options.txt). Dot-sourced by play.ps1; scripts/merge-settings.awk does the same
 # for servers, and scripts/test-settings.sh checks the two agree. Runs on Windows PowerShell 5.1 and PowerShell 7.
 #
-# A line's identity is its section (an INI [header], or the path of Forge `name {` categories) and its key (the text
-# before = , or : in options.txt). The pack owns every identity its files name: their lines replace all of the
+# A line's identity is its section (an INI [header], or the path of Forge `name {` categories) and its key: the text
+# before = (or : in .txt files such as options.txt), or what a `# key: <key>` comment on the line above says, for files
+# whose lines share a first word (Xaero's `interface:<name>:...`). A player's line has a key when it starts with it and
+# then the separator. The pack owns every identity its files name: their lines replace all of the
 # player's lines with that identity, where the first of them was, so a key repeated as a list is replaced as a whole.
 # An identity the player's file lacks goes at the end of its section, or a new INI section at the end.
 # always lines are put back on every launch. once lines are put in the first time the pack ships that exact line,
@@ -40,23 +42,40 @@ function Split-SettingLines([string[]]$Lines, [string]$Sep) {
         if ($kind -eq 'key') { $id = $sec.ToLowerInvariant() + "`t" + $key.ToLowerInvariant() }
         $indent = ([regex]::Match($line, '^[ \t]*')).Value
         $rows.Add([pscustomobject]@{ Line = $line; Trim = $t; Kind = $kind; Sec = $sec; SecKind = $secKind; Id = $id
-            Closed = $closed; Indent = $indent })
+            Key = $key; Closed = $closed; Indent = $indent })
     }
     return , $rows
 }
 
-# The pack's identities in one settings file, in order: Id, Sec, SecKind, Lines.
+# The pack's identities in one settings file, in order: Id, Sec, SecKind, Key, Lines.
 function Read-OwnedSettings([string[]]$Lines, [string]$Sep) {
     $owned = [ordered]@{}
+    $named = ''
     foreach ($row in (Split-SettingLines $Lines $Sep)) {
+        if ($row.Trim -match '^#\s*key:\s*(.*)$') { $named = Get-SettingTrim $Matches[1]; continue }
         if ($row.Kind -ne 'key') { continue }
-        if (-not $owned.Contains($row.Id)) {
-            $owned[$row.Id] = [pscustomobject]@{ Id = $row.Id; Sec = $row.Sec; SecKind = $row.SecKind
+        $key = $row.Key
+        if ($named -ne '') { $key = $named; $named = '' }
+        $id = $row.Sec.ToLowerInvariant() + "`t" + $key.ToLowerInvariant()
+        if (-not $owned.Contains($id)) {
+            $owned[$id] = [pscustomobject]@{ Id = $id; Sec = $row.Sec; SecKind = $row.SecKind; Key = $key
                 Lines = (New-Object System.Collections.Generic.List[string]) }
         }
-        $owned[$row.Id].Lines.Add($row.Trim)
+        $owned[$id].Lines.Add($row.Trim)
     }
     return $owned
+}
+
+# The pack identity a player's line has: the longest pack key in its section it starts with, then the separator.
+# $Keys holds every pack key for the file, once lines already applied included, longest first.
+function Get-SettingOwner($Row, $Keys, [string]$Sep) {
+    foreach ($o in $Keys) {
+        if ($o.Sec -ne $Row.Sec) { continue }
+        if (-not $Row.Trim.StartsWith($o.Key, [StringComparison]::OrdinalIgnoreCase)) { continue }
+        $rest = $Row.Trim.Substring($o.Key.Length).TrimStart(" `t".ToCharArray())
+        if ($rest.StartsWith($Sep)) { return $o.Id }
+    }
+    return ''
 }
 
 # Where a line of this section goes when the target lacks it: after this row (0-based, -1 means before the first),
@@ -85,9 +104,11 @@ function Get-SettingInsertAt($Rows, [string]$Sec, [string]$SecKind) {
     return $last
 }
 
-# The target's lines with the owned identities put in. $Owned is an ordered list from Read-OwnedSettings.
-function Merge-Settings([string[]]$Target, $Owned, [string]$Sep, [string]$File) {
+# The target's lines with the owned identities put in. $Owned is an ordered list from Read-OwnedSettings; $Keys every
+# pack key for the file (see Get-SettingOwner).
+function Merge-Settings([string[]]$Target, $Owned, $Keys, [string]$Sep, [string]$File) {
     $rows = Split-SettingLines $Target $Sep
+    foreach ($row in $rows) { if ($row.Kind -eq 'key') { $row.Id = Get-SettingOwner $row $Keys $Sep } }
     $first = @{}; $drop = @{}; $rep = @{}; $have = @{}
     # An identity whose lines already read as the pack's, in order, stays where it is, even spread apart.
     foreach ($row in $rows) {
@@ -159,9 +180,19 @@ function Read-SettingFileLines([string]$Path) {
 # (a HashSet of signatures); new signatures go into $NewState.
 function Set-OwnedSettings([string]$Root, [string]$Rel, [string]$Target, $State, $NewState) {
     $sep = '='
-    if ((Split-Path -Leaf $Rel) -eq 'options.txt') { $sep = ':' }
+    if ($Rel.EndsWith('.txt', [StringComparison]::OrdinalIgnoreCase)) { $sep = ':' }
     $always = Read-OwnedSettings (Read-SettingFileLines (Join-Path $Root "settings/always/$Rel")) $sep
     $onceAll = Read-OwnedSettings (Read-SettingFileLines (Join-Path $Root "settings/once/$Rel")) $sep
+    # Longest keys first, ties in the order the pack's files name them (as merge-settings.awk does).
+    $keys = New-Object System.Collections.Generic.List[object]
+    $listed = @{}
+    foreach ($o in @($always.Values) + @($onceAll.Values)) {
+        if ($listed.ContainsKey($o.Id)) { continue }
+        $listed[$o.Id] = $true
+        $j = $keys.Count
+        while ($j -gt 0 -and $keys[$j - 1].Key.Length -lt $o.Key.Length) { $j-- }
+        $keys.Insert($j, $o)
+    }
     $owned = [ordered]@{}
     foreach ($o in $always.Values) { $owned[$o.Id] = $o }
     foreach ($o in $onceAll.Values) {
@@ -173,7 +204,7 @@ function Set-OwnedSettings([string]$Root, [string]$Rel, [string]$Target, $State,
     }
     if ($owned.Count -eq 0) { return $false }
     $before = Read-SettingFileLines $Target
-    $after = Merge-Settings $before $owned $sep $Rel
+    $after = Merge-Settings $before $owned $keys $sep $Rel
     if (($before -join "`n") -ceq ($after -join "`n") -and (Test-Path -LiteralPath $Target)) { return $false }
     $newline = "`n"
     if ((Test-Path -LiteralPath $Target) -and ([IO.File]::ReadAllText($Target)).Contains("`r`n")) { $newline = "`r`n" }

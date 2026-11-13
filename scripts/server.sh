@@ -215,7 +215,7 @@ sync_settings() {
     touch "$state"
     while IFS= read -r rel; do
         sep='='
-        [ "$(basename "$rel")" = options.txt ] && sep=':'
+        case "$rel" in *.txt) sep=':' ;; esac
         always="$REPO/settings/always/$rel"; [ -f "$always" ] || always=/dev/null
         once="$REPO/settings/once/$rel"; [ -f "$once" ] || once=/dev/null
         new="$(mktemp)"; tmp="$(mktemp)"

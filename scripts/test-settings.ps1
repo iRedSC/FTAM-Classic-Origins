@@ -36,4 +36,14 @@ Merge-Copy 'config/forge.cfg' "$T/forge.cfg" "$T/pf1" $state
 Test-Same 'Forge categories' "$T/pf1" "$T/f1"
 Merge-Copy 'config/a.cfg' "$T/spread.cfg" "$T/ps1" (New-Object System.Collections.Generic.HashSet[string])
 Test-Same 'a matching list stays spread' "$T/ps1" "$T/s1"
+$crlf = New-Object System.Collections.Generic.HashSet[string]
+Merge-Copy 'config/a.cfg' "$T/crlf.cfg" "$T/pc1" $crlf
+Test-Same 'CRLF first launch' "$T/pc1" "$T/c1"
+Merge-Copy 'config/a.cfg' "$T/c1b" "$T/pc2" $crlf
+Test-Same 'CRLF keeps the player''s change' "$T/pc2" "$T/c2"
+$x = New-Object System.Collections.Generic.HashSet[string]
+Merge-Copy 'config/xaerominimap.txt' "$T/xaerominimap.txt" "$T/px1" $x
+Test-Same 'key: names one of several interface lines' "$T/px1" "$T/x1"
+Merge-Copy 'config/xaerominimap.txt' "$T/x1b" "$T/px2" $x
+Test-Same 'a moved minimap stays' "$T/px2" "$T/x2"
 exit $fail

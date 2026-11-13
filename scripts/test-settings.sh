@@ -92,6 +92,34 @@ check "options.txt gets the once key" "$(grep -a xaero "$T/o1" | tr -d '\r')" "k
 awk_merge config/forge.cfg = "$T/forge.cfg" "$T/state" > "$T/f1"
 check "Forge category lines keep their indent" "$(grep enabled "$T/f1")" "    B:enabled=false"
 
+# A CRLF file: a once line the player changes stays changed (the state file must match across line endings).
+printf '[Keys]\r\nUp = 200\r\n' > "$T/crlf.cfg"
+awk_merge config/a.cfg = "$T/crlf.cfg" "$T/state-crlf" > "$T/c1"
+check "CRLF: once applies the first time" "$(grep -a '^Up' "$T/c1" | tr -d '\r')" "Up = 17"
+sed 's/^Up = 17/Up = 72/' "$T/c1" > "$T/c1b"
+awk_merge config/a.cfg = "$T/c1b" "$T/state-crlf" > "$T/c2"
+check "CRLF: the player's change stays" "$(grep -a '^Up' "$T/c2" | tr -d '\r')" "Up = 72"
+check "the state file has no CR" "$(grep -c $'\r' "$T/state-crlf")" "0"
+
+# Xaero's lines share a first word: `# key:` names the one the pack owns, and the others stay.
+mkdir -p "$T/settings/once/config"
+cat > "$T/settings/once/config/xaerominimap.txt" <<'EOF2'
+# key: interface:gui.xaero_minimap
+interface:gui.xaero_minimap:0:0:false:false:false:false
+EOF2
+cat > "$T/xaerominimap.txt" <<'EOF2'
+minimap:true
+interface:dummy:0:0:true:false:false:false
+interface:gui.xaero_minimap:120:40:false:false:true:false
+interface:dummy:0:36:true:false:false:false
+EOF2
+awk_merge config/xaerominimap.txt : "$T/xaerominimap.txt" "$T/state-x" > "$T/x1"
+check "only the minimap's interface line moves" "$(tr '\n' '|' < "$T/x1")" \
+    "minimap:true|interface:dummy:0:0:true:false:false:false|interface:gui.xaero_minimap:0:0:false:false:false:false|interface:dummy:0:36:true:false:false:false|"
+sed 's/gui.xaero_minimap:0:0:false:false:false:false/gui.xaero_minimap:5:5:false:false:true:true/' "$T/x1" > "$T/x1b"
+awk_merge config/xaerominimap.txt : "$T/x1b" "$T/state-x" > "$T/x2"
+check "a player who moves the minimap keeps it there" "$(grep xaero_minimap "$T/x2")" "interface:gui.xaero_minimap:5:5:false:false:true:true"
+
 if command -v pwsh >/dev/null; then
     pwsh -NoProfile -File scripts/test-settings.ps1 "$T" || fail=1
 else

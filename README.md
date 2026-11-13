@@ -73,7 +73,7 @@ When a file is partly the player's (key bindings, `options.txt`), put only the l
 - `always`: put back on every launch and server start. For values players must not change.
 - `once`: put in the first time the pack ships that exact line, then left alone, so a player who changes it keeps their change. Edit the line and it applies once more. For defaults. `always` wins if both name a line.
 
-A line is matched by its section and key (the text before `=`, or `:` in `options.txt`). The pack's lines replace every line with that key in that section, so a key repeated as a list is replaced as a whole. A key the file lacks goes at the end of its section, and a missing file is created with just the pack's lines. Each game folder and server remembers its applied `once` lines in `.ftam-settings-once`.
+A line is matched by its section and key: the text before `=`, or before `:` in `.txt` files such as `options.txt`. Where lines share a first word, as Xaero's `interface:<name>:...` lines do, put `# key: interface:gui.xaero_minimap` on the line above to name the longer key. The pack's lines replace every line with that key in that section, so a key repeated as a list is replaced as a whole. A key the file lacks goes at the end of its section, and a missing file is created with just the pack's lines. Each game folder and server remembers its applied `once` lines in `.ftam-settings-once`.
 
 `play.ps1` (`scripts/settings.ps1`) does this on players' PCs and the server script (`scripts/merge-settings.awk`) on servers; `scripts/test-settings.sh` checks they agree (it needs `pwsh` for the `play.ps1` half). A file can't be in both `game/` and `settings/`; moving one from `game/` to `settings/` keeps it from being deleted as a removed file.
 

@@ -4,8 +4,10 @@
 #   awk -v SEP='=' -v FILE=config/x.cfg -v NEWSTATE=<file> -f merge-settings.awk \
 #       part=state <state> part=once <settings/once/...> part=always <settings/always/...> part=target <current>
 #
-# A line's identity is its section (an INI [header], or the path of Forge `name {` categories) and its key (the text
-# before SEP). The pack owns every identity its files name: their lines replace all of the target's lines with that
+# A line's identity is its section (an INI [header], or the path of Forge `name {` categories) and its key: the text
+# before SEP, or what a `# key: <key>` comment on the line above says, for files whose lines share a first word
+# (Xaero's `interface:<name>:...`). A target line has a key when it starts with it and then SEP. The pack owns every
+# identity its files name: their lines replace all of the target's lines with that
 # identity, where the first of them was, so a key repeated as a list is replaced as a whole. An identity the target
 # lacks goes at the end of its section, or a new INI section at the end. Once lines apply only if this exact line
 # isn't in the state file yet; NEWSTATE gets a line for each one applied. Always lines win over once lines.
@@ -40,17 +42,26 @@ function id(sec, key) { return tolower(sec) SUBSEP tolower(key) }
 
 part != lastpart { lastpart = part; SEC = ""; SECKIND = ""; depth = 0 }
 
-part == "state" { seen[$0] = 1; next }
+# The state file is written with "\n" (see END), but a CRLF one from an older run must still match.
+part == "state" { sub(/\r$/, ""); seen[$0] = 1; next }
 
 part == "once" || part == "always" {
     sub(/\r$/, "")
+    if (match($0, /^[ \t]*#[ \t]*key:[ \t]*/)) { named = trim(substr($0, RLENGTH + 1)); next }
     classify($0)
     if (KIND != "key") next
+    if (named != "") { KEY = named; named = "" }
     k = id(SEC, KEY)
     if (!((part, k) in lines)) {
         order[part, ++count[part]] = k
         lines[part, k] = ""
         sec[k] = SEC; seckind[k] = SECKIND
+    }
+    if (!(k in keyname)) {
+        keyname[k] = KEY
+        # Longest keys first, so `interface:gui.xaero_minimap` claims its line before a plain `interface` would.
+        for (j = ++keys; j > 1 && length(keyname[keylist[j - 1]]) < length(KEY); j--) keylist[j] = keylist[j - 1]
+        keylist[j] = k
     }
     lines[part, k] = lines[part, k] (lines[part, k] == "" ? "" : "\n") trim($0)
     next
@@ -63,9 +74,21 @@ part == "target" {
     row[n] = $0
     classify($0)
     rkind[n] = KIND; rsec[n] = SEC; rseckind[n] = SECKIND
-    rid[n] = KIND == "key" ? id(SEC, KEY) : ""
+    rid[n] = KIND == "key" ? owner_of(SEC, trim($0)) : ""
     if (KIND == "close") rclosed[n] = CLOSED
     match($0, /^[ \t]*/); rindent[n] = substr($0, 1, RLENGTH)
+}
+
+# The pack identity a target line in section s has: the longest pack key in s the line starts with, then SEP.
+function owner_of(s, t,   j, k, rest) {
+    for (j = 1; j <= keys; j++) {
+        k = keylist[j]
+        if (tolower(sec[k]) != tolower(s)) continue
+        if (tolower(substr(t, 1, length(keyname[k]))) != tolower(keyname[k])) continue
+        rest = substr(t, length(keyname[k]) + 1); sub(/^[ \t]+/, "", rest)
+        if (substr(rest, 1, 1) == SEP) return k
+    }
+    return ""
 }
 
 # Where a line of this section goes when the target lacks it: after this row (0 means before the first), or -1 when
@@ -108,7 +131,7 @@ END {
         gsub(/\n/, "\037", sig); gsub(SUBSEP, "\t", sig)
         if (sig in seen) continue
         own[k] = lines["once", k]; owned[++m] = k
-        if (NEWSTATE != "") print sig >> NEWSTATE
+        if (NEWSTATE != "") printf "%s\n", sig >> NEWSTATE
     }
 
     # An identity whose lines already read as the pack's, in order, stays where it is, even spread apart.
