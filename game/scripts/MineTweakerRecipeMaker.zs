@@ -184,7 +184,8 @@ recipes.addShaped(<contenttweaker:clayandgravel> * 9, [[<ore:itemClay>, <ore:ite
 recipes.addShaped(<GardenStuff:metal_block>, [[<contenttweaker:polymer>, <contenttweaker:polymer>, <contenttweaker:polymer>], [<contenttweaker:polymer>, <contenttweaker:polymer>, <contenttweaker:polymer>], [<contenttweaker:polymer>, <contenttweaker:polymer>, <contenttweaker:polymer>]]);
 recipes.addShaped(<MineFactoryReloaded:machine.0:13>, [[<ore:itemPlastic>, <ore:itemNetherStar>, <ore:itemPlastic>], [<minecraft:book>, <ore:thermalexpansion:machineFrame>, <minecraft:book>], [<ore:gearTin>, <ThermalExpansion:material:1>, <ore:gearTin>]]);
 recipes.addShaped(<ExtraUtilities:builderswand>, [[null, null, <ore:itemNetherStar>], [null, <minecraft:obsidian>, null], [<minecraft:obsidian>, null, null]]);
-recipes.addShaped(<minecraft:heavy_weighted_pressure_plate>, [[<ore:ingotIron>, <ore:ingotIron>, <ore:ingotIron>]]);
+// Three iron in a row is also Malisis' Doors Rusty Ladder, which wins; this combination is no other recipe.
+recipes.addShapeless(<minecraft:heavy_weighted_pressure_plate>, [<ore:ingotIron>, <ore:ingotIron>, <minecraft:stone_pressure_plate>]);
 recipes.addShaped(<MineFactoryReloaded:machine.0:2>, [[<MineFactoryReloaded:plastic.sheet>, <minecraft:shears>, <MineFactoryReloaded:plastic.sheet>], [<minecraft:iron_axe>, <ThermalExpansion:Frame:3>, <minecraft:iron_axe>], [<ore:gearEnderium>, <contenttweaker:chip>, <ore:gearEnderium>]]);
 recipes.addShaped(<ThermalFoundation:tool.sickleWood>, [[null, <ore:plankWood>, null], [null, null, <ore:plankWood>], [<ore:stickWood>, <ore:plankWood>, null]]);
 recipes.addShaped(<militarybasedecor:rebar> * 2, [[<ore:ingotIron>, <ore:ingotIron>]]);
