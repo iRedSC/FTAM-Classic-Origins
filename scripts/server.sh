@@ -242,12 +242,12 @@ sync_settings() {
 }
 
 sync_bans() {
-    # Item Blacklist enforces exactly what scripts/banned-*.zs tag "§4...". The forge-1.7.10-mods release writes those
-    # from House Rules' list, so it stays the one ban list.
+    # Item Blacklist enforces exactly the items scripts/banned-*.zs take recipes from. The forge-1.7.10-mods release
+    # writes those from House Rules' list, so it stays the one ban list.
     # <mod:item> without a meta bans every variant, which covers damaged tools and armor. Item Blacklist stops
     # the server over a name it doesn't know, so a typo there fails loudly on start instead of banning nothing.
     local entries
-    entries="$(sed -n 's/^<\([^>]*\)>\.addTooltip("§4.*/\1/p' "$REPO"/game/scripts/banned-*.zs 2>/dev/null | awk -F: '
+    entries="$(sed -n 's/^recipes\.remove(<\([^>]*\)>);.*/\1/p' "$REPO"/game/scripts/banned-*.zs 2>/dev/null | awk -F: '
         !seen[$0]++ { printf "%s    {\"item\": \"%s:%s\", \"damage\": \"%s\"}", (n++ ? ",\n" : ""), $1, $2, (NF > 2 ? $3 : "*") }')"
     [ -n "$entries" ] || fail "game/scripts/banned-*.zs ban nothing, so Item Blacklist would let everything through."
     mkdir -p "$SERVER/config"
