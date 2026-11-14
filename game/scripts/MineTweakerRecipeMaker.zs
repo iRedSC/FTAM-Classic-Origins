@@ -35,7 +35,6 @@ recipes.remove(<MineFactoryReloaded:machine.2:1>);
 recipes.remove(<EnderIO:blockTransceiver>);
 recipes.remove(<openmodularturrets:baseTierOneBlock>);
 recipes.remove(<ExtraUtilities:peaceful_table_top>);
-recipes.remove(<Mekanism:Robit>);
 recipes.remove(<GardenStuff:metal_block>);
 recipes.remove(<Aroma1997sDimension:portalIgniter>);
 recipes.remove(<Aroma1997sDimension:dimensionChanger>);
