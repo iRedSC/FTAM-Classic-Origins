@@ -31,3 +31,5 @@ mods.thermalexpansion.Pulverizer.addRecipe(3000, <BiomesOPlenty:gems:4>, <conten
 mods.thermalexpansion.Smelter.addRecipe(1000, <contenttweaker:clayandgravel> * 1, <MineFactoryReloaded:plastic.raw> * 1, <contenttweaker:polymer>);
 
 mods.thermalexpansion.Furnace.removeRecipe(<roadstuff:itemBitumen>);
+// Sky Stone without meteors: Obsidian + Ender Pearl in the Induction Smelter.
+mods.thermalexpansion.Smelter.addRecipe(4000, <minecraft:obsidian>, <minecraft:ender_pearl>, <appliedenergistics2:tile.BlockSkyStone> * 4);
