@@ -6,20 +6,7 @@
 // Launchers, radar and the other machines keep their recipes.
 // Meta is DefenseTech's explosive id, in its registration order.
 
-// Every missile and grenade loses its recipe, the missile module (only a crafting part) too; the kept ones say
-// where they come from.
+// Every missile and grenade loses its recipe, the missile module (only a crafting part) too. Where the kept ones
+// come from is in their tooltips, sent by forge-1.7.10-mods's Lore plugin (lore.json).
 recipes.remove(<DefenseTech:missile:*>);
 recipes.remove(<DefenseTech:grenade:*>);
-
-<DefenseTech:missile:0>.addTooltip("§6§l* §7Dropped by Envoy and Bosses"); // conventional
-<DefenseTech:missile:3>.addTooltip("§6§l* §7Dropped by Envoy and Bosses"); // debilitation
-<DefenseTech:missile:4>.addTooltip("§6§l* §7Dropped by Envoy and Bosses"); // chemical
-<DefenseTech:missile:9>.addTooltip("§6§l* §7Dropped by Envoy and Bosses"); // contagious
-<DefenseTech:missile:10>.addTooltip("§6§l* §7Dropped by Envoy and Bosses"); // sonic
-<DefenseTech:missile:13>.addTooltip("§6§l* §7Dropped by Envoy and Bosses"); // thermobaric
-<DefenseTech:missile:15>.addTooltip("§6§l* §7Dropped by Envoy and Bosses"); // nuclear
-<DefenseTech:missile:16>.addTooltip("§6§l* §7Dropped by Envoy and Bosses"); // EMP
-<DefenseTech:missile:20>.addTooltip("§6§l* §7Dropped by Envoy and Bosses"); // hypersonic
-<DefenseTech:grenade:0>.addTooltip("§6§l* §7Dropped by Envoy and Bosses"); // conventional
-<DefenseTech:grenade:3>.addTooltip("§6§l* §7Dropped by Envoy and Bosses"); // debilitation
-<DefenseTech:grenade:4>.addTooltip("§6§l* §7Dropped by Envoy and Bosses"); // chemical

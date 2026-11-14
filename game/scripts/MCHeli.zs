@@ -14,9 +14,3 @@ val crateOnly = [
 for v in crateOnly {
     recipes.remove(v);
 }
-val crateTooltip = [<mcheli:ah-1z>, <mcheli:ah-64>, <mcheli:mi28>, <mcheli:penetrator>, <mcheli:a-10>, <mcheli:ac-130>,
-          <mcheli:b-2a>, <mcheli:f22a>, <mcheli:f-35a>, <mcheli:f-35c>, <mcheli:fa18f>, <mcheli:tornado-gr4>,
-          <mcheli:tornado-ids>, <mcheli:x-47b>, <mcheli:cb90>] as IItemStack[];
-for v in crateTooltip {
-    v.addTooltip("§6§l* §7Found in crates.");
-}

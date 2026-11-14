@@ -149,16 +149,3 @@ MiningLaser.addPreferredOre(12, <minecraft:iron_ingot>);
 MiningLaser.addPreferredOre(14, <minecraft:redstone>);
 
 MiningLaser.addPreferredOre(15, <minecraft:coal>);
-
-<MineFactoryReloaded:laserfocus:0>.addTooltip("§aMaterials: Quartz");
-<MineFactoryReloaded:laserfocus:1>.addTooltip("§aMaterials: Copper");
-<MineFactoryReloaded:laserfocus:3>.addTooltip("§aMaterials: Diamond/Osmium/Silver");
-<MineFactoryReloaded:laserfocus:4>.addTooltip("§aMaterials: Glowstone/Gold/Yellorium/Ferrous");
-<MineFactoryReloaded:laserfocus:5>.addTooltip("§aMaterials: Emerald");
-<MineFactoryReloaded:laserfocus:8>.addTooltip("§aMaterials: Tin");
-<MineFactoryReloaded:laserfocus:9>.addTooltip("§aMaterials: Certus Quartz/Charged Certus Quartz");
-<MineFactoryReloaded:laserfocus:10>.addTooltip("§aMaterials: Lead, Electrotine");
-<MineFactoryReloaded:laserfocus:11>.addTooltip("§aMaterials: Lapis");
-<MineFactoryReloaded:laserfocus:12>.addTooltip("§aMaterials: Iron");
-<MineFactoryReloaded:laserfocus:14>.addTooltip("§aMaterials: Redstone");
-<MineFactoryReloaded:laserfocus:15>.addTooltip("§aMaterials: Coal");
