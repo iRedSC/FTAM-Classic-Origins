@@ -65,7 +65,6 @@ recipes.remove(<DescriptionTags:item.null:2>);
 recipes.remove(<customnpcs:npcCarpentyBench>);
 recipes.remove(<BiomesOPlenty:gemOre:9>);
 recipes.remove(<BiomesOPlenty:gemOre:15>);
-recipes.remove(<appliedenergistics2:item.ItemMultiPart:320>);
 recipes.remove(<MekanismGenerators:Reactor>);
 recipes.remove(<ExtraUtilities:bedrockiumIngot>);
 recipes.remove(<ExtraUtilities:block_bedrockium>);
