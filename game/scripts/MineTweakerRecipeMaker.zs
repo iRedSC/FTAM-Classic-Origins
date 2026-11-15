@@ -44,7 +44,6 @@ recipes.remove(<Aroma1997Core:wrench>);
 recipes.remove(<ExtraUtilities:dark_portal:2>);
 recipes.remove(<EnderIO:itemTravelStaff:16>);
 recipes.remove(<MineFactoryReloaded:machine.0:2>);
-recipes.remove(<ExtraUtilities:enderThermicPump>);
 recipes.remove(<MineFactoryReloaded:machine.1:9>);
 recipes.remove(<militarybasedecor:rope>);
 recipes.remove(<militarybasedecor:bundled_wire>);
