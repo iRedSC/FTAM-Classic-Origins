@@ -58,5 +58,5 @@ mods.content.Item.registerItem("Bickford Fuse", "bickford_fuse", "bickford_fuse"
 mods.content.Item.registerItem("Potassium Nitrate", "potassium_nitrate", "potassium_nitrate");
 mods.content.Item.registerItem("Logical Element", "logic_element", "logic_element");
 mods.content.Item.registerItem("Blue Blaze Rod", "blue_blaze_rod", "blue_blaze_rod");
-mods.content.Item.registerItem("Charged Heart", "charged_heart", "charged_heart");
+mods.content.Item.registerItem("Regrahc", "regrahc", "regrahc");
 mods.content.Item.registerItem("Milk Dud", "milk_dud", "milk_dud");

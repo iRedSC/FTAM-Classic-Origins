@@ -5,9 +5,9 @@
 <contenttweaker:blue_blaze_rod>.addTooltip("§bTinkers' modifier: Blue Flame");
 
 // The EMP Creeper's drop: Regrahc steals power from a hit player's items into the attacker's.
-<contenttweaker:charged_heart>.displayName = "Charged Heart";
-<contenttweaker:charged_heart>.addTooltip("§eTinkers' modifier: Regrahc");
-<contenttweaker:charged_heart>.addTooltip("§7§oSteals the charge right out of a man's heart.");
+<contenttweaker:regrahc>.displayName = "Regrahc";
+<contenttweaker:regrahc>.addTooltip("§eTinkers' modifier: Regrahc");
+<contenttweaker:regrahc>.addTooltip("§7§oSteals the charge right out of a man's heart.");
 
 // Bullwinkle's drop, one of its milk drums that never went off: Milk Dud cuts a hit target's good potion effects short
 // and draws their bad ones out.
