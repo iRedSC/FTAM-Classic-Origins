@@ -71,7 +71,6 @@ recipes.remove(<EnderIO:itemEnderFood>);
 recipes.remove(<EnderIO:blockTravelAnchor>);
 recipes.remove(<appliedenergistics2:item.ItemMultiMaterial:34>);
 recipes.remove(<appliedenergistics2:item.ItemMultiMaterial:33>);
-recipes.remove(<Mekanism:Flamethrower>);
 recipes.remove(<MineFactoryReloaded:machine.2:1>);
 recipes.remove(<ExtraUtilities:watering_can:3>);
 recipes.remove(<ExtraUtilities:drum:1>);
