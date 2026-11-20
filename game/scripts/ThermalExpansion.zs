@@ -7,7 +7,6 @@ mods.thermalexpansion.Smelter.addRecipe(3000, <minecraft:skull:1> * 64, <Thermal
 
 mods.thermalexpansion.Smelter.addRecipe(4200, <EnderIO:itemMaterial:2> * 8, <minecraft:gunpowder> * 64, <contenttweaker:industrial_powder>);
 mods.thermalexpansion.Smelter.addRecipe(4200, <EnderIO:itemMaterial:2> * 8, <ThermalFoundation:material:17> * 64, <contenttweaker:potassium_nitrate>);
-mods.thermalexpansion.Smelter.addRecipe(4200, <contenttweaker:potassium_nitrate> * 1, <contenttweaker:industrial_powder> * 8, <contenttweaker:powder_briquette>);
 
 mods.thermalexpansion.Smelter.addRecipe(6500, <psychedelicraft:cannabisLeaf> * 5, <ThermalExpansion:material:516> * 3, <psychedelicraft:driedCannabisLeaves>);
 mods.thermalexpansion.Smelter.addRecipe(6500, <psychedelicraft:cannabisBuds> * 5, <ThermalExpansion:material:516> * 3, <psychedelicraft:driedCannabisBuds>);
