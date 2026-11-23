@@ -121,7 +121,6 @@ recipes.remove(<psychedelicraft:joint>);
 recipes.remove(<psychedelicraft:cigar>);
 recipes.remove(<psychedelicraft:cigarette>);
 recipes.remove(<psychedelicraft:riftJar>);
-recipes.remove(<OpenBlocks:tank>);
 recipes.remove(<minecraft:paper>);
 recipes.remove(<Mekanism:ObsidianTNT>);
 recipes.remove(<OpenBlocks:generic>);
