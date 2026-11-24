@@ -64,6 +64,8 @@ One jar is patched in place, by rewriting one string in its class files:
 
 `mods/client/World-Stripper-*.jar` stays client only: its strip packet has no permission check, so on a server any player could clear blocks around them. Without it on the server, it only works in single player.
 
+`mods/client/InventoryTweaks-*.jar` stays client only too: on a server, its click packet runs `slotClick` straight from the network thread, skipping the server's own click checks. Without it on the server, sorting and refills go through vanilla clicks, which the server checks like any other.
+
 ## Settings
 
 `game/` holds the pack's settings: mod configs, MineTweaker `scripts/`, ContentTweaker `contentScripts/` and Flan's Mod content packs (`Flan/`: MPACK guns, GREYLIGHT armor and injectors). `play.cmd` and the server script copy each file in it over the game folder's copy every time they run, so edit them here, not in the instance or server. Files `game/` doesn't have, such as your own options, are left alone.
