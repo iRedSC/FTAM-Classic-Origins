@@ -266,11 +266,28 @@ if [ -z "${FTAM_PULLED:-}" ]; then
         || FTAM_PULLED=1 FTAM_START_MS="$START_MS" FTAM_STEPS="$STEPS" exec bash "${BASH_SOURCE[0]}" "$@"
 fi
 timed forge install_forge
-timed mods sync_mods
-timed plugins sync_plugins
-timed settings sync_game
-timed pack-lines sync_settings
-timed bans sync_bans
+
+# A hot fix (LiveMcp's hotfix tool) holds this server's own mods, plugins, configs and scripts on the release it was
+# made on: pack-hotfix names that release, and starts of it skip the sync, so what was changed live survives. A start
+# of any other release removes the mark and syncs as usual, so the next release, which carries the fix, takes over.
+HOTFIX="$SERVER/pack-hotfix"
+RELEASE="$(git -C "$REPO" config --get ftam.release || true)"
+HELD="$(head -n 1 "$HOTFIX" 2>/dev/null | tr -d '\r[:space:]' || true)"
+if [ -n "$HELD" ] && [ "$HELD" != "$RELEASE" ]; then
+    rm -f "$HOTFIX"
+    say "The hot fix held on $HELD ends: ${RELEASE:-this pack} replaces it."
+    HELD=""
+fi
+if [ -n "$HELD" ]; then
+    say "Hot fixed on $HELD: mods, plugins, configs and scripts stay as this server has them (pack-hotfix)."
+    STEPS+="${STEPS:+, }sync skipped (hot fix)"
+else
+    timed mods sync_mods
+    timed plugins sync_plugins
+    timed settings sync_game
+    timed pack-lines sync_settings
+    timed bans sync_bans
+fi
 
 # Running this script is agreeing to the Minecraft EULA: https://aka.ms/MinecraftEULA
 [ -f "$SERVER/eula.txt" ] || echo 'eula=true' > "$SERVER/eula.txt"
